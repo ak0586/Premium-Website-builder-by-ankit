@@ -1,4 +1,10 @@
+---
+name: visual-qa
+description: Inspects rendered websites across mobile, tablet, laptop, and desktop viewports to identify visual, typography, spacing, color, imagery, responsive, interaction, motion, and generic AI-aesthetic issues.
+---
+
 # Visual QA Skill
+
 
 ## Purpose
 

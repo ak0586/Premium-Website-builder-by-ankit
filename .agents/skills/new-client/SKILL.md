@@ -1,4 +1,10 @@
+---
+name: new-client
+description: Guides the creation of a new client website from business understanding and research through creative direction, information architecture, design system, implementation, responsive refinement, visual QA, and final QA.
+---
+
 # New Client Website Skill
+
 
 ## Purpose
 

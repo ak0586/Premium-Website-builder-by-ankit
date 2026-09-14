@@ -1,4 +1,10 @@
+---
+name: final-qa
+description: Performs the final production-readiness review covering build, functionality, browser behavior, responsive design, accessibility, performance, SEO, security, factual content, visual quality, and Git readiness.
+---
+
 # Final QA Skill
+
 
 ## Purpose
 

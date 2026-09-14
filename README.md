@@ -1,44 +1,62 @@
 # Premium Website Builder
 
-Master design system, agent rules, and engineering standards for creating bespoke, production-grade websites for businesses and clients.
+Master design system, agent rules, reusable workflows, and engineering standards for creating bespoke, production-grade websites for businesses and clients.
 
 ## Overview
 
-The **Premium Website Builder** repository serves as the central design system and operational foundation. It defines the architectural, visual, accessibility, and performance rules required to design and build websites that feel:
+The **Premium Website Builder** repository serves as the central design system and operational foundation for building premium client websites.
 
-- **Professionally Art-Directed**: Bespoke visual identities tailored to each business type.
-- **Commercially Purposeful**: Engineered around clear conversion funnels, trust signals, and user needs.
-- **Accessible & Performant**: Clean semantic HTML, responsive layouts across all viewports, and high Lighthouse scores.
-- **Production-Ready**: Tested, verified, and free of generic AI design tropes.
+It defines the architectural, visual, accessibility, performance, research, and quality standards required to create websites that feel:
+
+- **Professionally Art-Directed**: Bespoke visual identities tailored to each business, audience, market, and brand.
+- **Commercially Purposeful**: Engineered around clear conversion paths, trust signals, business goals, and user needs.
+- **Accessible & Performant**: Semantic HTML, responsive layouts, accessible interactions, optimized assets, and strong performance.
+- **Production-Ready**: Visually inspected, technically verified, responsive, accessible, secure, and free from generic AI design patterns.
+- **Distinctive by Client**: Shared engineering quality and design discipline without forcing every client website into the same visual style.
 
 ---
 
 ## Repository Structure
 
-```
-.
+```text
+Premium-Website-builder-by-ankit/
+│
 ├── .agents/
-│   ├── rules/                 # Strict design, UI, motion, a11y, performance, and code rules
-│   └── skills/                # Agent workflows (new-client, premium-ui, visual-qa, final-qa)
-├── design-system/             # Core design system documentation
-│   ├── principles.md          # Visual hierarchy, composition, and restraint
-│   ├── color.md               # Semantic color token strategy
-│   ├── typography.md          # Hierarchy and type pairings
-│   ├── spacing.md             # Spacing scale and layout rhythm
-│   ├── layout.md              # Responsive layout guidelines
-│   ├── motion.md              # Interaction and animation tiers
-│   └── components.md          # Component guidelines and patterns
+│   ├── rules/
+│   │   ├── 01-premium-design.md
+│   │   ├── 02-ui-system.md
+│   │   ├── 03-animation.md
+│   │   ├── 04-responsive-accessibility.md
+│   │   ├── 05-performance-seo.md
+│   │   └── 06-code-quality.md
+│   │
+│   └── skills/
+│       ├── new-client/
+│       │   └── SKILL.md
+│       ├── premium-ui/
+│       │   └── SKILL.md
+│       ├── prospecting/
+│       │   └── SKILL.md
+│       ├── visual-qa/
+│       │   └── SKILL.md
+│       └── final-qa/
+│           └── SKILL.md
+│
+├── design-system/
+│   ├── color.md
+│   ├── components.md
+│   ├── layout.md
+│   ├── motion.md
+│   ├── principles.md
+│   ├── spacing.md
+│   └── typography.md
+│
 ├── docs/
-│   ├── premium-stack.md       # Recommended tooling and UI libraries
-│   └── references.md          # Creative references and component sources
-├── GEMINI.md                  # Master Antigravity / Gemini instructions
-└── CLAUDE.md                  # Claude Code instructions
-```
-
----
-
-## Core Philosophy
-
-1. **Consistent Quality, Distinctive Identity**: Every client receives top-tier engineering, UX discipline, and accessibility, with visual branding uniquely tailored to their industry.
-2. **Restraint Over Excess**: Avoid generic AI cliches (neon gradients, excessive glassmorphism, ubiquitous card grids). Every visual element and animation must serve a clear purpose.
-3. **Verified Execution**: Designs and implementations are verified visually and technically across mobile, tablet, and desktop viewports before delivery.
+│   ├── client-design-brief-template.md
+│   ├── premium-stack.md
+│   └── references.md
+│
+├── CLAUDE.md
+├── GEMINI.md
+├── README.md
+└── .gitignore

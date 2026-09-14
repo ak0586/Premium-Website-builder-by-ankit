@@ -1,8 +1,7 @@
 ---
-
 name: prospecting
-description: Research and rank potential website clients based on verified business information, website quality, commercial opportunity, and project fit. Use when finding businesses that may need a new or improved website. Do not begin website development or outreach from this skill.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+description: Researches and ranks potential website clients using verified business information, website quality, commercial opportunity, differentiation, and project fit. Use when identifying businesses that may need a new or improved website.
+---
 
 # Prospecting Skill
 

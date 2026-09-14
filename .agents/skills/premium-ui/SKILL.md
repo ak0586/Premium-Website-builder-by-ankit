@@ -1,4 +1,10 @@
+---
+name: premium-ui
+description: Guides premium visual interface design with intentional hierarchy, typography, composition, restrained motion, client-specific visual identity, and strong visual refinement while avoiding generic AI-generated aesthetics.
+---
+
 # Premium UI Skill
+
 
 ## Purpose
 
