@@ -62,6 +62,18 @@ identity of client websites.
 
 ---
 
+## Cinematic 3D & Luxury Healthcare Benchmarks
+
+Award-winning benchmarks (Awwwards / CSS Design Awards inspirations such as LAVA Dental, Dentalux, Ori Scan, Apple Product Films):
+
+Use as inspiration for:
+- Macro camera journeys revealing microscopic material beauty
+- Physical material authenticity (organic enamel translucency, clearcoat moisture sheen, perikymata ripples)
+- Restrained, warm off-white / ivory studio environments
+- Interactive diagnostic overlays (hairline contours, clinical telemetry)
+- Seamless scroll-bound transitions morphing from physical objects into architectural treatment rooms
+- Absolute prohibition of generic dental clichés (cartoon teeth, floating toothbrushes, neon blue sci-fi lasers)
+
 # General Rule
 
 These libraries are resources, not design systems for the client.

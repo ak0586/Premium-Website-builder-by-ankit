@@ -174,7 +174,35 @@ Do not combine unrelated animation styles without a reason.
 
 ---
 
-## 12. Final Motion Test
+## 12. Cinematic 3D Motion & WebGL Storytelling
+
+When the creative direction calls for an ultra-premium, cinematic digital experience (such as luxury healthcare, high-end cosmetic practices, or architectural brands):
+
+### Macro-to-Micro Camera Journeys
+- Begin with an extreme macro close-up exploring physical surface textures, translucency, and natural microscopic details under soft studio lighting.
+- Pull back smoothly along a cinematic camera curve to reveal the full object in space.
+- Preserve generous negative space (e.g. 40% visual object, 60% typography and breathing room).
+
+### Physical Materials & Optical Realism
+- Avoid the artificial "glossy plastic CGI" look.
+- Use physically based materials: realistic subsurface light transmission, refractive index (IOR ~1.62 for enamel), subtle satin roughness, clearcoat moisture sheen, and natural microscopic imperfections.
+- Ambient particles should feel like microscopic dust illuminated by soft studio softboxes, never neon sci-fi streaks.
+
+### Interactive Medical & Diagnostic Moments
+- Mouse movement should subtly tilt camera perspective and shift specular highlights across physical surfaces.
+- Hover states should trigger whisper-thin, elegant diagnostic contours with refined metadata labels (e.g. *"01 / Precision"*, *"02 / Enamel Integrity"*), creating the feel of an advanced optical instrument rather than a video game.
+
+### Subtle Micro-Transformations
+- Represent restorative or functional transitions through microscopic changes in surface texture, translucency, and light.
+- Never display exaggerated decay, blood, or disturbing medical visuals.
+
+### Scroll-Bound Camera Continuity
+- Connect window scroll to camera dolly and translation.
+- As the user scrolls, the hero object gracefully transitions into the adjacent section, morphing or revealing architectural interiors with natural daylight and acoustic calm.
+
+---
+
+## 13. Final Motion Test
 
 Ask:
 
@@ -186,4 +214,4 @@ Ask:
 - Does reduced motion work?
 - Would removing it improve the interface?
 
-If yes, remove it.
+If removing it improves the interface, remove it.

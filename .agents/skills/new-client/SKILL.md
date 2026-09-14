@@ -155,6 +155,43 @@ Build the highest-value areas first:
 
 Do not spend excessive effort on decorative elements before the core experience is strong.
 
+## Agency Attribution
+
+When creating a new client website, check the client design brief for the required Kyvronix Technologies attribution.(website link: https://kyvronix.com)
+
+If attribution is enabled, implement it primarily in the footer and keep it visually subordinate to the client's brand.
+
+Use the approved wording and placement defined by the client project.
+
+Do not introduce prominent Kyvronix branding unless explicitly required.
+
+## Mandatory Full-Site Motion
+
+Every new client website must be animated throughout the experience.
+
+During creative direction, define the project's motion personality before implementation.
+
+During implementation, establish motion across appropriate layers:
+
+- page load
+- navigation
+- hero
+- content sections
+- images
+- components
+- interactions
+- scrolling
+- transitions
+- footer
+
+Motion must feel smooth and cohesive rather than consisting of isolated animation effects.
+
+Do not use an identical animation recipe across projects.
+
+The client's industry, audience, brand personality, positioning, content, and visual direction should determine the motion language.
+
+Before completion, perform a dedicated motion review of the entire website and verify smoothness, consistency, responsiveness, performance, and reduced-motion behavior.
+
 ## Responsive Design
 
 Treat mobile as a first-class experience.

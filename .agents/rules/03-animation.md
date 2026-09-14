@@ -2,252 +2,416 @@
 trigger: always_on
 ---
 
-# Animation and Motion Rules
+## Core Requirement: Fully Animated Website
 
-## Purpose
+Every client website must be designed and implemented as a motion-rich experience.
 
-Create motion that feels intentional, refined and appropriate to the
-client.
+A website should not feel static.
 
-Animation should improve the experience rather than demonstrate that
-an animation library was used.
+Motion should be present throughout the complete user journey, including:
 
----
+- initial page load
+- page transitions
+- navigation
+- hero
+- headings
+- text
+- images
+- sections
+- cards
+- buttons
+- links
+- forms
+- menus
+- interactive components
+- hover states
+- focus states
+- scroll interactions
+- section transitions
+- content reveals
+- image transitions
+- loading states
+- success/error states
+- footer
+- other meaningful interface interactions
 
-## 1. Purpose of Motion
+The goal is not to animate every element continuously.
 
-Motion may communicate:
+The goal is:
 
-- hierarchy
-- continuity
-- feedback
-- orientation
-- state changes
-- progressive disclosure
-- spatial relationships
-- subtle delight
+> The entire website should feel alive, fluid, responsive, and intentionally animated.
 
-Every significant animation should have a reason.
-
----
-
-## 2. Default Motion Philosophy
-
-Prefer:
-
-- subtle
-- smooth
-- restrained
-- responsive
-- purposeful
-
-Do not animate everything.
-
-A premium website should contain enough motion to feel alive without
-becoming distracting.
+Motion should create continuity between elements and sections rather than appearing as isolated animation effects.
 
 ---
 
-## 3. Motion Hierarchy
+## Smooth Motion Is Mandatory
 
-Use motion at different levels.
-
-### Level 1 — Micro-interactions
-
-Examples:
-
-- button hover
-- icon transitions
-- focus changes
-- small state changes
-
-### Level 2 — Component transitions
-
-Examples:
-
-- dropdowns
-- dialogs
-- accordions
-- navigation transitions
-
-### Level 3 — Section transitions
-
-Examples:
-
-- section entrance
-- image reveal
-- staggered content
-- subtle scroll interaction
-
-### Level 4 — Hero/brand motion
-
-Use only when appropriate.
-
-### Level 5 — Large decorative effects
-
-Use rarely and only when the creative direction strongly supports
-them.
-
-Most projects should primarily use Levels 1–3.
-
----
-
-## 4. Avoid Animation Overload
+Animations should feel smooth, natural, and professionally choreographed.
 
 Avoid:
 
-- animation on every section
-- constant floating elements
-- excessive parallax
-- random text effects
-- continuous background movement
-- unnecessary scroll hijacking
-- excessive blur animation
-- excessive glow effects
-- multiple competing animations
-- animation that delays content usability
+- abrupt movement
+- mechanical transitions
+- excessive bouncing
+- random delays
+- inconsistent easing
+- overly fast entrances
+- unnecessary long animations
+- animation that feels like a demonstration of a library
+- disconnected animations where every element moves independently
 
-If everything moves, nothing feels important.
+Prefer:
 
----
+- natural easing
+- coordinated timing
+- consistent motion language
+- appropriate duration
+- subtle acceleration/deceleration
+- smooth transitions between interface states
+- meaningful sequencing
+- visual continuity
+- responsive interaction feedback
 
-## 5. Entrance Animations
-
-Entrance animation should generally:
-
-- be brief
-- reinforce hierarchy
-- avoid delaying interaction
-- avoid excessive staggering
-
-Do not make users wait for basic content to become usable.
+Motion should feel intentional rather than mechanically triggered.
 
 ---
 
-## 6. Hover and Interaction
+## Motion Throughout the Experience
 
-Hover states should communicate:
+Every major part of the website should have an appropriate motion behavior.
 
-- interactivity
-- feedback
-- hierarchy
+### Page Load
 
-They should not become miniature visual effects.
+The initial experience should establish the website's motion personality.
 
-Use subtle:
+Consider:
 
-- color change
-- opacity
-- transform
-- border change
-- shadow change
+- page entrance
+- hero reveal
+- typography reveal
+- image entrance
+- navigation appearance
+- coordinated sequencing
 
-when appropriate.
+Do not create an unnecessarily long loading animation.
 
 ---
 
-## 7. Scroll Animation
+### Navigation
 
-Use scroll-triggered animation selectively.
+Navigation should respond smoothly to user interaction.
 
-Good uses:
+Consider:
 
-- revealing content
-- creating continuity
-- emphasizing important sections
+- hover transitions
+- active states
+- mobile menu opening/closing
+- menu item reveals
+- sticky navigation transitions
+- scroll-state changes
+
+---
+
+### Hero
+
+The hero should generally be one of the strongest motion areas.
+
+Potential techniques include:
+
+- staged text reveals
+- image/media entrance
 - subtle image movement
+- CTA transitions
+- layered movement
+- controlled background motion
+- scroll-linked behavior
 
-Bad uses:
-
-- making every section fly in
-- large parallax movement
-- hiding content until scrolling
-- excessive motion that makes reading difficult
-
----
-
-## 8. Libraries
-
-Use CSS transitions when they are sufficient.
-
-Use Motion, GSAP, Lenis, React Bits or Magic UI when they provide
-meaningful value.
-
-Do not add a library for a simple transition that CSS can handle.
-
-Do not use multiple animation libraries unnecessarily.
+Do not overload the hero with unrelated effects.
 
 ---
 
-## 9. Performance
+### Content Sections
 
-Prefer animation properties that are efficient when possible.
+Sections should not simply appear as static blocks.
 
-Be cautious with:
+Use appropriate:
 
-- layout-triggering animation
-- large blur effects
-- heavy canvas effects
-- continuous JavaScript animation
-- large numbers of animated elements
+- reveal transitions
+- staggered content
+- image reveals
+- text transitions
+- directional movement
+- scroll-linked effects
+- section-to-section continuity
 
-Test animation on lower-powered devices when practical.
+The animation should support the hierarchy of the content.
 
 ---
 
-## 10. Reduced Motion
+### Components
+
+Interactive components should provide smooth feedback.
+
+Examples:
+
+- buttons
+- cards
+- tabs
+- accordions
+- forms
+- dropdowns
+- navigation
+- image galleries
+- filters
+- sliders
+- dialogs
+
+Every meaningful interactive state should have an appropriate transition where technically and contextually appropriate.
+
+---
+
+### Scroll Experience
+
+Scrolling should feel connected and intentional.
+
+Possible techniques include:
+
+- section reveals
+- progressive content movement
+- subtle parallax
+- image movement
+- sticky storytelling
+- scroll-linked transformations
+- smooth section transitions
+
+Do not automatically add heavy parallax or smooth-scroll libraries.
+
+Choose techniques based on the project's creative direction and performance requirements.
+
+---
+
+### Footer
+
+The footer should not be treated as an unanimated afterthought.
+
+Use subtle transitions for:
+
+- links
+- interactive elements
+- content appearance
+- agency attribution
+- navigation
+
+The final section should feel like part of the same motion system.
+
+---
+
+## Motion Continuity
+
+Animations across the website should feel like they belong to the same system.
+
+Define:
+
+- motion personality
+- easing philosophy
+- duration ranges
+- reveal direction
+- stagger behavior
+- hover behavior
+- scroll behavior
+- page transition behavior
+
+Avoid creating every animation independently.
+
+The website should feel choreographed rather than assembled from unrelated effects.
+
+---
+
+## Client-Specific Motion Personality
+
+Every project must have a motion personality appropriate to the client.
+
+Possible characteristics include:
+
+- calm
+- elegant
+- premium
+- energetic
+- playful
+- editorial
+- cinematic
+- technical
+- precise
+- luxurious
+- warm
+- authoritative
+- experimental
+
+The motion personality should be determined by:
+
+- industry
+- audience
+- brand
+- positioning
+- content
+- visual identity
+- conversion goals
+- cultural context
+
+Do not use the same animation style for every client.
+
+---
+
+## Animation Hierarchy
+
+Use multiple levels of motion:
+
+1. **Micro motion**
+   - buttons
+   - links
+   - icons
+   - controls
+   - feedback
+
+2. **Component motion**
+   - cards
+   - menus
+   - forms
+   - galleries
+   - dialogs
+
+3. **Section motion**
+   - content reveals
+   - image movement
+   - section transitions
+   - scroll-linked effects
+
+4. **Page motion**
+   - page entrance
+   - route transitions
+   - major navigation transitions
+
+5. **Brand motion**
+   - distinctive movement language
+   - signature transitions
+   - unique interactions
+
+6. **Ambient motion**
+   - subtle background movement
+   - media movement
+   - atmospheric effects
+
+Ambient and decorative motion should remain controlled.
+
+---
+
+## Motion Must Not Become Visual Noise
+
+"Fully animated" does not mean:
+
+- everything constantly moves
+- every section uses a different effect
+- every scroll event triggers an animation
+- every element has parallax
+- every card floats
+- every heading spins or scales
+- excessive stagger delays
+- continuous looping animations everywhere
+
+The user should notice the **quality and fluidity of the experience**, not the number of animations.
+
+---
+
+## Performance
+
+Prefer performant animation techniques.
+
+Prioritize properties such as:
+
+- transform
+- opacity
+
+Use GPU-friendly techniques where appropriate.
+
+Avoid unnecessarily animating:
+
+- layout-heavy properties
+- expensive filters
+- large-area blur effects
+- excessive box-shadow transitions
+- expensive DOM operations
+- unnecessary JavaScript animation loops
+
+Animation must not significantly degrade:
+
+- loading performance
+- scrolling
+- interaction responsiveness
+- mobile performance
+- battery usage
+
+---
+
+## Reduced Motion
 
 Respect:
 
 `prefers-reduced-motion`
 
-Provide an appropriately simplified experience.
+When reduced motion is enabled:
 
-Do not merely disable CSS while leaving broken transitions or hidden
-content.
+- reduce movement
+- remove non-essential motion
+- shorten transitions
+- preserve usability
+- preserve important state changes
 
----
-
-## 11. Client-Specific Motion
-
-Motion should match the client.
-
-Examples:
-
-A medical clinic may benefit from:
-
-- calm transitions
-- subtle reveals
-- soft movement
-
-A motorcycle business may support:
-
-- stronger directional movement
-- sharper transitions
-- more energetic interaction
-
-A luxury interior designer may support:
-
-- editorial image reveals
-- slow transitions
-- sophisticated movement
-
-Do not use the same motion language for every client.
+The website should remain fully usable without decorative motion.
 
 ---
 
-## 12. Final Motion Review
+## Animation Technology
 
-Ask:
+Choose the smallest appropriate technology.
 
-- Does this animation have a purpose?
-- Does it reinforce the design?
-- Is it distracting?
-- Does it delay interaction?
-- Is it performant?
-- Does it fit the brand?
-- Does it work on mobile?
-- Does reduced motion work?
-- Would the interface be better without it?
+Possible tools include:
 
-If removing an animation improves the experience, remove it.
+- CSS transitions
+- CSS animations
+- Motion
+- GSAP
+- Lenis
+- React Bits
+- Magic UI
+- native browser APIs
+
+Do not use a library merely because it is available.
+
+The technology should support the creative direction rather than determine it.
+
+---
+
+## Final Motion Test
+
+Before considering a website complete, ask:
+
+- Does the website feel alive?
+- Is motion present throughout the experience?
+- Does the page load feel intentional?
+- Does navigation respond smoothly?
+- Do major sections transition naturally?
+- Do interactive elements provide feedback?
+- Does scrolling feel connected?
+- Does the footer feel integrated into the motion system?
+- Do animations feel like one coherent language?
+- Is the motion appropriate for this particular client?
+- Does anything feel excessively animated?
+- Does anything feel mechanically animated?
+- Does anything look like a generic AI animation template?
+- Does the website remain smooth on mobile?
+- Does reduced-motion behavior work correctly?
+
+The final experience should feel:
+
+> **smooth, fluid, cohesive, responsive, intentional, and professionally art-directed.**

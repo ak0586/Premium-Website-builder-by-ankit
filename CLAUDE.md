@@ -350,23 +350,27 @@ Implement appropriate SEO fundamentals without inventing factual business inform
 
 ---
 
-# 14. Animation
+# 14. Animation (Mandatory Baseline)
+
+Every website built using this system **MUST contain animations**. Static, lifeless pages are strictly unacceptable.
+
+Each client project must incorporate purposeful, signature motion tailored to its brand and industry:
+* **Flagship Hero Motion**: An interactive 3D WebGL / Canvas scene, macro camera travel, or high-fidelity visual centerpiece that immediately commands attention.
+* **Micro-Interactions**: Responsive cursor parallax, physical reflection shifts, state transitions, and tactile hover feedback.
+* **Scroll-Driven Storytelling**: Spatial camera journeys, seamless section morphs, and progressive reveals.
+* **Restraint & Performance**: Maintain 60fps fluidity, avoid tacky/cliché AI floating elements, and respect `prefers-reduced-motion`.
 
 Motion should support:
-
 * hierarchy
 * orientation
 * feedback
 * storytelling
 * perceived quality
-
-Do not animate everything.
+* brand memorability
 
 Follow:
-
 `.agents/rules/03-animation.md`
-
-Respect reduced-motion preferences.
+`design-system/motion.md`
 
 ---
 

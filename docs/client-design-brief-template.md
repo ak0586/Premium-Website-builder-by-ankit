@@ -371,38 +371,93 @@ Do not imply that stock imagery represents the real business.
 
 ---
 
-# 10. Motion Direction
+## 10. Motion Direction
 
-## Motion Personality
+### Motion Requirement
 
-[Subtle / energetic / cinematic / editorial / technical / restrained / etc.]
+This project must use animation throughout the website.
 
-### Motion Principles
+The website should feel alive and fluid from initial load through navigation, scrolling, interaction, content transitions, and footer.
 
-* [Principle]
-* [Principle]
-* [Principle]
+### Motion Personality
 
-### Entrance Motion
+- Motion personality:
+- Motion intensity: Low / Moderate / High
+- Overall motion character:
+- Relationship to brand personality:
 
-[Description]
+### Page-Level Motion
 
-### Hover / Interaction Motion
+- Initial page-load behavior:
+- Page transition behavior:
+- Navigation transitions:
+- Scroll behavior:
+- Section transitions:
 
-[Description]
+### Content Motion
 
-### Scroll Motion
+- Hero reveal:
+- Typography reveal:
+- Image reveal:
+- Section reveal:
+- Stagger strategy:
 
-[Description]
+### Interaction Motion
 
-### Special Moments
+- Button behavior:
+- Link behavior:
+- Card behavior:
+- Navigation behavior:
+- Form behavior:
+- Menu behavior:
+- Other interactive states:
 
-[Optional]
+### Brand Motion
+
+- Signature animation:
+- Distinctive transition:
+- Brand-specific interaction:
+
+### Ambient Motion
+
+- Background movement:
+- Media movement:
+- Decorative movement:
+- Continuous animation, if any:
+
+### Motion System
+
+- Primary easing:
+- Secondary easing:
+- Typical duration:
+- Entrance duration:
+- Interaction duration:
+- Stagger interval:
+- Motion direction:
+- Scale behavior:
+- Opacity behavior:
+
+### Animation Technology
+
+- CSS / Motion / GSAP / Lenis / React Bits / Magic UI / Other:
+- Reason for selection:
 
 ### Reduced Motion
 
-The website must remain usable and understandable when reduced motion is enabled.
+- `prefers-reduced-motion` behavior:
+- Non-essential motion removed:
+- Essential state changes preserved:
 
+### Performance
+
+- Mobile animation strategy:
+- GPU-friendly properties:
+- Expensive effects intentionally avoided:
+- Performance considerations:
+
+### Animation Intentionally Avoided
+
+Document motion patterns that do not fit this client's visual identity.
 ---
 
 # 11. Component Strategy
@@ -803,3 +858,14 @@ Do not begin major implementation until the creative direction is sufficiently c
 | [Date] | Initial brief | Project initialization |
 |        |               |                        |
 |        |               |                        |
+
+
+
+## Agency Attribution
+
+- Attribution required: Yes / No
+- Attribution type: Built by / Built & managed by
+- Attribution text:
+- Kyvronix Technologies URL: https://kyvronix.com
+- Client-approved placement:
+- Client-specific requirements:

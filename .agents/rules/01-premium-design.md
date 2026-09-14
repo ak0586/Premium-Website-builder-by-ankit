@@ -425,3 +425,33 @@ Before considering a major page complete, evaluate:
 When in doubt:
 
 **simplify, verify and refine.**
+
+---
+
+## 15. Agency Attribution
+
+Client websites may include subtle agency attribution for **Kyvronix Technologies**.
+
+Default attribution:
+
+> Built & managed by Kyvronix Technologies
+
+When the project includes ongoing maintenance, hosting, updates, SEO, or management services, use:
+
+> Built & managed by Kyvronix Technologies
+
+When Kyvronix Technologies only develops the website and does not manage it, use:
+
+> Built by Kyvronix Technologies
+
+Attribution should:
+
+- appear primarily in the website footer
+- remain visually subordinate to the client's brand
+- use typography, spacing, and contrast appropriate to the client's design
+- never interfere with the client's conversion goals
+- never compete with the client's branding
+- link to the official Kyvronix Technologies website when appropriate
+- be removed or modified if the client agreement requires it
+
+Do not place prominent Kyvronix branding in the hero, primary navigation, or main conversion areas unless explicitly requested or agreed with the client.

@@ -9,6 +9,7 @@ The standard toolkit includes:
 - Motion
 - React Bits
 - Magic UI
+- Three.js / WebGL / PBR shaders (for cinematic 3D, anatomical, & luxury spatial experiences)
 - Lucide icons where appropriate
 - CSS/native browser capabilities
 

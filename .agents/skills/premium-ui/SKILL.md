@@ -210,6 +210,26 @@ Consider:
 
 before creating another card.
 
+## Luxury Healthcare & 3D Spatial Experiences
+
+When designing flagship healthcare, aesthetic, or dental experiences:
+
+### The "Luxury Healthcare" Standard
+- Elevate the environment to feel like a high-end luxury wellness brand rather than a sterile clinic.
+- Combine warm off-white / ivory backgrounds (`#FAFAF7`), champagne accents, soft studio shadows, and restrained dark typography.
+- Communicate three core values: **PRECISION**, **TRUST**, and **CONFIDENCE**.
+
+### Physical Material Authenticity
+- Render biological surfaces (enamel, tissue, skin) with anatomical realism, subsurface light transmission, perikymata micro-grooves, and natural clearcoat moisture.
+- Avoid the artificial "plastic CGI" look.
+- Never use cartoon tooth icons, floating toothbrushes, dental emojis, or neon holographic effects.
+
+### Negative Space & Typography Integration
+- Structure heroes with a 40/60 balance: the 3D subject occupies ~40% of the screen, leaving generous negative space for editorial typography and CTAs.
+- The typography must feel physically integrated into the studio environment rather than layered on top.
+
+---
+
 ## Final UI Review
 
 Ask:

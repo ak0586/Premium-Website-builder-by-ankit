@@ -198,7 +198,28 @@ Prefer native HTML behavior where possible.
 
 ---
 
-## 15. Final Component Review
+## 15. Cinematic 3D Hero & Interactive Canvas Components
+
+For experiences incorporating WebGL / Three.js 3D environments:
+
+### Architecture: Canvas + Layered DOM
+- The WebGL Canvas should sit as a responsive, hardware-accelerated viewport layer (`z-0`).
+- Editorial typography, status pills, and primary CTAs live in a pointer-events-managed semantic DOM layer (`z-20`).
+- Use atmospheric gradient overlays (`z-10`) to softly feather 3D scene edges into the negative space of the page, ensuring text readability without heavy cards.
+
+### Layout & Composition
+- Maintain a **40/60 visual proportion**: the 3D subject occupies approximately 40% of the screen (typically right or center-right), leaving generous negative space for the primary headline and conversion path.
+- The headline and CTA must feel physically integrated into the studio lighting environment rather than slapped on top.
+
+### Responsive Rigs & Mobile Optimization
+- Adjust camera field of view and translation vectors responsively.
+- On desktop, enable interactive raycasting (cursor parallax and diagnostic contour highlights).
+- On mobile devices, utilize simplified camera paths and touch-damped orbital shifts to maintain a silky 60fps frame rate.
+- Always clean up WebGL contexts, geometries, materials, and animation frame IDs on unmount.
+
+---
+
+## 16. Final Component Review
 
 Ask:
 
