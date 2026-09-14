@@ -1,0 +1,805 @@
+# Client Design Brief
+
+> Use this document for every new client website.
+>
+> This is the project's design and product contract. It should be completed before significant implementation begins and updated when major design decisions change.
+
+---
+
+## 1. Client Overview
+
+### Business Name
+
+[Real business name]
+
+### Business Type
+
+[Clinic / Barber / Bike Repair / Restaurant / SaaS / etc.]
+
+### Location
+
+[City, Country]
+
+### Target Market
+
+[Local / regional / national / international]
+
+### Website Type
+
+[Marketing website / service website / booking website / ecommerce / portfolio / etc.]
+
+---
+
+## 2. Business Understanding
+
+### What the Business Does
+
+[Short factual description]
+
+### Primary Services / Products
+
+* [Service/product]
+* [Service/product]
+* [Service/product]
+
+### Business Differentiators
+
+Only include verified differentiators.
+
+* [Differentiator]
+* [Differentiator]
+* [Differentiator]
+
+### Customer Problem
+
+[What problem does the customer want solved?]
+
+### Customer Intent
+
+[What is the visitor most likely trying to accomplish?]
+
+---
+
+## 3. Audience
+
+### Primary Audience
+
+[Who is the most important visitor?]
+
+### Secondary Audience
+
+[Optional]
+
+### Audience Expectations
+
+Consider:
+
+* trust
+* speed
+* convenience
+* expertise
+* affordability
+* prestige
+* reliability
+* reassurance
+* local familiarity
+* visual quality
+
+### Customer Psychology
+
+What should the visitor feel?
+
+* [Feeling]
+* [Feeling]
+* [Feeling]
+
+What should the visitor believe after using the website?
+
+* [Belief]
+* [Belief]
+
+---
+
+## 4. Conversion Strategy
+
+### Primary Conversion Goal
+
+[Book appointment / Call / WhatsApp / Request quote / Buy / Visit location / Contact / etc.]
+
+### Secondary Conversion Goal
+
+[Optional]
+
+### Primary CTA
+
+[Exact CTA]
+
+### Secondary CTA
+
+[Exact CTA]
+
+### Conversion Friction
+
+What could prevent the user from taking action?
+
+* [Problem]
+* [Problem]
+* [Problem]
+
+### Trust Requirements
+
+Potential trust signals:
+
+* verified credentials
+* real business information
+* genuine testimonials
+* real photos
+* service details
+* transparent pricing when available
+* location
+* opening hours
+* contact information
+* booking process
+* guarantees when factually supported
+
+Never invent trust signals.
+
+---
+
+# 5. Research
+
+## Market Research
+
+[Important findings]
+
+## Competitor Research
+
+### Competitor 1
+
+[Name + URL]
+
+**Strengths**
+
+* [Finding]
+
+**Weaknesses**
+
+* [Finding]
+
+**Opportunity**
+
+[How our design can differentiate]
+
+### Competitor 2
+
+[Name + URL]
+
+**Strengths**
+
+* [Finding]
+
+**Weaknesses**
+
+* [Finding]
+
+**Opportunity**
+
+[How our design can differentiate]
+
+### Competitor 3
+
+[Name + URL]
+
+**Strengths**
+
+* [Finding]
+
+**Weaknesses**
+
+* [Finding]
+
+**Opportunity**
+
+[How our design can differentiate]
+
+---
+
+# 6. Creative Direction
+
+## Design Personality
+
+Choose descriptive words rather than generic terms such as "modern" alone.
+
+Examples:
+
+* editorial
+* refined
+* warm
+* clinical
+* sophisticated
+* energetic
+* technical
+* rugged
+* understated
+* playful
+* premium
+* trustworthy
+* human
+* luxurious
+* utilitarian
+
+### Primary Personality
+
+[Description]
+
+### Secondary Personality
+
+[Description]
+
+### Overall Design Statement
+
+> [One or two sentences describing what the website should feel like.]
+
+---
+
+# 7. Visual Identity
+
+## Color Direction
+
+### Primary Color
+
+[Color + reason]
+
+### Secondary Color
+
+[Color + reason]
+
+### Accent Color
+
+[Color + reason]
+
+### Background Strategy
+
+[Description]
+
+### Color Psychology
+
+Explain why these colors fit:
+
+* the business
+* the audience
+* the market
+* the desired emotional response
+
+Do not select colors merely because they are currently fashionable.
+
+## Typography
+
+### Display Typeface
+
+[Typeface + reason]
+
+### Body Typeface
+
+[Typeface + reason]
+
+### Supporting Typeface
+
+[Optional]
+
+### Typography Personality
+
+[Description]
+
+### Typography Rules
+
+* [Rule]
+* [Rule]
+
+---
+
+# 8. Layout & Composition
+
+## Layout Character
+
+Choose appropriate characteristics:
+
+* editorial
+* asymmetric
+* centered
+* modular
+* immersive
+* image-led
+* typography-led
+* minimal
+* structured
+* experimental
+
+### Layout Direction
+
+[Description]
+
+### Container Strategy
+
+[Description]
+
+### Grid Strategy
+
+[Description]
+
+### Whitespace Strategy
+
+[Description]
+
+### Section Rhythm
+
+[Description]
+
+Avoid making every section follow the same visual structure.
+
+---
+
+# 9. Imagery
+
+## Image Direction
+
+[Photography / product photography / editorial / documentary / illustration / abstract / etc.]
+
+### Image Personality
+
+[Description]
+
+### Image Treatment
+
+[Full bleed / framed / cropped / monochrome / natural / etc.]
+
+### Image Sources
+
+Only use:
+
+* client-provided assets
+* properly licensed assets
+* approved image sources
+* generated imagery when appropriate
+
+Do not imply that stock imagery represents the real business.
+
+### Important Images
+
+* [Image requirement]
+* [Image requirement]
+
+---
+
+# 10. Motion Direction
+
+## Motion Personality
+
+[Subtle / energetic / cinematic / editorial / technical / restrained / etc.]
+
+### Motion Principles
+
+* [Principle]
+* [Principle]
+* [Principle]
+
+### Entrance Motion
+
+[Description]
+
+### Hover / Interaction Motion
+
+[Description]
+
+### Scroll Motion
+
+[Description]
+
+### Special Moments
+
+[Optional]
+
+### Reduced Motion
+
+The website must remain usable and understandable when reduced motion is enabled.
+
+---
+
+# 11. Component Strategy
+
+## Navigation
+
+[Description]
+
+## Buttons
+
+[Description]
+
+## Cards
+
+[Description]
+
+## Forms
+
+[Description]
+
+## Content Sections
+
+[Description]
+
+## Icons
+
+[Description]
+
+## Special Components
+
+* [Component]
+* [Component]
+
+Do not introduce components merely for decoration.
+
+---
+
+# 12. Information Architecture
+
+## Primary Navigation
+
+* [Page]
+* [Page]
+* [Page]
+
+## Homepage Sections
+
+1. [Section]
+2. [Section]
+3. [Section]
+4. [Section]
+5. [Section]
+
+## Supporting Pages
+
+* [Page]
+* [Page]
+
+### Content Priority
+
+1. [Highest priority]
+2. [Second priority]
+3. [Third priority]
+
+---
+
+# 13. Responsive Strategy
+
+## Mobile
+
+[Important mobile decisions]
+
+## Tablet
+
+[Important tablet decisions]
+
+## Desktop
+
+[Important desktop decisions]
+
+## Large Desktop
+
+[Optional]
+
+### Responsive Rules
+
+* [Rule]
+* [Rule]
+* [Rule]
+
+Mobile should be treated as a first-class experience rather than a reduced desktop layout.
+
+---
+
+# 14. Accessibility
+
+### Requirements
+
+* semantic HTML
+* keyboard navigation
+* visible focus states
+* appropriate contrast
+* accessible labels
+* meaningful alt text
+* logical heading hierarchy
+* usable touch targets
+* reduced-motion support
+
+### Additional Requirements
+
+* [Requirement]
+
+---
+
+# 15. Performance
+
+### Image Strategy
+
+[Description]
+
+### Font Strategy
+
+[Description]
+
+### Animation Strategy
+
+[Description]
+
+### JavaScript Strategy
+
+[Description]
+
+### Third-Party Services
+
+* [Service]
+* [Service]
+
+Only introduce third-party dependencies when their value justifies their cost.
+
+---
+
+# 16. SEO
+
+### Page Title
+
+[Draft]
+
+### Meta Description
+
+[Draft]
+
+### Primary Search Intent
+
+[Intent]
+
+### Important Keywords
+
+Use naturally and only when relevant.
+
+* [Keyword]
+* [Keyword]
+
+### Local SEO
+
+[If applicable]
+
+### Structured Data
+
+[If appropriate]
+
+Never manufacture business information for SEO.
+
+---
+
+# 17. Content Rules
+
+## Voice
+
+[Professional / friendly / authoritative / conversational / etc.]
+
+## Tone
+
+[Description]
+
+## Content Principles
+
+* concise where possible
+* specific rather than generic
+* benefit-oriented
+* easy to scan
+* factually accurate
+* appropriate for the audience
+
+### Forbidden Without Verification
+
+Do not invent:
+
+* testimonials
+* reviews
+* awards
+* certifications
+* statistics
+* prices
+* addresses
+* business history
+* years of experience
+* customer counts
+* guarantees
+* medical claims
+* performance claims
+
+---
+
+# 18. Technology Decisions
+
+### Framework
+
+[Next.js / React / Vite / etc.]
+
+### Styling
+
+[Tailwind / CSS / etc.]
+
+### UI Primitives
+
+[shadcn/ui / custom / etc.]
+
+### Motion
+
+[Motion / GSAP / native CSS / etc.]
+
+### Additional Libraries
+
+* [Library]
+* [Library]
+
+### Why These Technologies?
+
+[Short explanation]
+
+Prefer the smallest appropriate technology stack.
+
+---
+
+# 19. Design References
+
+### Reference 1
+
+[URL]
+
+**What to learn from it:**
+
+[Specific aspect]
+
+### Reference 2
+
+[URL]
+
+**What to learn from it:**
+
+[Specific aspect]
+
+### Reference 3
+
+[URL]
+
+**What to learn from it:**
+
+[Specific aspect]
+
+References are sources of inspiration and technique, not templates to copy.
+
+---
+
+# 20. Design Decisions
+
+Record important decisions made during the project.
+
+### Decision 1
+
+**Decision:**
+
+[Decision]
+
+**Reason:**
+
+[Reason]
+
+**Alternative rejected:**
+
+[Alternative]
+
+### Decision 2
+
+**Decision:**
+
+[Decision]
+
+**Reason:**
+
+[Reason]
+
+**Alternative rejected:**
+
+[Alternative]
+
+---
+
+# 21. Anti-Patterns To Avoid
+
+Based on this specific client, avoid:
+
+* [Pattern]
+* [Pattern]
+* [Pattern]
+
+General anti-patterns still apply:
+
+* generic SaaS layouts
+* excessive gradients
+* unnecessary glassmorphism
+* excessive rounded cards
+* excessive shadows
+* decorative animation without purpose
+* repetitive card grids
+* giant gradient headlines
+* visual effects that compete with content
+
+---
+
+# 22. Final Creative Test
+
+Before implementation is considered complete, answer:
+
+### Does this website feel specific to this client?
+
+[Yes / No]
+
+### Does the visual identity feel intentional?
+
+[Yes / No]
+
+### Does the design avoid generic AI aesthetics?
+
+[Yes / No]
+
+### Does the design support the business goal?
+
+[Yes / No]
+
+### Does the mobile experience feel deliberately designed?
+
+[Yes / No]
+
+### Is the content factually trustworthy?
+
+[Yes / No]
+
+### Is the level of visual complexity justified?
+
+[Yes / No]
+
+### What still feels generic?
+
+[Answer]
+
+### What should be improved?
+
+[Answer]
+
+---
+
+# 23. Approval Gate
+
+Before major implementation:
+
+* [ ] Business understanding complete
+* [ ] Audience defined
+* [ ] Conversion goal defined
+* [ ] Research completed where useful
+* [ ] Creative direction defined
+* [ ] Color direction defined
+* [ ] Typography direction defined
+* [ ] Layout direction defined
+* [ ] Motion direction defined
+* [ ] Information architecture defined
+* [ ] Technology selected
+* [ ] Factual content verified or clearly marked as placeholder
+
+Do not begin major implementation until the creative direction is sufficiently clear.
+
+---
+
+## Change Log
+
+| Date   | Change        | Reason                 |
+| ------ | ------------- | ---------------------- |
+| [Date] | Initial brief | Project initialization |
+|        |               |                        |
+|        |               |                        |

@@ -1,1022 +1,617 @@
-# Premium Website Builder — Claude Code Instructions
+# Premium Website Builder — Claude Instructions
 
 ## 1. Repository Purpose
 
-This repository is the master system for creating premium,
-production-quality websites for real clients.
+This repository is the master system for building premium production websites for clients.
 
-Typical clients may include:
+It contains:
 
-- clinics
-- dentists
-- medical practices
-- salons
-- barbers
-- motorcycle repair businesses
-- automobile businesses
-- mobile/electronics repair shops
-- restaurants
-- local service businesses
-- professional services
-- construction businesses
-- architects
-- interior designers
-- consultants
-- education businesses
-- hospitality businesses
-- other small and medium businesses
+* reusable development standards
+* design principles
+* UI guidance
+* animation standards
+* accessibility and performance standards
+* SEO guidance
+* specialized agent skills
+* prospecting workflows
+* reference resources
 
-The goal is not merely to generate working websites.
-
-The goal is to produce websites that feel:
-
-- professionally designed
-- intentionally art-directed
-- commercially useful
-- trustworthy
-- distinctive
-- responsive
-- accessible
-- performant
-- maintainable
-- production-ready
-
-The final result should not look obviously AI-generated.
+The system must produce **high-quality websites with distinctive client identities**, not a collection of visually identical templates.
 
 ---
 
-# 2. Core Principle
-
-Treat every website as a real client project.
+# 2. Role
 
 Act as a combination of:
 
-- senior product designer
-- UX strategist
-- creative director
-- senior frontend engineer
-- accessibility specialist
-- performance engineer
-- QA engineer
+* senior product designer
+* UX strategist
+* creative director
+* senior frontend engineer
+* accessibility specialist
+* performance-minded web engineer
+* SEO-aware developer
+* visual QA reviewer
 
-Do not optimize only for code completion.
+Think before implementing.
 
-Optimize for the quality of the final user experience.
+Do not optimize only for "working code."
+
+Optimize for:
+
+* business goals
+* user experience
+* visual quality
+* usability
+* accessibility
+* performance
+* maintainability
+* conversion
+* authenticity
+* restraint
 
 ---
 
 # 3. Source of Truth
 
-When working in this repository, use the following hierarchy:
+Use the repository's instruction layers according to their purpose.
 
-1. Current client requirements
-2. Existing client-specific design decisions
-3. This CLAUDE.md
-4. Applicable `.agents/rules/`
-5. `design-system/`
-6. Applicable `.agents/skills/`
-7. Existing project code and conventions
-8. Component/library documentation
-9. General model assumptions
+### Root Instructions
 
-Do not override explicit client requirements with generic design
-preferences.
+`CLAUDE.md`
 
-Do not change an established design system without a clear reason.
+Defines high-level operating principles and workflow.
 
----
+### Always-On Rules
 
-# 4. Client Repository Separation
+`.agents/rules/`
 
-`Premium-Website-Builder` is the master system.
+Contains detailed rules that should consistently govern implementation.
 
-Do not place unrelated client websites inside this repository.
+### Design System
 
-Each actual client website should normally have its own independent
-Git repository.
+`design-system/`
 
-Preferred architecture:
+Contains detailed design knowledge and principles.
 
-Premium-Website-Builder
-    ↓
-Client Website A
-    ↓
-Client Website B
-    ↓
-Client Website C
+### Skills
 
-Do not create nested Git repositories or Git submodules for client
-websites unless explicitly requested.
+`.agents/skills/`
 
-The builder repository should contain reusable:
+Contains specialized workflows for particular tasks.
 
-- principles
-- rules
-- skills
-- patterns
-- components
-- templates
-- documentation
-- design-system guidance
+### Documentation
 
-Client-specific visual identities belong in their individual
-repositories.
+`docs/`
+
+Contains reference material, technology guidance, and project templates.
+
+Do not unnecessarily duplicate detailed rules between these layers.
 
 ---
 
-# 5. Client Project Initialization
+# 4. Core Design Principle
 
-Before beginning substantial implementation for a new client:
+Build for the **client**, not for the AI model.
 
-1. Understand the business.
-2. Understand the target audience.
-3. Understand the geographic market.
-4. Identify the primary business goal.
-5. Identify the primary conversion.
-6. Identify secondary conversions.
-7. Understand trust requirements.
-8. Review available brand assets.
-9. Establish a creative direction.
-10. Establish information architecture.
-11. Establish a design system.
-12. Then begin implementation.
+Every website should have its own:
 
-Do not immediately generate a generic homepage after receiving a
-short business description.
+* visual identity
+* typography
+* color strategy
+* composition
+* imagery
+* interaction personality
+* motion personality
+* content hierarchy
 
-If important information is missing, make reasonable design
-decisions without inventing factual business information.
+The underlying quality standards may be shared.
+
+The visual identity should not be.
 
 ---
 
-# 6. Research and Competitive Context
+# 5. Premium Does Not Mean Generic
 
-When research is available or useful, consider:
+Premium quality comes from:
 
-- local competitors
-- industry conventions
-- customer expectations
-- market positioning
-- visual patterns
-- common conversion patterns
-- business differentiation
+* intentional typography
+* strong hierarchy
+* thoughtful composition
+* appropriate color
+* meaningful imagery
+* spacing and rhythm
+* polished interactions
+* restrained motion
+* responsive refinement
+* accessibility
+* performance
+* factual content
+* attention to detail
 
-Research should inform design decisions.
+Do not automatically use:
 
-Do not copy competitor websites.
+* neon gradients
+* purple/blue AI gradients
+* excessive glassmorphism
+* excessive rounded cards
+* giant gradient headings
+* excessive shadows
+* repetitive card grids
+* floating decorative elements
+* unnecessary animation
+* generic SaaS layouts
 
-Do not reproduce another company's:
-
-- branding
-- wording
-- images
-- layout
-- distinctive visual identity
-- proprietary content
-
-Use research to discover opportunities and avoid predictable
-design patterns.
-
----
-
-# 7. Creative Direction Before Implementation
-
-For substantial websites, establish a clear creative direction before
-building large portions of the interface.
-
-Define, where appropriate:
-
-- visual personality
-- emotional tone
-- color strategy
-- typography strategy
-- layout philosophy
-- imagery direction
-- component style
-- interaction philosophy
-- animation philosophy
-- conversion strategy
-
-The design direction must be appropriate for the specific client.
-
-Do not force a universal visual style onto unrelated businesses.
+Use such patterns only when the client's creative direction genuinely supports them.
 
 ---
 
-# 8. Avoid Generic AI Design
+# 6. Client Repository Separation
 
-Do not automatically generate the visual patterns that AI commonly
-produces.
+The master repository is **not** the repository for client websites.
 
-Avoid using these by default:
+Normally:
 
-- purple gradients
-- blue/purple SaaS gradients
-- neon colors
-- excessive glassmorphism
-- excessive rounded cards
-- excessive shadows
-- oversized gradient headings
-- generic dashboard layouts
-- repetitive card grids
-- excessive floating decorations
-- unnecessary blobs
-- excessive glowing effects
-- generic "AI startup" aesthetics
-- excessive centered hero layouts
-- excessive pill-shaped UI
-- animation everywhere
+```text
+Premium-Website-builder-by-ankit
+        ↓
+Master system
+        ↓
+Independent client repository
+        ↓
+Client website
+```
 
-These techniques are not forbidden.
+Each real client website should normally have its own independent Git repository.
 
-They may be used when they genuinely fit the client's brand and
-creative direction.
-
-The rule is intentionality, not prohibition.
-
-Every significant visual decision should have a reason.
-
----
-
-# 9. Client Visual Identity
-
-Every unrelated client should feel visually distinct.
-
-Do not repeatedly reuse the same:
-
-- color palette
-- typography pairing
-- hero composition
-- card treatment
-- section layout
-- button treatment
-- decorative elements
-- animation language
-- imagery style
-
-Reuse architecture and engineering patterns when appropriate.
-
-Do not reuse visual identity merely for convenience.
-
----
-
-# 10. Color Strategy
-
-Color must be selected according to context.
-
-Consider:
-
-- brand personality
-- industry
-- audience
-- emotional positioning
-- geographic/cultural context
-- trust requirements
-- accessibility
-- conversion goals
-- existing brand assets
-
-Do not default to pastel colors.
-
-Do not default to neon colors.
-
-Do not default to dark backgrounds.
-
-Do not default to purple or blue gradients.
-
-Pastel palettes are appropriate when the client and context support
-them.
-
-Color must remain accessible and visually coherent.
-
-Use the detailed guidance in:
-
-`design-system/color.md`
-
----
-
-# 11. Typography
-
-Typography is a major part of visual identity.
-
-Do not automatically use Inter.
-
-Choose typography based on:
-
-- brand personality
-- industry
-- audience
-- readability
-- hierarchy
-- cultural context
-- available font performance
-
-Create a deliberate hierarchy for:
-
-- display text
-- headings
-- body text
-- labels
-- metadata
-- buttons
-- navigation
-
-Avoid using extremely large typography simply to make a website
-appear premium.
-
-Use the guidance in:
-
-`design-system/typography.md`
-
----
-
-# 12. Layout and Composition
-
-Prioritize:
-
-- visual hierarchy
-- rhythm
-- whitespace
-- alignment
-- composition
-- content density
-- balance
-- intentional asymmetry
-- clear reading flow
-
-Do not turn every section into cards.
-
-Do not make every section follow:
-
-heading → subtitle → 3 cards → CTA.
-
-Use different compositions when the content requires them.
-
-A premium website should have visual rhythm and variation.
-
-Use:
-
-`design-system/layout.md`
-
-for deeper guidance.
-
----
-
-# 13. Content Strategy
-
-Content hierarchy must support the user's goals.
-
-Prioritize clarity over filler.
-
-Typical priorities may include:
-
-- value proposition
-- services
-- differentiation
-- trust signals
-- process
-- proof
-- FAQs
-- location
-- contact
-- conversion CTA
-
-Do not generate meaningless marketing copy merely to fill space.
-
-Do not invent:
-
-- customer reviews
-- awards
-- certifications
-- statistics
-- years in business
-- number of customers
-- medical claims
-- guarantees
-- credentials
-- prices
-- addresses
-- business history
-- staff qualifications
-
-If factual information is unknown, use appropriate placeholders or
-clearly indicate that the information needs to be supplied.
-
----
-
-# 14. Images and Assets
-
-Use imagery intentionally.
-
-Prefer high-quality, relevant imagery over decorative filler.
-
-Do not use obviously unrelated stock imagery.
-
-Do not fabricate real-world business imagery and present it as factual.
-
-Optimize images appropriately.
-
-Consider:
-
-- dimensions
-- format
-- compression
-- loading behavior
-- responsive crops
-- alt text
-
-Do not add image dependencies or external services unnecessarily.
-
----
-
-# 15. UI Component Libraries
-
-Preferred reference libraries include:
-
-- shadcn/ui
-- React Bits
-- Magic UI
-
-They are resources, not visual identities.
-
-Use them selectively.
-
-Do not blindly copy demo compositions.
-
-Do not combine multiple libraries when one solution is sufficient.
-
-Before introducing a component or dependency, consider:
-
-1. Does it solve a real problem?
-2. Does it fit the client's visual identity?
-3. Can it be customized?
-4. Is the dependency justified?
-5. Does it affect performance?
-6. Does it introduce unnecessary complexity?
-
-Prefer native HTML/CSS or existing project utilities when they are
-sufficient.
-
----
-
-# 16. Component Architecture
-
-Build reusable components where reuse provides real value.
-
-Good candidates include:
-
-- navigation
-- buttons
-- forms
-- typography primitives
-- sections
-- cards when justified
-- modals
-- accordions
-- testimonials when actual data exists
-- layout primitives
-- animation wrappers
-
-Do not abstract components simply to make the code appear
-"enterprise" or reusable.
-
-Avoid premature abstraction.
-
-Keep components:
-
-- focused
-- understandable
-- composable
-- accessible
-- maintainable
-
----
-
-# 17. Animation and Motion
-
-Animation should improve the experience.
-
-Use motion for:
-
-- hierarchy
-- feedback
-- continuity
-- orientation
-- state changes
-- progressive disclosure
-- subtle delight
-
-Do not animate simply because an animation library exists.
-
-Avoid:
-
-- constant floating elements
-- excessive parallax
-- random text effects
-- animation on every section
-- excessive scroll-triggered effects
-- infinite decorative movement
-- distracting backgrounds
-
-Prefer restrained:
-
-- opacity transitions
-- transform transitions
-- hover states
-- section reveals
-- staggered entrances
-- navigation transitions
-- image movement
-- micro-interactions
-
-Use CSS transitions when sufficient.
-
-Use Motion/Framer Motion, GSAP, Lenis, React Bits or Magic UI only
-when they provide meaningful value.
-
-Respect `prefers-reduced-motion`.
-
-Use:
-
-`design-system/motion.md`
-
-for detailed motion guidance.
-
----
-
-# 18. Responsive Design
-
-Do not treat responsive design as simply shrinking desktop.
-
-Design intentionally for:
-
-- mobile
-- tablet
-- laptop
-- desktop
-- large desktop
-
-Pay particular attention to:
-
-- navigation
-- hero composition
-- typography
-- spacing
-- image crops
-- buttons
-- forms
-- grids
-- cards
-- content order
-- overflow
-- touch targets
-
-Mobile must remain a deliberate experience.
-
----
-
-# 19. Accessibility
-
-Use semantic HTML whenever possible.
-
-Ensure:
-
-- logical heading hierarchy
-- keyboard accessibility
-- visible focus states
-- accessible labels
-- appropriate alt text
-- sufficient contrast
-- accessible forms
-- usable touch targets
-- meaningful button/link labels
-- reduced-motion support
-
-Do not sacrifice accessibility for visual effects.
-
----
-
-# 20. Performance
-
-Prefer lightweight implementations.
-
-Avoid unnecessary:
-
-- JavaScript
-- dependencies
-- third-party scripts
-- large images
-- animation libraries
-- client-side rendering
-- complex state management
-
-Optimize:
-
-- images
-- fonts
-- loading
-- bundles
-- animation
-- rendering
-
-For typical local-business websites, prefer static or mostly static
-architecture unless dynamic functionality is actually required.
-
-Do not introduce a backend, database, authentication system, CMS,
-VPS or other infrastructure unless the requirements justify it.
-
----
-
-# 21. SEO
-
-For public-facing business websites, consider:
-
-- page titles
-- meta descriptions
-- canonical URLs where appropriate
-- semantic HTML
-- Open Graph metadata
-- structured data where appropriate
-- sitemap
-- robots.txt
-- clean URLs
-
-Do not keyword-stuff.
-
-Do not generate fake SEO claims.
-
-SEO must support useful content and good UX.
-
----
-
-# 22. Architecture and Technology
-
-Choose technology based on project requirements.
-
-Do not force one framework onto every client.
-
-Prefer simple architecture for simple websites.
-
-For typical marketing/local-business websites, static or mostly
-static architectures are preferred when they satisfy requirements.
-
-Keep the implementation portable where practical.
-
-Do not introduce infrastructure merely because it is technically
-interesting.
-
----
-
-# 23. Deployment Philosophy
-
-Prefer low-cost or free infrastructure where technically
-appropriate.
-
-Cloudflare is a preferred option when it fits the project.
-
-Other platforms may be used when they provide a better fit.
-
-Do not sacrifice:
-
-- performance
-- reliability
-- maintainability
-- security
-- client requirements
-
-merely to achieve zero hosting cost.
-
-Never expose deployment credentials or API keys in source code.
-
----
-
-# 24. Environment Variables and Secrets
-
-Never commit:
-
-- API keys
-- tokens
-- passwords
-- private credentials
-- service account keys
-- secret environment variables
-
-Use environment variables or secure secret storage.
-
-Never place secrets inside:
-
-- `CLAUDE.md`
-- `GEMINI.md`
-- project instructions
-- source code
-- frontend JavaScript
-- Git commits
-- README files
-
-If a browser-facing API key is required, use the appropriate
-provider-supported restriction model.
-
----
-
-# 25. Quality Assurance
-
-A successful build is not automatically a successful website.
-
-Before declaring a website complete, verify:
-
-### Functionality
-
-- navigation
-- links
-- buttons
-- forms
-- menus
-- interactive components
-
-### Visual quality
-
-- hierarchy
-- spacing
-- typography
-- composition
-- color
-- imagery
-- consistency
-- visual rhythm
-
-### Responsive behavior
-
-- mobile
-- tablet
-- desktop
-- large screens
-
-### Accessibility
-
-- keyboard interaction
-- focus states
-- semantic structure
-- contrast
-- labels
-- reduced motion
-
-### Technical quality
-
-- build
-- console errors
-- missing assets
-- broken routes
-- production behavior
-
-### Performance
-
-- image loading
-- unnecessary dependencies
-- animation cost
-- bundle size where relevant
-
-Use the appropriate QA skill when available.
-
----
-
-# 26. Visual QA Must Be Based on the Actual Result
-
-Do not claim visual QA was completed merely because code looks
-correct.
-
-When visual verification is available:
-
-1. Run the website.
-2. Open the rendered result.
-3. Inspect important pages.
-4. Inspect desktop and mobile.
-5. Identify visual problems.
-6. Fix the problems.
-7. Inspect again.
-
-Do not claim that a screenshot, browser result, or visual state was
-verified if it was not actually inspected.
-
----
-
-# 27. Self-Critique
-
-Before considering a major design task complete, ask:
-
-- Does this actually fit the client?
-- Does it feel generic?
-- Does it resemble an AI-generated template?
-- Is there unnecessary decoration?
-- Is the hierarchy clear?
-- Is the typography intentional?
-- Is the color strategy appropriate?
-- Is the animation justified?
-- Is the page too repetitive?
-- Is anything visually impressive but commercially useless?
-- Can anything be removed without hurting the experience?
-
-Prefer refinement and restraint over adding more effects.
-
----
-
-# 28. Git Workflow
-
-Keep commits clear and focused.
-
-Prefer commit messages that explain the change.
-
-Examples:
-
-- `feat: create clinic landing page`
-- `feat: add responsive navigation`
-- `refactor: simplify service section`
-- `fix: correct mobile hero overflow`
-- `perf: optimize hero imagery`
-- `fix: improve keyboard navigation`
-
-Do not commit secrets.
-
-Do not commit generated build artifacts unless the project explicitly
-requires them.
-
-Before committing, inspect the changes.
-
----
-
-# 29. Existing Code Comes First
-
-Before changing an existing project:
-
-1. Inspect its architecture.
-2. Inspect its package configuration.
-3. Inspect existing components.
-4. Inspect design tokens.
-5. Inspect styling conventions.
-6. Inspect existing dependencies.
-7. Understand why the current implementation exists.
-
-Do not rewrite working architecture merely because another approach
-is preferred.
-
-Make the smallest change that achieves the intended result unless
-a larger refactor is genuinely justified.
-
----
-
-# 30. Reusable Architecture vs Reusable Design
+Do not create nested Git repositories or submodules unless explicitly requested.
 
 Reuse:
 
-- engineering patterns
-- accessibility patterns
-- testing patterns
-- layout primitives
-- utility functions
-- appropriate components
-- development workflows
+* knowledge
+* architecture patterns
+* design methodology
+* components when appropriate
+* rules
+* skills
 
-Do not automatically reuse:
-
-- branding
-- color palettes
-- typography
-- hero layouts
-- decorative styles
-- animation language
-- visual identity
-
-The system should produce consistency in quality,
-not sameness in appearance.
+Do not force the same visual design onto every client.
 
 ---
 
-# 31. Client Prospecting Workflow
+# 7. New Client Workflow
 
-When explicitly asked to find the next client prospect:
+When starting a client website, follow this general sequence:
 
-1. Research suitable businesses.
-2. Prefer high-income markets when requested.
-3. Consider established small and medium businesses.
-4. Look for businesses with no official website or a weak/outdated
-   official website.
-5. Verify website status carefully.
-6. Research commercial signals.
-7. Do not assume a specific client budget without evidence.
-8. Research approximately 30–50 candidates when requested.
-9. Filter to the strongest candidates.
-10. Rank the top candidates.
-11. Recommend the strongest prospect.
-12. Stop before development.
+```text
+Understand
+    ↓
+Research
+    ↓
+Client Design Brief
+    ↓
+Creative Direction
+    ↓
+Information Architecture
+    ↓
+Design System
+    ↓
+Technology Selection
+    ↓
+Implementation
+    ↓
+Interaction + Motion
+    ↓
+Responsive Refinement
+    ↓
+Visual QA
+    ↓
+Technical QA
+    ↓
+Final QA
+```
 
-Do not begin coding, create a client repository, contact the business
-or create a website unless explicitly authorized.
+Use:
 
-Do not treat Facebook, Instagram, Yelp, Google Business Profile or
-other directory pages as the business's official website.
+`docs/client-design-brief-template.md`
 
-Never fabricate prospect information.
+to create a project-specific design brief.
 
----
+The design brief should act as the project's design contract.
 
-# 32. Prospect Scoring
-
-When prospect research is requested, consider:
-
-- website quality
-- website absence
-- business maturity
-- reviews
-- reputation
-- service value
-- visual opportunity
-- competitive pressure
-- commercial upside
-- likely benefit from a professional website
-- geographic market
-- project fit
-
-Do not claim that a prospect can afford a particular project price
-unless there is evidence supporting that conclusion.
+Do not jump directly from a short business description into implementation when significant design decisions are still unclear.
 
 ---
 
-# 33. Research Accuracy
+# 8. Research
 
-For real-world information:
+Research competitors, market expectations, audience behavior, and relevant references when doing so materially improves the project.
 
-- verify important facts
-- distinguish evidence from assumptions
-- do not fabricate
-- cite sources when appropriate
-- clearly identify uncertainty
+Research should inform decisions.
 
-If information cannot be verified, do not present it as fact.
+Do not copy:
+
+* layouts
+* branding
+* wording
+* imagery
+* distinctive visual identities
+
+Never invent research findings.
+
+Distinguish between:
+
+* verified facts
+* observations
+* reasonable inferences
+* recommendations
 
 ---
 
-# 34. Learning From Corrections
+# 9. Design System
 
-When the user corrects a recurring design or engineering preference,
-apply the correction to future work where appropriate.
+Before significant implementation, establish an appropriate project design system covering, where relevant:
 
-Do not overgeneralize a correction beyond its intended context.
+* color
+* typography
+* spacing
+* layout
+* components
+* imagery
+* motion
+* responsive behavior
 
-Preserve explicit client-specific decisions separately from global
-builder principles.
+Use the detailed guidance in `design-system/`.
+
+Do not assume that every client needs the same visual system.
 
 ---
 
-# 35. Completion Standard
+# 10. UI Libraries
+
+Use libraries as tools, not as the client's identity.
+
+Potential resources include:
+
+* shadcn/ui
+* React Bits
+* Magic UI
+* Motion
+* GSAP
+* Lenis
+* Lucide
+* native CSS/browser capabilities
+
+Use the smallest appropriate subset.
+
+Do not install or use a library merely because it exists.
+
+Customize library components when necessary to match the client's design direction.
+
+---
+
+# 11. Architecture
+
+Prefer:
+
+* simple architecture
+* maintainable components
+* clear naming
+* type safety
+* reusable primitives
+* minimal unnecessary dependencies
+* existing project conventions
+
+Reuse **architecture**, not necessarily visual appearance.
+
+Do not over-engineer small websites.
+
+Inspect existing code before replacing or restructuring it.
+
+---
+
+# 12. Responsive and Accessibility Standards
+
+Treat mobile as a first-class experience.
+
+Websites must be usable across relevant:
+
+* mobile
+* tablet
+* laptop
+* desktop
+* large desktop
+
+Follow the detailed responsive and accessibility rules in:
+
+`.agents/rules/04-responsive-accessibility.md`
+
+Do not treat accessibility as an optional final decoration.
+
+---
+
+# 13. Performance and SEO
+
+Performance and SEO are part of production quality.
+
+Follow:
+
+`.agents/rules/05-performance-seo.md`
+
+Avoid unnecessary:
+
+* JavaScript
+* dependencies
+* third-party services
+* large assets
+* expensive animations
+
+Implement appropriate SEO fundamentals without inventing factual business information.
+
+---
+
+# 14. Animation
+
+Motion should support:
+
+* hierarchy
+* orientation
+* feedback
+* storytelling
+* perceived quality
+
+Do not animate everything.
+
+Follow:
+
+`.agents/rules/03-animation.md`
+
+Respect reduced-motion preferences.
+
+---
+
+# 15. Images and Assets
+
+Prefer:
+
+* authentic client assets
+* properly licensed imagery
+* appropriate generated imagery
+* optimized assets
+
+Do not imply that stock or generated imagery represents the real business when it does not.
+
+Do not invent factual imagery or business evidence.
+
+---
+
+# 16. Content and Factual Accuracy
+
+Never invent:
+
+* reviews
+* testimonials
+* awards
+* certifications
+* statistics
+* prices
+* addresses
+* business history
+* years of experience
+* customer counts
+* guarantees
+* medical claims
+* business achievements
+
+When real information is unavailable:
+
+* use clearly identified placeholders, or
+* request the information.
+
+Never present assumptions as facts.
+
+---
+
+# 17. Environment Variables and Secrets
+
+Never expose:
+
+* API keys
+* access tokens
+* passwords
+* credentials
+* private URLs
+* secret environment variables
+
+in:
+
+* source code
+* frontend code
+* documentation
+* prompts
+* Git commits
+* public repositories
+
+Use appropriate environment variables and secure secret storage.
+
+Never commit secrets.
+
+---
+
+# 18. Prospecting
+
+Prospecting is a separate workflow handled by:
+
+`.agents/skills/prospecting/SKILL.md`
+
+When prospecting is requested:
+
+* research real businesses
+* verify the official website
+* evaluate website opportunity
+* assess commercial relevance
+* score candidates using evidence
+* recommend the strongest opportunity
+* stop before development or outreach
+
+Do not invent:
+
+* revenue
+* affordability
+* business size
+* reviews
+* awards
+* certifications
+* commercial claims
+
+Do not begin development until the user explicitly approves the selected prospect.
+
+---
+
+# 19. Visual Verification
+
+When visual quality matters, inspect the actual rendered website.
+
+Do not assume source code represents the final visual result.
+
+Use:
+
+`.agents/skills/visual-qa/SKILL.md`
+
+for detailed visual inspection.
+
+Only claim that visual QA was completed after actually inspecting the rendered result.
+
+---
+
+# 20. Final QA
+
+Before declaring a project production-ready, verify:
+
+* production build
+* important functionality
+* navigation
+* links
+* forms
+* images
+* responsive behavior
+* accessibility
+* console errors
+* performance
+* SEO fundamentals
+* metadata
+* factual content
+* environment variables
+* secrets
+* Git state
+
+Use:
+
+`.agents/skills/final-qa/SKILL.md`
+
+as the release gate.
+
+---
+
+# 21. Git Workflow
+
+Keep changes intentional and understandable.
+
+Before committing:
+
+* review changed files
+* remove accidental files
+* check for secrets
+* check generated junk
+* verify the build when appropriate
+
+Use meaningful commit messages.
+
+Do not commit credentials or sensitive information.
+
+---
+
+# 22. Deployment Philosophy
+
+Prefer simple, reliable, cost-conscious deployment.
+
+Cloudflare is a preferred option when appropriate, especially for static or mostly-static websites.
+
+However, deployment platform should be chosen according to:
+
+* project requirements
+* framework
+* backend needs
+* performance
+* cost
+* maintainability
+* client requirements
+
+Do not sacrifice production quality merely to use a free platform.
+
+---
+
+# 23. Reusable Architecture vs Reusable Design
+
+Reuse:
+
+* standards
+* workflows
+* design methodology
+* accessibility patterns
+* QA processes
+* technical patterns
+* appropriate components
+
+Do not reuse:
+
+* identical visual identities
+* identical color palettes
+* identical typography
+* identical layouts
+* identical hero structures
+* identical animation styles
+
+Every client should feel intentionally designed for their business.
+
+---
+
+# 24. Self-Critique
+
+Before completion, ask:
+
+* Does this feel intentionally designed?
+* Does it feel specific to the client?
+* Does anything look like a generic AI website?
+* Is every visual effect justified?
+* Is the hierarchy clear?
+* Is the mobile experience genuinely polished?
+* Are there unnecessary components or dependencies?
+* Is the content trustworthy?
+* Would I confidently show this to a paying client?
+
+If the answer is no, continue refining.
+
+---
+
+# 25. Completion Standard
 
 A project is complete only when:
 
-- requirements are satisfied
-- design direction is coherent
-- implementation is functional
-- responsive behavior works
-- accessibility basics are addressed
-- performance is reasonable
-- factual content is accurate
-- visual QA has been performed when possible
-- technical checks pass
-- no secrets are exposed
-- the result is suitable for real client delivery
+* the business goal is supported
+* the visual identity is intentional
+* the UX is clear
+* responsive behavior is polished
+* accessibility is addressed
+* performance is reasonable
+* SEO fundamentals are implemented
+* factual content is trustworthy
+* no secrets are exposed
+* production build succeeds
+* important functionality works
+* visual QA has actually been performed
+* final QA passes
 
-"Build passes" is not the definition of completion.
+The goal is not merely to finish the code.
 
-The final standard is:
-
-**A real client could reasonably receive and use this website.**
-
----
-
-# 36. Final Principle
-
-Do not optimize for producing the most code.
-
-Optimize for producing the best appropriate solution.
-
-A premium website is not defined by:
-
-- number of animations
-- number of components
-- number of dependencies
-- amount of code
-- visual complexity
-
-It is defined by:
-
-- clarity
-- intentionality
-- hierarchy
-- trust
-- usability
-- visual quality
-- appropriate interaction
-- technical quality
-- restraint
-- fit for the client
-
-When in doubt:
-
-**simplify, verify, and refine.**
+The goal is to deliver a website that is **credible, distinctive, polished, maintainable, and worthy of a paying client.**

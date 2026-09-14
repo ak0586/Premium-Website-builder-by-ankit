@@ -29,6 +29,16 @@ Always follow this sequence:
 
 Do not skip directly from a business description to coding.
 
+## Prospecting Relationship
+
+Prospecting is a separate workflow.
+
+If the user has not yet selected a client and asks to find potential clients, use the `prospecting` skill first.
+
+Do not mix prospect discovery with client implementation.
+
+Once a prospect is explicitly selected, switch to the new-client workflow.
+
 ## Client Understanding
 
 Before implementation, determine when possible:
