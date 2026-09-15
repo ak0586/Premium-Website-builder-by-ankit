@@ -122,6 +122,423 @@ silky fluidity without heavy canvas calculations or battery drain.
 
 ---
 
+## 2c. Primary Technique Library (Required Reading Before Implementation)
+
+This section documents the concrete, copy-reference animation patterns
+that every client website must implement. These are the minimum craft
+standards — the floor, not the ceiling.
+
+The **canonical reference implementation** for all patterns below is
+`e:\clients-websites\devaki-dental-v2\`. Read the source of any
+component you are building to see the exact pattern in full context.
+
+---
+
+### Pattern 1 — Clip-Path Wipe Reveal (Hero Headline)
+
+The signature headline entrance. Text is hidden by a clip rectangle that
+sweeps open, like a clinical light (or a spotlight, or a curtain — derive
+the metaphor from the category motion concept).
+
+```jsx
+// Motion (Framer Motion)
+const WipeReveal = ({ children, delay = 0 }) => (
+  <div style={{ overflow: 'hidden' }}>
+    <motion.div
+      initial={{ clipPath: 'inset(0 100% 0 0)' }}
+      animate={{ clipPath: 'inset(0 0% 0 0)' }}
+      transition={{ duration: 1.1, delay, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
+  </div>
+)
+
+// Usage — stagger each headline line
+<h1>
+  <WipeReveal delay={0.4}><span>Line one</span></WipeReveal>
+  <WipeReveal delay={0.58}><span>Line two</span></WipeReveal>
+</h1>
+```
+
+**Variations by motion concept:**
+- Horizontal L→R: `inset(0 100% 0 0)` → `inset(0 0% 0 0)` (clinical sweep)
+- Horizontal R→L: `inset(0 0 0 100%)` → `inset(0 0 0 0%)` (reveal from right)
+- Vertical T→B: `inset(0 0 100% 0)` → `inset(0 0 0% 0)` (curtain drop)
+- Diagonal: combine with `rotate` on a parent wrapper
+
+---
+
+### Pattern 2 — Scroll-Linked Hero Parallax + Fade-Out
+
+The hero image moves at a slower rate than scroll, and the content
+fades as the user leaves the hero.
+
+```jsx
+// Motion (Framer Motion)
+const ref = useRef(null)
+const { scrollYProgress } = useScroll({
+  target: ref,
+  offset: ['start start', 'end start']
+})
+
+const imageY    = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+const contentY  = useTransform(scrollYProgress, [0, 1], ['0%', '8%'])
+const opacity   = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+
+// Apply:
+<section ref={ref}>
+  <motion.div style={{ y: imageY }}> {/* background image wrapper */} </motion.div>
+  <motion.div style={{ y: contentY, opacity }}> {/* hero content */} </motion.div>
+</section>
+```
+
+---
+
+### Pattern 3 — Scroll-Triggered Fade-Up (Section Content)
+
+Every text block in every section uses this as the baseline entrance.
+
+```jsx
+// Motion (Framer Motion)
+const FadeUp = ({ children, delay = 0 }) => {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-60px' })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+```
+
+**Standard delay cascade for a section header:**
+- Label: `delay={0}`
+- H2 heading: `delay={0.12}`
+- Body paragraph 1: `delay={0.24}`
+- Body paragraph 2: `delay={0.36}`
+- CTA button: `delay={0.46}`
+
+---
+
+### Pattern 4 — Staggered Grid Children
+
+For service cards, pillar grids, testimonial grids, and any repeating
+layout where children should enter sequentially.
+
+```jsx
+// Column-aware stagger — items in the same column share delay,
+// preventing visual "waterfall" in a 3-col grid
+{items.map((item, i) => (
+  <motion.div
+    key={item.id}
+    ref={ref}
+    initial={{ opacity: 0, y: 28 }}
+    animate={inView ? { opacity: 1, y: 0 } : {}}
+    transition={{
+      duration: 0.7,
+      delay: (i % cols) * 0.1,  // cols = 1 | 2 | 3
+      ease: [0.16, 1, 0.3, 1]
+    }}
+  />
+))}
+```
+
+---
+
+### Pattern 5 — Image Sweep-In (Editorial Split Layout)
+
+For About sections and split-layout image+text compositions.
+
+```jsx
+// Motion (Framer Motion)
+const SweepIn = ({ children, delay = 0, direction = 'left' }) => {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{
+        clipPath: direction === 'left' ? 'inset(0 100% 0 0)' : 'inset(0 0 0 100%)',
+        opacity: 0
+      }}
+      animate={inView ? { clipPath: 'inset(0 0% 0 0%)', opacity: 1 } : {}}
+      transition={{ duration: 1, delay, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+```
+
+---
+
+### Pattern 6 — Scroll-Aware Nav Glass Transition
+
+```css
+/* CSS only — no JS needed */
+.header {
+  position: fixed;
+  top: 0;
+  transition:
+    background-color 0.4s ease,
+    backdrop-filter 0.4s ease,
+    border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(15, 17, 23, 0.88);
+  backdrop-filter: blur(20px) saturate(160%);
+  border-bottom-color: var(--color-border-dark);
+}
+```
+
+```js
+// React hook
+const [scrolled, setScrolled] = useState(false)
+useEffect(() => {
+  const handler = () => setScrolled(window.scrollY > 60)
+  window.addEventListener('scroll', handler, { passive: true })
+  return () => window.removeEventListener('scroll', handler)
+}, [])
+```
+
+---
+
+### Pattern 7 — Hover Card Accent Reveal
+
+A colored border line that grows from 0 to 100% on hover. The accent
+direction (top, left) should be derived from the design system.
+
+```css
+.card { position: relative; overflow: hidden; }
+
+/* Left accent — grows vertically */
+.cardAccent {
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--color-accent);
+  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardAccent { height: 100%; }
+
+/* Top accent — grows horizontally */
+.cardAccentTop {
+  position: absolute;
+  top: 0; left: 0;
+  height: 2px; width: 0;
+  background: var(--color-accent);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardAccentTop { width: 100%; }
+```
+
+---
+
+### Pattern 8 — Animated Link Underline
+
+```css
+.navLink {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navLink:hover::after { right: 0; }
+```
+
+---
+
+### Pattern 9 — CSS SVG Avatar States
+
+All four states of the AI concierge avatar MUST be CSS `@keyframes` only.
+No JS runtime cost.
+
+```css
+/* Idle — ambient breathing on outer ring */
+@keyframes breathe {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.04); }
+}
+.idle .outerRing { animation: breathe 3s ease-in-out infinite; }
+
+/* Listening — expanding pulse arcs */
+@keyframes pulse1 {
+  0%   { opacity: 0.6; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.35); }
+}
+.listening .pulseArc1 { animation: pulse1 1.4s ease-out infinite; }
+.listening .pulseArc2 { animation: pulse1 1.4s ease-out infinite 0.3s; }
+
+/* Thinking — spinning dashed arc */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.thinking .thinkingArc {
+  transform-origin: center;
+  animation: spin 1.6s linear infinite;
+}
+
+/* Speaking — waveform bars */
+@keyframes barPulse {
+  0%, 100% { transform: scaleY(0.5); }
+  50%      { transform: scaleY(1); }
+}
+.speaking .bar { animation: barPulse 0.6s ease-in-out infinite; }
+.speaking .bar:nth-child(2) { animation-delay: 0.1s; }
+.speaking .bar:nth-child(3) { animation-delay: 0.2s; }
+
+/* Always disable all animation for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .avatarWrap * { animation: none !important; }
+}
+```
+
+---
+
+### Pattern 10 — GSAP Counter Animation (Stats)
+
+For trust bars and any numeric stat that should count up on scroll entry.
+
+```jsx
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+useEffect(() => {
+  const el = counterRef.current
+  const obj = { val: 0 }
+  gsap.to(obj, {
+    val: targetNumber,
+    duration: 1.4,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 80%',
+      once: true,
+    },
+    onUpdate() {
+      el.textContent = Math.round(obj.val).toLocaleString()
+    }
+  })
+}, [targetNumber])
+```
+
+---
+
+### Pattern 11 — GSAP Word Split Reveal (Headlines)
+
+For premium editorial headline reveals beyond the clip-path sweep.
+
+```jsx
+import { gsap } from 'gsap'
+import { SplitText } from 'gsap/SplitText' // requires GSAP Club or manual span split
+gsap.registerPlugin(SplitText)
+
+useEffect(() => {
+  if (!headlineRef.current) return
+  const split = new SplitText(headlineRef.current, { type: 'words' })
+  gsap.from(split.words, {
+    opacity: 0,
+    y: 24,
+    duration: 0.7,
+    stagger: 0.06,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: headlineRef.current,
+      start: 'top 80%',
+      once: true,
+    }
+  })
+  return () => split.revert()
+}, [])
+```
+
+**Alternative without GSAP Club** — manual `<span>` split:
+
+```jsx
+const words = text.split(' ')
+return (
+  <h2>
+    {words.map((word, i) => (
+      <motion.span
+        key={i}
+        style={{ display: 'inline-block', marginRight: '0.25em' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {word}
+      </motion.span>
+    ))}
+  </h2>
+)
+```
+
+---
+
+### Pattern 12 — Ambient Hero Brand Mark
+
+A single atmospheric element in the hero that communicates the motion
+concept. Must be derived from the category-specific motion concept, not
+added generically.
+
+```jsx
+// Example: diagonal light sweep line (Devaki Dental — "Clinical Illumination")
+<motion.div
+  className={styles.lightLine}  // diagonal CSS transform, thin gradient line
+  initial={{ opacity: 0, scaleX: 0 }}
+  animate={{ opacity: 0.35, scaleX: 1 }}
+  transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+  aria-hidden="true"
+/>
+```
+
+```css
+.lightLine {
+  position: absolute;
+  top: 0; left: -20%; right: -20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+  transform: rotate(-25deg) translateY(45vh);
+  transform-origin: center;
+}
+```
+
+**Other category-derived examples:**
+- Barber: slow rotating scissor outline
+- Automotive: horizontal speed line sweeping left to right once
+- Architect: grid lines assembling from grid intersection points
+- Yoga: breath-synchronized expanding/contracting circle
+
+---
+
+
+
+---
+
 ## 3. Motion Hierarchy
 
 ### Micro

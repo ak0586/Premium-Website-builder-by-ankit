@@ -346,6 +346,92 @@ Ambient and decorative motion should remain controlled.
 
 ---
 
+## Required Technique Floor
+
+Every website built in this system must implement ALL of the following
+techniques as a minimum standard. These are not optional enhancements.
+
+### Hero
+
+- **Wipe-reveal or clip-path entrance** on the primary headline (e.g.
+  `clipPath: 'inset(0 100% 0 0)'` → `inset(0 0% 0 0)` sweep). The direction
+  and angle should be derived from the category-specific motion concept.
+- **Scroll-linked parallax** on the hero background image using
+  `useScroll` + `useTransform` (5–18% relative travel).
+- **Scroll-linked opacity fade-out** on hero content as the user
+  scrolls past — `useTransform(scrollYProgress, [0, 0.6], [1, 0])`.
+- **Staggered entrance sequence** for eyebrow → headline → subheadline → CTA
+  → trust line (delays: 0.2, 0.4–0.6, 0.9, 1.05, 1.2s).
+
+### Navigation
+
+- **Scroll-aware glass transition**: transparent at top → dark/blurred backdrop
+  after 60px scroll. CSS `transition` on `background-color` and
+  `backdrop-filter`.
+- **Animated link underlines**: CSS `::after` pseudo-element with
+  `scaleX` or `right` transition from 100% to 0%.
+- **Mobile drawer**: `AnimatePresence` + `motion.div` slide or fade.
+
+### Content Sections
+
+- **Scroll-triggered fade-up**: Every section's text content fades up
+  via `useInView` with `once: true`. Default: `opacity 0→1`, `y 24→0`,
+  `duration 0.7–0.8s`, `ease [0.16, 1, 0.3, 1]`.
+- **Staggered children**: Where sections contain a grid/list, each child
+  staggers by `(index % cols) * 0.1s`.
+- **Image sweep-in**: Editorial split-layout images use a clip-path
+  sweep from the outer edge. Direction alternates L/R across sections.
+- **Accent marks**: Decorative borders, lines, or circles use `scaleY`
+  or `scaleX` entrance triggered by scroll (`transform-origin: top`).
+
+### Cards & Interactive Elements
+
+- **Hover lift**: Cards translate `translateY(-3–6px)` on hover with
+  `transition: transform 0.3s ease`.
+- **Accent reveal**: A colored border/line (e.g. top or left edge)
+  expands from 0 to 100% on hover via `height` or `width` CSS transition.
+- **Icon state transition**: Icons within cards respond to parent hover
+  (color change, background shift) via CSS transitions.
+
+### Trust Bar / Stats
+
+- **Stagger scroll reveal**: Each stat fades up with index-based delay
+  using `useInView`. For count-up number animation, use React Bits or
+  GSAP `gsap.to({ val: 0 }, { val: target })` on scroll entry.
+
+### AI Concierge Avatar
+
+- **4 CSS-animated SVG states**: idle (ambient breath), listening
+  (pulse arcs), thinking (rotating arc), speaking (waveform bars).
+  All CSS `@keyframes`, zero JS runtime cost.
+- **Launcher pulse**: The widget launcher button has a subtle ambient
+  glow or scale animation when in idle state.
+
+### Ambient / Brand Mark
+
+- **One atmospheric brand element**: A single category-derived ambient
+  mark (diagonal line, arc, geometric shape) that appears in the hero
+  via `scaleX` or `opacity` entrance and then persists. Must be derived
+  from the motion concept, not added generically.
+
+### Footer
+
+- **Link hover transitions**: All footer links have CSS `color`
+  transitions on hover.
+- **Reveal on scroll entry**: Footer content fades in via `useInView`.
+
+---
+
+## Reference Implementation
+
+> **`e:\clients-websites\devaki-dental-v2\`** is the canonical reference
+> implementation for this technique floor. Every technique in the
+> "Required Technique Floor" section above is demonstrated there.
+> Read the source code of any component you are implementing to
+> understand how the technique was applied in context.
+
+---
+
 ## Motion Must Not Become Visual Noise
 
 "Fully animated" does not mean:
@@ -411,33 +497,84 @@ The website should remain fully usable without decorative motion.
 
 ---
 
-## Animation Technology
-
-Choose the smallest appropriate technology.
+## Animation Technology — Primary Required Stack
 
 > [!IMPORTANT]
-> **WebGL and 3D are the exception, not the default**: Three.js and WebGL
-> scenes are strictly opt-in exception technologies requiring explicit justification
-> (see [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md)).
-> For all standard client websites, CSS transitions/animations, small JS animation
-> libraries, and SVG/vector animation (Lottie / Rive) must be reached for first.
+> The following four technologies are the **primary required animation stack**
+> for every client website built in this system. They are not optional additions
+> — they are the standard implementation foundation.
 
-Possible tools include:
+### 1. Motion (Framer Motion) — Scroll-Triggered Reveals & Choreography
 
-- CSS transitions
-- CSS animations
-- Motion
-- GSAP
-- Lenis
-- Lottie / Rive (for vector bot avatars and lightweight spot animations)
-- React Bits
-- Magic UI
-- native browser APIs
-- Three.js / WebGL (exception path only, when gated and justified)
+Use for:
 
-Do not use a library merely because it is available.
+- `useInView` + `motion.div` scroll-triggered reveals on every content section
+- `useScroll` + `useTransform` for scroll-linked parallax (hero images, content fade-out)
+- `AnimatePresence` for component mount/unmount (nav mobile drawer, concierge widget, modals)
+- Stagger choreography via `variants` with `staggerChildren`
+- Page-load entrance sequences (hero, nav)
+- Clip-path wipe-reveal animations for headlines and section imagery
 
-The technology should support the creative direction rather than determine it.
+Install: `npm install framer-motion`
+
+### 2. GSAP — Timeline Choreography & Advanced Scroll
+
+Use for:
+
+- Complex timeline sequences that need precise per-element control
+- `ScrollTrigger` for scroll-driven storytelling (pin-and-scrub, progress-linked transforms)
+- Multi-step entrance choreographies where framer-motion stagger is insufficient
+- Smooth counters, path morphs, and SVG stroke animations
+- Hero text character/word split animations (`SplitText` or manual span splitting)
+
+Install: `npm install gsap`
+
+> [!NOTE]
+> Use Motion for declarative React-native scroll reveals. Use GSAP when you need
+> imperative, timeline-based control or advanced ScrollTrigger capabilities.
+> They coexist cleanly in the same project.
+
+### 3. React Bits — Elevated Micro-Interactions & Text Effects
+
+Use for:
+
+- Text reveal and split effects that feel premium (letter-by-letter, word-by-word)
+- Hover interaction patterns (magnetic buttons, cursor follow effects)
+- Count-up number animations (stat counters, trust bars)
+- Animated backgrounds (mesh gradients, particle fields — when justified by creative direction)
+- Transition overlay patterns between route changes
+
+Reference: https://www.reactbits.dev
+
+### 4. CSS Animations & SVG Keyframes — Avatar States & Ambient Motion
+
+Use for:
+
+- All animated bot/concierge avatar states (idle breath, listening pulse, thinking spin, speaking waveform) — CSS keyframes only, no JS runtime cost
+- Ambient decorative brand marks (diagonal light lines, rotating circles, atmospheric elements)
+- Nav link underline hover transitions
+- Button micro-interactions (scale, border-color, background transitions)
+- Loading spinners and progress indicators
+- Any continuous looping animation (CSS, not JS)
+
+**Rule**: Any continuously looping animation MUST use CSS `@keyframes`, never a JavaScript `requestAnimationFrame` loop.
+
+### Supporting Tools
+
+- **Lenis**: Required for smooth momentum scroll on all projects. Install: `npm install lenis`. Load asynchronously after LCP.
+- **Lottie / Rive**: For complex vector animations (AI avatar if SVG keyframes are insufficient, icon animations, brand spot animations).
+- **Three.js / WebGL**: Exception path only — see `.agents/rules/01-premium-design.md` gating criteria.
+
+### Technology Selection Rule
+
+Every project should default to this full stack:
+```
+Motion + GSAP + React Bits + CSS/SVG + Lenis
+```
+
+Only remove a technology if the project genuinely does not require it, and
+document the reason in the client design brief. Do not reduce the stack
+merely to minimize setup time.
 
 ---
 

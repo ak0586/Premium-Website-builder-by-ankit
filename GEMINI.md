@@ -283,28 +283,42 @@ Do not assume all clients need the same visual system.
 
 ---
 
-# 10. UI Resources
+# 10. UI Resources — Primary Required Animation Stack
 
-Potential resources include:
+The following are **required by default** on every client website. Do not
+treat them as optional or additive — they are the animation implementation
+foundation.
 
-* shadcn/ui
-* React Bits
-* Magic UI
-* Motion
-* GSAP
-* Lenis
-* Lucide
-* native CSS/browser APIs
+| Technology | Primary Use |
+|------------|-------------|
+| **Motion (Framer Motion)** | `useInView` scroll reveals, `useScroll`+`useTransform` parallax, `AnimatePresence`, clip-path wipe entrances |
+| **GSAP** | Timeline sequences, `ScrollTrigger`, counter animations, word split reveals |
+| **React Bits** | Premium text effects, magnetic interactions, count-up numbers |
+| **CSS / SVG Animations** | All looping animations (avatar states, ambient marks, hover transitions) |
+| **Lenis** | Momentum smooth scroll — async loaded, progressive enhancement |
 
-Use them selectively.
+Standard install: `npm install framer-motion gsap lenis lucide-react`
+
+See [`docs/premium-stack.md`](./docs/premium-stack.md) for full setup
+instructions and [`design-system/motion.md`](./design-system/motion.md)
+Section 2c for copy-reference code patterns for every required animation.
+
+**Additional resources** (use when they provide genuine value beyond the above):
+
+- shadcn/ui — accessible primitives (buttons, dialogs, sheets, forms)
+- Magic UI — marquees, number animations, animated backgrounds
+- Lucide — icon set
+- Lottie / Rive — complex vector animations, avatar when CSS SVG insufficient
+- Three.js / WebGL — exception path only, see Section 4 gating criteria
 
 Libraries are tools, not the client's visual identity.
 
-Prefer the smallest appropriate stack.
+Every project should use the smallest appropriate subset of the additional
+resources. Do not introduce dependencies without a clear reason.
 
-Do not introduce dependencies without a clear reason.
+The **canonical reference implementation** for the full required stack is
+`e:\clients-websites\devaki-dental-v2\`.
 
----
 
 # 11. Architecture
 

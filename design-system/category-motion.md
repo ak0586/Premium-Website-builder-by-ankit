@@ -292,3 +292,127 @@ Before implementation, confirm:
   interpretation (Section 7)?
 - Is the motion documented in the client design brief before
   implementation began?
+
+---
+
+## 10. Worked Example — Devaki Dental v2 ("Clinical Illumination")
+
+This section is a complete worked example of the six-question derivation
+method applied to a real client, resulting in concrete, client-specific
+implementation choices. Use it as a template for how to think through
+the process — not as a result to copy.
+
+**Reference implementation**: `e:\clients-websites\devaki-dental-v2\`
+
+---
+
+### Client context
+
+Devaki Dental and Oral Health Clinic. Small private dental practice
+in Indiranagar, Bengaluru. Led by Dr. K. Jayanthi (BDS, MDS), 15+
+years. 4.9★ / 511 Google reviews. No existing website. Dark/charcoal
+editorial creative direction.
+
+---
+
+### Six-question derivation
+
+**Q1: What physical or conceptual characteristics define this business?**
+
+Dental precision instruments — explorers, mirrors, scalers. The dental
+mirror as a circular form with a long handle: the defining instrument
+of examination. Clinical light: a soft, focused beam directed at a
+specific surface. The tactile quality of carefully polished enamel.
+The patient journey: arriving with anxiety, passing through examination,
+leaving with clarity and restored confidence. White-coat expertise.
+Measured, calm professional environment.
+
+**Q2: What visual metaphors naturally emerge?**
+
+Light passing through a dental loupe. The sweep of a polisher across
+a surface — gradual illumination. The arc of a smile opening. The
+dental mirror reflecting a focused beam. The careful, deliberate
+opening of a clinical drawer.
+
+**Q3: Which metaphors can become motion?**
+
+→ **The sweep of focused clinical light across a surface** — content
+  and text emerge as if gradually illuminated by a precise directed light.
+
+→ The dental mirror as an animated avatar identity — the circular form
+  + handle of the instrument becomes the concierge widget avatar.
+
+→ Parallax as the sensation of depth in a clinical examination — the
+  hero image world is deeper than the content plane.
+
+**Q4: Which motion would reinforce the brand?**
+
+The sweep-reveal is calm, deliberate, and precise — consistent with the
+clinical character of the practice. It is slow and confident, not
+energetic or playful. It communicates that the practitioner takes their
+work seriously. The animation pacing matches the tone of the business.
+
+**Q5: Which motion improves storytelling or comprehension?**
+
+The wipe-reveal creates a reading arc: as the user enters the site, the
+headline gradually illuminates — visually mirroring the patient's journey
+from arriving in the dark (uncertainty, anxiety about dental care) to
+gaining clarity. The scrolling parallax amplifies this: as you move
+through the site, depth is gradually revealed, like a thorough
+examination.
+
+**Q6: What is decoration only, and should be rejected?**
+
+- ❌ Animated cartoon tooth — literal and juvenile; would embarrass the
+  client in front of their professional peers
+- ❌ Continuously spinning dental instruments — gimmicky, offers no
+  metaphorical connection
+- ❌ Pulsing rings everywhere — generic healthcare UX pattern, offers
+  nothing specific to this client
+- ❌ Sparkle/confetti on CTA — inappropriate for the clinical tone
+- ❌ Floating dental icons as ambient elements — decorative with no
+  relationship to the motion concept
+
+---
+
+### Resulting concept name
+
+**"Clinical Illumination"**
+
+*Content emerges via a diagonal wipe-sweep — like a precise clinical light
+gradually illuminating a surface, revealing what lies beneath. Calm,
+unhurried, expert.*
+
+---
+
+### Concept → Implementation choices
+
+| Concept element | Implementation |
+|----------------|----------------|
+| Light sweep revealing content | `clipPath: inset(0 100% 0 0)` → `inset(0 0% 0 0)` on headline lines, staggered |
+| Diagonal direction of sweep | `rotate(-25deg)` on the ambient light-line element |
+| Clinical depth / examination perspective | `useScroll` + `useTransform` hero parallax (18% travel) |
+| Scroll-as-examination-arc | `useTransform(scrollYProgress, [0, 0.6], [1, 0])` fade-out on hero content |
+| Dental mirror as avatar identity | SVG circle + line handle, branded `ConciergeAvatar` with 4 CSS states |
+| Atmospheric clinical illumination mark | Thin `1px` gradient line in hero at `-25deg`, `opacity: 0.35`, `scaleX` entrance |
+| Deliberate pacing | All easing: `[0.16, 1, 0.3, 1]` (slow in, natural settle) |
+| No continuous decoration | Zero looping JS animations; only CSS `breathe` on avatar idle state |
+
+---
+
+### Why this concept is specific to this client
+
+The "Clinical Illumination" wipe-sweep is derived specifically from the
+physical act of using a dental light + dental mirror during examination —
+the two primary instruments of the practice's core work.
+
+Applied to a motorcycle workshop with the same sweep direction and timing,
+it would make no semantic sense. Applied to a bakery, it would be
+decorative noise. Applied to a different dental clinic, it could be
+adapted — but the direction (diagonal not horizontal), the pacing
+(2s for the hero ambient line, not 0.5s), and the ambient-mark placement
+would need to differ based on that clinic's positioning and tone.
+
+This is what "specific to the client, not to the industry" means in
+practice.
+
