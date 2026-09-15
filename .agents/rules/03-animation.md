@@ -2,6 +2,10 @@
 trigger: always_on
 ---
 
+---
+trigger: always_on
+---
+
 ## Core Requirement: Fully Animated Website
 
 Every client website must be designed and implemented as a motion-rich experience.
@@ -263,6 +267,45 @@ Do not use the same animation style for every client.
 
 ---
 
+## Category-Specific Motion Concepts (Required)
+
+A motion personality (calm, energetic, luxurious, etc.) is necessary
+but not sufficient. Beyond tone, every project must derive a
+**category-specific motion concept**: a small set of motion ideas
+rooted in the physical or conceptual characteristics of the client's
+actual industry, so that the animation communicates what the business
+*is*, not just how it feels.
+
+> Animation should communicate the identity of the business.
+> Not: animation should simply make the page move.
+
+Before implementing animation on a client project:
+
+1. Derive the motion concept using the six-question method in
+   [`design-system/category-motion.md`](../../design-system/category-motion.md#3-motion-concept-derivation-required-before-implementation).
+2. Consult the industry motion bank in that same file for inspiration
+   — treat every entry there as a starting point, never as a template
+   to copy directly.
+3. Record the resulting motion concept in the client design brief
+   (Section 10, Motion Concept Derivation) before major implementation
+   begins.
+
+Two clients in the same industry must not receive the same execution.
+The category supplies semantic material; the client's brand,
+positioning, audience, and content determine the final result.
+
+Category-derived motion must remain sophisticated and metaphorical,
+never literal or gimmicky (cartoon objects, things flying across the
+screen, decorative spinning with no relationship to the business). See
+`design-system/category-motion.md` Section 7 for concrete good/bad
+examples.
+
+If a proposed animation would work identically on a direct competitor
+in the same industry, it has not been made specific enough — return to
+the six-question derivation and continue.
+
+---
+
 ## Animation Hierarchy
 
 Use multiple levels of motion:
@@ -296,6 +339,7 @@ Use multiple levels of motion:
    - distinctive movement language
    - signature transitions
    - unique interactions
+   - category-specific motion concept (see above)
 
 6. **Ambient motion**
    - subtle background movement
@@ -406,6 +450,10 @@ Before considering a website complete, ask:
 - Does the footer feel integrated into the motion system?
 - Do animations feel like one coherent language?
 - Is the motion appropriate for this particular client?
+- Does the website have a category-specific motion concept, or only a
+  generic motion personality?
+- Would this motion concept work unchanged on a direct competitor? If
+  so, it is not specific enough.
 - Does anything feel excessively animated?
 - Does anything feel mechanically animated?
 - Does anything look like a generic AI animation template?

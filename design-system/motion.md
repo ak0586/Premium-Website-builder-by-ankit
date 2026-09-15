@@ -52,6 +52,26 @@ These are examples, not fixed templates.
 
 ---
 
+## 2a. Category-Specific Starting Points
+
+Motion personality (Section 2) describes *tone*. It does not by
+itself make motion specific to the client's business.
+
+Before implementation, derive a category-specific motion concept using
+the six-question method and industry motion banks in
+[`design-system/category-motion.md`](./category-motion.md). That file
+is the canonical reference — do not duplicate its content here.
+
+Two rules carry over from that file into every project:
+
+- The industry motion banks are inspiration, never templates. Two
+  clients in the same industry must not receive the same execution.
+- Reject any candidate motion idea that is decoration with no
+  relationship to the business, even if it looks technically
+  impressive.
+
+---
+
 ## 3. Motion Hierarchy
 
 ### Micro
@@ -78,6 +98,7 @@ These are examples, not fixed templates.
 
 - hero motion
 - major visual transitions
+- category-specific motion concept (see Section 2a)
 
 ### Decorative
 
@@ -200,6 +221,10 @@ When the creative direction calls for an ultra-premium, cinematic digital experi
 - Connect window scroll to camera dolly and translation.
 - As the user scrolls, the hero object gracefully transitions into the adjacent section, morphing or revealing architectural interiors with natural daylight and acoustic calm.
 
+This is itself a category-specific motion concept (luxury healthcare)
+— treat Section 12 as a worked example of Section 2a, not as a default
+to reach for outside that category.
+
 ---
 
 ## 13. Final Motion Test
@@ -208,6 +233,7 @@ Ask:
 
 - Does motion communicate something?
 - Does it fit the brand?
+- Does it fit the client's specific industry, not just a generic tone?
 - Is it distracting?
 - Is it performant?
 - Is mobile appropriate?

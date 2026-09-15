@@ -161,7 +161,7 @@ Research
     ↓
 Client Design Brief
     ↓
-Creative Direction
+Creative Direction (incl. Category-Specific Motion Concept)
     ↓
 Information Architecture
     ↓
@@ -327,6 +327,7 @@ Never invent business information for SEO.
 Every website built using this system **MUST contain animations**. Static, lifeless pages are strictly unacceptable.
 
 Each client project must incorporate purposeful, signature motion tailored to its brand and industry:
+* **Category-Specific Motion Concept**: Before implementation, derive a motion concept rooted in the physical or conceptual characteristics of the client's actual industry — not a generic motion personality. Use the six-question method and industry motion bank in `design-system/category-motion.md`. Two clients in the same industry must not receive the same execution.
 * **Flagship Hero Motion**: An interactive 3D WebGL / Canvas scene, macro camera travel, or high-fidelity visual centerpiece that immediately commands attention.
 * **Micro-Interactions**: Responsive cursor parallax, physical reflection shifts, state transitions, and tactile hover feedback.
 * **Scroll-Driven Storytelling**: Spatial camera journeys, seamless section morphs, and progressive reveals.
@@ -340,9 +341,12 @@ Motion should support:
 * perceived quality
 * brand memorability
 
+A motion idea that is decoration with no relationship to the business must be rejected, even if it looks technically impressive. Avoid literal or gimmicky category interpretations (e.g. cartoon teeth, spinning wheels with no purpose) — see `design-system/category-motion.md` Section 7.
+
 Follow:
 `.agents/rules/03-animation.md`
 `design-system/motion.md`
+`design-system/category-motion.md`
 
 ---
 
@@ -519,6 +523,7 @@ Before completion, ask:
 * Is every visual effect justified?
 * Are dependencies necessary?
 * Is the content trustworthy?
+* Does the motion concept feel specific to this business, or would it work unchanged on a direct competitor?
 * Would I confidently show this to a paying client?
 
 If not, refine it.
@@ -541,6 +546,7 @@ Do not consider the website complete until:
 * production build succeeds
 * important functionality works
 * actual visual QA has been performed
+* the motion concept is category-specific and client-specific, not generic
 * final QA passes
 
 The objective is not simply to generate code.

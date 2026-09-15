@@ -91,7 +91,6 @@ What should the visitor feel?
 
 * [Feeling]
 * [Feeling]
-* [Feeling]
 
 What should the visitor believe after using the website?
 
@@ -378,6 +377,43 @@ Do not imply that stock imagery represents the real business.
 This project must use animation throughout the website.
 
 The website should feel alive and fluid from initial load through navigation, scrolling, interaction, content transitions, and footer.
+
+### Motion Concept Derivation
+
+Complete this before defining Motion Personality below. See
+`design-system/category-motion.md` for the full method and the
+industry motion bank. Do not skip to a generic motion personality
+without answering these six questions first.
+
+1. What physical or conceptual characteristics define this business?
+
+   [Answer]
+
+2. What visual metaphors naturally emerge from those characteristics?
+
+   [Answer]
+
+3. Which of those metaphors can become motion?
+
+   [Answer]
+
+4. Which motion would reinforce the brand?
+
+   [Answer]
+
+5. Which motion would improve storytelling or comprehension?
+
+   [Answer]
+
+6. Which candidate motion ideas were rejected as pure decoration, and why?
+
+   [Answer — this list should not be empty]
+
+### Resulting Motion Concept
+
+> [One or two sentences naming the specific, client-derived motion
+> concept — not a generic tone. Would this concept transfer unchanged
+> to a direct competitor in the same industry? It should not.]
 
 ### Motion Personality
 
@@ -785,6 +821,7 @@ General anti-patterns still apply:
 * repetitive card grids
 * giant gradient headlines
 * visual effects that compete with content
+* a motion personality with no category-specific motion concept behind it
 
 ---
 
@@ -820,6 +857,10 @@ Before implementation is considered complete, answer:
 
 [Yes / No]
 
+### Does the motion concept feel specific to this business, or would it work unchanged on a competitor?
+
+[Answer]
+
 ### What still feels generic?
 
 [Answer]
@@ -842,6 +883,7 @@ Before major implementation:
 * [ ] Color direction defined
 * [ ] Typography direction defined
 * [ ] Layout direction defined
+* [ ] Motion concept derived (Section 10, six-question method answered)
 * [ ] Motion direction defined
 * [ ] Information architecture defined
 * [ ] Technology selected

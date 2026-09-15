@@ -23,15 +23,16 @@ Always follow this sequence:
 5. Research relevant competitors
 6. Define the website's primary conversion goal
 7. Define creative direction
-8. Define information architecture
-9. Define design system
-10. Select appropriate technologies
-11. Implement
-12. Refine interactions and motion
-13. Test responsive behavior
-14. Perform visual QA
-15. Perform technical QA
-16. Perform final self-critique
+8. Derive the category-specific motion concept
+9. Define information architecture
+10. Define design system
+11. Select appropriate technologies
+12. Implement
+13. Refine interactions and motion
+14. Test responsive behavior
+15. Perform visual QA
+16. Perform technical QA
+17. Perform final self-critique
 
 Do not skip directly from a business description to coding.
 
@@ -97,9 +98,40 @@ Before coding, establish:
 - imagery direction
 - interaction personality
 - motion personality
+- category-specific motion concept
 - content hierarchy
 
 The design should have a clear reason for existing.
+
+## Category-Specific Motion Concept (Required)
+
+Motion personality alone (calm, energetic, luxurious, etc.) is not
+sufficient. Before implementation, derive a motion concept specific to
+the client's actual industry using the six-question method in
+`design-system/category-motion.md`:
+
+1. What physical or conceptual characteristics define this business?
+2. What visual metaphors naturally emerge from those characteristics?
+3. Which of those metaphors can become motion?
+4. Which motion would reinforce the brand?
+5. Which motion would improve storytelling or comprehension?
+6. Which motion would simply be decoration, and should therefore be rejected?
+
+Consult the industry motion bank in `design-system/category-motion.md`
+for inspiration only — never copy an entry directly. Two clients in
+the same industry must receive different executions, driven by their
+specific brand, positioning, audience, and content.
+
+Record the resulting motion concept in the client design brief
+(`docs/client-design-brief-template.md`, Section 10, Motion Concept
+Derivation) before major implementation begins.
+
+Reject candidate motion ideas that are decoration with no relationship
+to the business, even if they look technically impressive. Reject
+literal or gimmicky interpretations (cartoon objects, things flying
+across the screen, motion with no metaphorical connection to the
+client) — see `design-system/category-motion.md` Section 7 for
+examples.
 
 ## Design System
 
@@ -169,7 +201,9 @@ Do not introduce prominent Kyvronix branding unless explicitly required.
 
 Every new client website must be animated throughout the experience.
 
-During creative direction, define the project's motion personality before implementation.
+During creative direction, define the project's motion personality
+AND derive its category-specific motion concept (see above) before
+implementation.
 
 During implementation, establish motion across appropriate layers:
 
@@ -190,7 +224,7 @@ Do not use an identical animation recipe across projects.
 
 The client's industry, audience, brand personality, positioning, content, and visual direction should determine the motion language.
 
-Before completion, perform a dedicated motion review of the entire website and verify smoothness, consistency, responsiveness, performance, and reduced-motion behavior.
+Before completion, perform a dedicated motion review of the entire website and verify smoothness, consistency, responsiveness, performance, reduced-motion behavior, and that the motion concept is specific to this client rather than generic to its industry.
 
 ## Responsive Design
 
@@ -239,6 +273,7 @@ Before considering the project complete:
 - layout feels designed
 - mobile experience is polished
 - interactions feel natural
+- the motion concept is specific to this client's industry and brand, not a generic recipe
 - no obvious AI-generated visual patterns remain
 - content is factual
 - no secrets are exposed
