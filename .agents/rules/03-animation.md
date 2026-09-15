@@ -559,22 +559,20 @@ Use for:
 
 **Rule**: Any continuously looping animation MUST use CSS `@keyframes`, never a JavaScript `requestAnimationFrame` loop.
 
-### Supporting Tools
+### Supporting & 3D Tools
 
+- **Three.js**: **Mandatory for every website** — implement a bespoke, smooth, hardware-accelerated 3D scene directly tailored to the client's medical/business specialization (e.g. dermal cellular matrix for dermatology, enamel prism for dental, joint kinematics for orthopedics, aerodynamic flow for auto). **Every website must have a UNIQUE 3D effect.** Clean up resources on unmount (`geometry.dispose()`, `material.dispose()`, `renderer.dispose()`).
 - **Lenis**: Required for smooth momentum scroll on all projects. Install: `npm install lenis`. Load asynchronously after LCP.
 - **Lottie / Rive**: For complex vector animations (AI avatar if SVG keyframes are insufficient, icon animations, brand spot animations).
-- **Three.js / WebGL**: Exception path only — see `.agents/rules/01-premium-design.md` gating criteria.
 
 ### Technology Selection Rule
 
-Every project should default to this full stack:
+Every project must implement this full stack:
 ```
-Motion + GSAP + React Bits + CSS/SVG + Lenis
+Three.js + GSAP + Motion (Framer Motion) + React Bits + CSS/SVG + Lenis
 ```
 
-Only remove a technology if the project genuinely does not require it, and
-document the reason in the client design brief. Do not reduce the stack
-merely to minimize setup time.
+Do not skip Three.js or reduce the stack to a simple 2D template. Every client website requires a bespoke Three.js 3D moment and signature interactive components (3D cylinder carousel with bespoke SVGs, smooth before/after sliders, magnetic cursor).
 
 ---
 
@@ -582,25 +580,13 @@ merely to minimize setup time.
 
 Before considering a website complete, ask:
 
-- Does the website feel alive?
-- Is motion present throughout the experience?
-- Does the page load feel intentional?
-- Does navigation respond smoothly?
-- Do major sections transition naturally?
-- Do interactive elements provide feedback?
-- Does scrolling feel connected?
-- Does the footer feel integrated into the motion system?
-- Do animations feel like one coherent language?
-- Is the motion appropriate for this particular client?
-- Does the website have a category-specific motion concept, or only a
-  generic motion personality?
-- Would this motion concept work unchanged on a direct competitor? If
-  so, it is not specific enough.
-- Does this project need 3D, or does a 2D/parallax/blur technique achieve the
-  same premium feeling at a fraction of the performance cost?
-- Does anything feel excessively animated?
-- Does anything feel mechanically animated?
-- Does anything look like a generic AI animation template?
+- Does the website feel alive and premium?
+- Is a bespoke Three.js 3D animation implemented, and is it unique to this client's specialization?
+- Is Three.js properly disposed on unmount with zero memory leaks?
+- Are navigation buttons strictly on a single line (`white-space: nowrap`) with zero wrapping?
+- Is the Ushera AI concierge widget present with its compact avatar + name launcher?
+- Has redundant static consultation form clutter been removed in favor of Ushera?
+- Is motion present throughout the complete journey without lagging?
 - Does the website remain smooth (60fps) on mobile, specifically verified on
   a simulated throttled/low-end device profile (e.g. ₹8k–15k Android phone)?
 - Does reduced-motion behavior work correctly?

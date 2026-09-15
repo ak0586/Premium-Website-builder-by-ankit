@@ -207,6 +207,53 @@ receptionist service with RAG and appointment booking APIs):
 
 ---
 
+## 5a. Ushera AI Concierge Presentation & Site Integration Constraints
+
+### Launcher Button Presentation
+- The floating launcher must feature the lovely, brand-matched animated
+  avatar accompanied simply by the assistant's name **Ushera** (e.g.
+  `[Avatar] Ushera`), styled as a sleek, compact luxury pill with a subtle
+  metallic/theme border.
+- **Never use verbose action strings on the launcher** such as "Ask & Book
+  with Ushera" or "Chat with us now". The avatar and name are clean,
+  prestigious, and non-intrusive.
+
+### Navigation Bar Single-Line Constraint & Deduplication
+- **Strict single-line constraint**: Every navigation link, status pill, and
+  CTA button in the navigation bar **MUST remain strictly on a single line**
+  (`white-space: nowrap; flex-shrink: 0;`). Words must never wrap onto multiple
+  lines, even when labels contain multiple words (e.g., `Diagnostic Compass`,
+  `Hospital Standards`, `The Life Plus Hospital`, `Book Appointment`).
+- **No duplicate navigation links**: Do not include an "Ask Ushera & Book"
+  link inside the center navigation links when the navbar's primary right CTA
+  button already provides direct access to Ushera and appointment booking.
+  Center navigation is reserved for core thematic content sections.
+
+### Elimination of Redundant Static Consultation Forms
+- **No separate static consultation form**: Because the website features
+  the Ushera AI concierge (which handles patient questions, scheduling
+  intake, triage, pricing inquiries, and cancellation policies directly via
+  interactive chat and voice), **do NOT build a redundant, separate static
+  consultation form** or bulky two-column form layout.
+- The consultation / appointment section on the page must instead be an
+  elegant, conversion-focused direct contact card highlighting the clinic's
+  reception phone line, hospital address, clinic operating hours, and a direct
+  button triggering Ushera to book the consultation. This avoids redundant
+  data entry and reinforces the AI concierge as the smart booking engine.
+
+### Restraint with "Ask & Book" Buttons
+- **Do not clutter service cards**: Never place repetitive "Ask & Book with
+  Ushera" buttons on individual service cards, diagnostic cards, or carousel
+  slides. Card content should focus purely on clinical excellence, procedural
+  details, and bespoke SVG medical iconography.
+- Maintain four intentional, highly effective conversion touchpoints:
+  1. Persistent floating Ushera launcher pill (bottom right).
+  2. Hero section primary consultation CTA.
+  3. Header navigation right CTA button.
+  4. Appointment / contact section direct consultation button.
+
+---
+
 ## 6. Anti-Patterns to Avoid
 
 - **Generic blue chat bubble**: Do not use a generic off-the-shelf icon
@@ -247,5 +294,9 @@ Before declaring a client project complete, verify:
       buttons on mobile viewports?
 - [ ] Does the widget load asynchronously without degrading Core Web
       Vitals on low-end mobile devices?
+- [ ] Does the launcher button display the avatar + name "Ushera" only (no verbose text like "Ask & Book with Ushera")?
+- [ ] Are all navbar buttons strictly on a single line (`white-space: nowrap`), with no redundant "Ask Ushera & Book" in center links?
+- [ ] Has any redundant static consultation form been omitted from the page, letting Ushera serve as the primary booking and inquiry engine?
+- [ ] Are individual service cards and carousel slides free from repetitive "Ask & Book with Ushera" buttons?
 - [ ] Are all backend credentials stored strictly in environment
       variables?

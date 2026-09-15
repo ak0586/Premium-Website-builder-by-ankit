@@ -663,50 +663,44 @@ Do not combine unrelated animation styles without a reason.
 
 ---
 
-## 12. Cinematic 3D Motion & WebGL Storytelling (Opt-In Exception Path)
+## 12. Mandatory Three.js 3D Animation & Signature Interactive Effects (Core Standard)
 
-**IMPORTANT: This is an opt-in exception path, NOT the default baseline.**
+**Every website built using this system must feature a bespoke 3D animation implemented with Three.js, alongside signature interactive effects.**
 
-Apply 3D WebGL / Canvas storytelling **only** when the project satisfies
-the explicit gating criteria in `.agents/rules/01-premium-design.md`
-(Section 3a):
-1. The client's brand and industry genuinely call for it (e.g. high-end
-   cosmetic surgery, luxury dental studio, flagship architecture).
-2. The project has allocated budget for the specialized 3D modeling,
-   rigging, and cross-browser QA required.
-3. **Crucially: It must not compromise performance for the client's
-   actual audience on budget/mid-tier mobile devices.** If the target
-   audience predominantly browses on modest smartphones (e.g. ₹8k–15k
-   Android devices on mobile data), 3D must be rejected in favor of the
-   2D-first motion system (Section 2b).
+This 3D experience is not an optional exception; it is a core brand differentiator that elevates the client above ordinary template sites. It must be directly tailored to the client's medical, health, or business specialization.
 
-When those gating criteria are fully satisfied:
+### 1. Unique 3D Specialization Mapping (Never Repeat the Same Effect)
+Each website must possess a **unique, domain-specific 3D effect** directly connected to what the doctor or business actually does:
+- **Aesthetic Dermatology / Regenerative Skin**: 3D cellular matrix / dermal collagen lattice simulation with undulating organic depth, breathing node connections, and cursor interaction (e.g. `DermalMatrix3D.jsx` as in Dr. Chahal).
+- **Cosmetic / Restorative Dentistry**: 3D anatomical tooth prism, enamel refraction lattice, or precision alignment matrix with translucent light refraction.
+- **Orthopedics & Sports Medicine**: Kinetic joint kinematics, anatomical articulation simulation, and biomechanical stress vectors.
+- **Cardiology & Vascular Medicine**: Hemodynamic vascular pulse flow, kinetic blood cell stream with fluid viscosity.
+- **Automotive & Detailing**: Aerodynamic particle wind-tunnel flow lines and precision chassis grid lattice.
+- **Hair & Scalp Science**: 3D keratin follicular helix and micro-fiber tension dynamics.
+- **Architecture / Luxury Interiors**: Volumetric ambient light rays and spatial wireframe perspective transforms.
 
-### Macro-to-Micro Camera Journeys
-- Begin with an extreme macro close-up exploring physical surface textures, translucency, and natural microscopic details under soft studio lighting.
-- Pull back smoothly along a cinematic camera curve to reveal the full object in space.
-- Preserve generous negative space (e.g. 40% visual object, 60% typography and breathing room).
+### 2. Engineering & Performance Standards for Three.js
+- **Smoothness & Frame Rate**: Must run silky-smooth at 60fps+ on standard hardware using hardware acceleration.
+- **Responsive Geometry**: Canvas scales cleanly to container width and height (`renderer.setSize`, `camera.aspect = w / h`, `camera.updateProjectionMatrix()`).
+- **Interactive Mouse / Gyro Parallax**: Gentle tilt and camera translation mapped to normalized pointer coordinates (`(e.clientX / window.innerWidth) * 2 - 1`).
+- **Zero Memory Leaks**: Always clean up resources on component unmount:
+  ```javascript
+  return () => {
+    cancelAnimationFrame(animId)
+    geometry.dispose()
+    material.dispose()
+    renderer.dispose()
+    if (mountRef.current && renderer.domElement) {
+      mountRef.current.removeChild(renderer.domElement)
+    }
+  }
+  ```
+- **Mobile Graceful Degradation**: On mobile or low-power devices, reduce particle count or lattice resolution automatically while preserving visual artistry.
 
-### Physical Materials & Optical Realism
-- Avoid the artificial "glossy plastic CGI" look.
-- Use physically based materials: realistic subsurface light transmission, refractive index (IOR ~1.62 for enamel), subtle satin roughness, clearcoat moisture sheen, and natural microscopic imperfections.
-- Ambient particles should feel like microscopic dust illuminated by soft studio softboxes, never neon sci-fi streaks.
-
-### Interactive Medical & Diagnostic Moments
-- Mouse movement should subtly tilt camera perspective and shift specular highlights across physical surfaces.
-- Hover states should trigger whisper-thin, elegant diagnostic contours with refined metadata labels (e.g. *"01 / Precision"*, *"02 / Enamel Integrity"*), creating the feel of an advanced optical instrument rather than a video game.
-
-### Subtle Micro-Transformations
-- Represent restorative or functional transitions through microscopic changes in surface texture, translucency, and light.
-- Never display exaggerated decay, blood, or disturbing medical visuals.
-
-### Scroll-Bound Camera Continuity
-- Connect window scroll to camera dolly and translation.
-- As the user scrolls, the hero object gracefully transitions into the adjacent section, morphing or revealing architectural interiors with natural daylight and acoustic calm.
-
-This is itself a category-specific motion concept (luxury healthcare)
-— treat Section 12 as a worked example of Section 2a, not as a default
-to reach for outside that category.
+### 3. Other Signature Interactive Effects to Implement
+- **3D Cylinder Treatment Carousel**: Bespoke circular 3D carousel with drag, mouse wheel, and touchpad horizontal swipe navigation, featuring bespoke medical SVG icons on every card.
+- **Interactive Before & After Comparison Slider**: Hardware-accelerated pointer capture with CSS custom properties (`--slider-pos`) for 120fps responsive scrubbing.
+- **Magnetic Custom Cursor**: Custom cursor dot tracking interactive hover targets on desktop viewports.
 
 ---
 
@@ -714,17 +708,11 @@ to reach for outside that category.
 
 Ask:
 
-- Does motion communicate something?
-- Does it fit the brand?
-- Does it fit the client's specific industry, not just a generic tone?
-- **Does this need to be 3D, or would a 2D/parallax/blur technique
-  achieve the same premium feeling at a fraction of the performance
-  cost?**
-- **Have I checked this on a simulated low-end/throttled mobile device?**
-- Is it distracting?
-- Is it performant?
-- Is mobile appropriate?
-- Does reduced motion work?
-- Would removing it improve the interface?
-
-If removing it improves the interface, remove it.
+- Does the motion communicate something meaningful about the client's practice?
+- Does the Three.js 3D animation reflect this client's unique specialization (not a duplicate of another client)?
+- Is the 3D canvas lightweight, smooth (60fps+), and properly disposed on unmount?
+- Are the navigation buttons strictly on a single line (`white-space: nowrap`) with zero wrapping?
+- Is the AI concierge widget launcher compact and clean (avatar + name "Ushera" only)?
+- Are redundant static forms omitted in favor of direct Ushera concierge intake?
+- Is mobile performance silky-smooth on simulated mid-tier Android devices?
+- Does reduced motion (`prefers-reduced-motion`) degrade gracefully without breaking layout?

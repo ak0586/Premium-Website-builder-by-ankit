@@ -86,6 +86,9 @@ Alternatives include:
 - grids without card containers
 - image-led layouts
 
+### Button Restraint on Cards
+Do NOT add repetitive "Ask & Book with Ushera" or "Book Consultation" buttons to individual service cards, diagnostic cards, or carousel slides. Cards should focus on clinical explanation, procedural context, and bespoke medical SVG iconography. Reserve conversion buttons for the primary hero, header navbar, persistent floating Ushera launcher, and the appointment section.
+
 ---
 
 ## 7. Forms
@@ -105,6 +108,15 @@ Provide:
 - feedback
 - appropriate CTA hierarchy
 
+### Consultation Form Omission Rule (When Ushera is Present)
+When the website features the Ushera AI concierge assistant, **do NOT implement a redundant static consultation form** or cumbersome two-column form layout. Ushera directly handles patient questions, scheduling intake, procedure triage, and booking requests via interactive chat and voice. 
+
+Instead of a static form, the appointment/contact section should feature:
+- Direct clinic telephone line (`tel:`)
+- Verified physical facility / hospital address & directions
+- Operating days & hours
+- A prominent, elegant button triggering Ushera to guide the booking
+
 ---
 
 ## 8. Navigation
@@ -115,6 +127,15 @@ Navigation should remain:
 - accessible
 - predictable
 - responsive
+
+### Strict Single-Line Navigation Constraint
+- Every navigation link, status indicator badge, and call-to-action button in the navbar **must remain strictly on a single line** (`white-space: nowrap; flex-shrink: 0;`).
+- Multi-word labels (such as `Diagnostic Compass`, `Hospital Standards`, `The Life Plus Hospital`, `Book Appointment`) must never wrap text across multiple lines.
+- Container padding, flex gaps, and viewport media queries must ensure adequate breathing room without compressing elements into multi-line breaks.
+
+### Navigation Link Deduplication
+- Do not include an "Ask Ushera & Book" link in the center navigation list when the far-right CTA button already triggers booking or opens the Ushera concierge.
+- Center navigation is strictly reserved for primary content anchors (e.g. Rejuvenation, Diagnostic Compass, Standards, Doctor Profile).
 
 Mobile navigation should receive intentional design treatment.
 

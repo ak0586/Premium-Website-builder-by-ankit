@@ -497,19 +497,32 @@ Document motion patterns that do not fit this client's visual identity.
 
 ---
 
-## 10b. AI Concierge / Chat & Voice Widget (Required)
+## 10b. AI Concierge / Ushera Chatbot (Required)
 
 Every client website must include an on-brand AI concierge slot for interactive Q&A and appointment booking.
 See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
 
 - Enabled: Yes (Required by default)
-- Supported modes: Chat only / Voice only / Both (Default: Both)
-- Avatar style & visual personality: [Brand-derived description: colors, character, motion style]
+- Name: Ushera
+- Supported modes: Both Chat and Voice (Default)
+- Launcher presentation: Compact luxury pill with lovely avatar + name "Ushera" only (NO verbose "Ask & Book with Ushera" text)
+- Avatar style & visual personality: [Brand-derived description: colors, reticle/crest, motion style]
 - Avatar technology: [SVG animation / Lottie / Rive — avoid raw GIFs]
-- Primary booking flow: [Appointment booking / consultation request / callback request / service quote]
+- Primary booking flow: [Appointment booking / consultation request / callback request]
 - Integration mode: [Placeholder/Demo mode (scripted + fallback) / Connected AI Receptionist SaaS backend]
-- Fallback contact method: [WhatsApp link / Phone `tel:` link / Contact form]
-- Placement: [Bottom-right / Bottom-left anchor with explicit mobile CTA clearance]
+- Fallback contact method: [Reception Phone `tel:` link / WhatsApp link]
+- Placement: [Bottom-right anchor with explicit mobile CTA clearance]
+- Navigation Bar Rule: All navbar items strictly single-line (`white-space: nowrap`), no duplicate Ushera links in center nav
+- Consultation Form Rule: Redundant static consultation form omitted; Ushera serves as the interactive intake and scheduling concierge
+
+## 10c. Bespoke Three.js 3D Animation & Signature Interactive Effects (Required)
+
+Every client website must include a basic, smooth, unique 3D animation using Three.js tailored to the business specialization.
+
+- 3D Specialization Concept: [Unique domain-specific 3D concept mapped to client's exact specialization — e.g. dermal matrix for dermatology, enamel prism for dental, joint kinematics for orthopedics, aerodynamic flow for auto]
+- Three.js Implementation: [Geometry, particle system, lighting, camera parallax, 60fps optimization, resource disposal on unmount]
+- 3D Cylinder / Carousel: [Bespoke SVG icons for each service card, horizontal drag/swipe navigation]
+- Interactive Comparison Slider: [Hardware-accelerated before/after image slider with pointer capture]
 
 ---
 
@@ -517,27 +530,29 @@ See canonical specification in [design-system/chatbot-widget.md](file:///e:/clie
 
 ## Navigation
 
-[Description]
+- Strict single-line rule: Every link, status pill, and CTA button has `white-space: nowrap` and `flex-shrink: 0`. No wrapping.
+- Deduplication: Center links contain content anchors only. No duplicate "Ask Ushera & Book" in center links.
 
 ## Buttons
 
-[Description]
+- Primary hero CTA, navbar CTA, contact section CTA, and floating Ushera launcher.
+- Restraint: No repetitive "Ask & Book with Ushera" buttons on individual service cards.
 
 ## Cards
 
-[Description]
+- Information-first: Procedure descriptions, doctor's approach, bespoke medical SVG icons. No repetitive booking buttons.
 
 ## Forms
 
-[Description]
+- **Static consultation form omitted**: Replaced by direct reception phone, hospital address, hours, and direct Ushera booking trigger.
 
 ## Content Sections
 
 [Description]
 
-## AI Concierge Widget (Required)
+## AI Concierge Widget (Ushera)
 
-[Specification of launcher, chat/voice modal, animated vector avatar, and fallback booking path. See design-system/chatbot-widget.md]
+[Specification of launcher (avatar + "Ushera"), chat/voice modal, animated vector avatar, and fallback booking path. See design-system/chatbot-widget.md]
 
 ## Icons
 

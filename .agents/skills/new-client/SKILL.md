@@ -134,12 +134,16 @@ across the screen, motion with no metaphorical connection to the
 client) — see `design-system/category-motion.md` Section 7 for
 examples.
 
-## AI Concierge Widget (Required)
+## AI Concierge Widget & Chatbot Presentation Constraints (Required)
 
 Every client website must include an AI concierge slot for interactive Q&A and appointment booking.
 See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md):
 
 - Derive the assistant's visual identity, avatar character, and motion personality directly from the client's brand.
+- **Launcher button presentation**: Display a lovely, brand-matched animated avatar accompanied simply by the name **Ushera** (clean, compact luxury pill, e.g. `<ConciergeAvatar size={32} /> Ushera`). Never use verbose text like "Ask & Book with Ushera".
+- **Strict single-line navbar**: Every navigation button, status badge, and CTA in the navbar must remain strictly on a single line (`white-space: nowrap; flex-shrink: 0;`), never wrapping words across multiple lines. Never duplicate "Ask Ushera & Book" in center links when the right CTA button already triggers booking/Ushera.
+- **No redundant static consultation form**: Because Ushera handles inquiries, scheduling, pricing, and intake via interactive chat and voice, **do NOT build a separate static consultation form** or two-column form layout. The consultation section should instead feature direct clinic contact details (phone, hospital address, timings) and a direct button triggering Ushera.
+- **Button restraint on cards**: Do not sprinkle repetitive "Ask & Book with Ushera" buttons across individual service cards or carousel slides.
 - Use lightweight vector animation (SVG animation, Lottie, or Rive) for idle, listening, thinking, and speaking avatar states—never heavy raw GIFs.
 - Support dual modes: text chat and push-to-talk voice with live transcript.
 - Implement behind a clean, pluggable adapter interface: runs out of the box in placeholder/demo mode (with realistic scripted responses and direct WhatsApp/phone fallback links), ready to connect to any external AI Receptionist SaaS backend.
@@ -172,18 +176,16 @@ Reuse architecture and quality standards, not visual identity.
 
 Choose the simplest appropriate stack.
 
-Consider:
+Must include:
 
-- React
-- Next.js
-- Vite
-- Tailwind
-- shadcn/ui
-- Motion
-- GSAP
-- Lenis
+- React + Vite
+- Three.js (mandatory for bespoke, unique 3D animation mapped to client specialization)
+- Motion (Framer Motion)
+- GSAP + ScrollTrigger
+- Lenis (smooth momentum scroll)
+- CSS Modules / Vanilla CSS / Tailwind (as appropriate)
+- React Bits / Magic UI (selective signature moments)
 - Lottie / Rive (for vector bot avatars and lightweight spot animations)
-- Three.js / WebGL (exception path only, when gated and justified)
 
 Do not add libraries without a clear reason.
 
@@ -191,14 +193,15 @@ Do not add libraries without a clear reason.
 
 Build the highest-value areas first:
 
-1. Header/navigation
-2. Hero (default 2D-first craft + lightweight depth; 3D strictly gated)
-3. Primary conversion path
-4. Core services/content
-5. AI Concierge Widget (chat + voice, pluggable adapter, fallback booking path)
-6. Trust sections
-7. Supporting sections
-8. Footer
+1. Header/navigation (strictly single-line items, no wrapped text, clean CTA)
+2. Hero (mandatory bespoke Three.js 3D animation + editorial typography and photography)
+3. Primary conversion path (floating Ushera widget + hero CTA + navbar CTA)
+4. Interactive features (3D cylinder treatment carousel with bespoke SVGs, smooth before/after comparison slider)
+5. Core services/content (clean cards without repetitive buttons)
+6. Consultation & Contact (reception phone, hospital address, operating hours, direct Ushera trigger; NO redundant static form)
+7. Trust sections & proof
+8. Supporting sections
+9. Footer
 
 Do not spend excessive effort on decorative elements before the core experience is strong.
 

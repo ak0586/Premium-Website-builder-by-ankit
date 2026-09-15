@@ -97,7 +97,7 @@ Share quality standards and architecture patterns.
 
 Do not force visual sameness.
 
-### Creative Hierarchy: 2D-First Craft Default
+### Creative Hierarchy: Premium Craft with Mandatory Bespoke 3D Animation
 
 The baseline creative direction across all client projects follows this explicit hierarchy:
 
@@ -106,40 +106,39 @@ PREMIUM LOCAL WEBSITE
         │
    ─────┴─────
    │         │
-BEAUTIFUL 2D   MOTION
+BEAUTIFUL 2D   BESPOKE THREE.JS 3D
    │         │
- photography    scroll reveals
- illustrations  image movement
- typography     text animation
- SVG            hover effects
+ photography    specialization-mapped
+ illustrations  cellular / enamel / lattice
+ typography     smooth 60fps hardware-accel
+ SVG            interactive parallax
    │         │
    ─────┬─────
         │
-  LIGHTWEIGHT DEPTH
+  SIGNATURE INTERACTION
         │
-  parallax / perspective
-  layering / scale / blur
+  3D cylinder carousel with bespoke SVGs
+  interactive before/after image sliders
+  magnetic custom cursor & GSAP reveals
         │
         ▼
-  OPTIONAL 3D MOMENT
-  (only when justified)
+  USHERA AI CONCIERGE
+  (chat + voice, lovely avatar, direct booking)
 ```
 
 1. **Beautiful 2D Craft**: High-resolution photography, bespoke vector illustration, distinctive typography, and crisp SVG art.
-2. **Purposeful Motion**: Smooth entrance reveals, staggered content fades, image hover micro-interactions, and masked typographic transitions.
-3. **Lightweight Depth**: Simulated depth using multi-layer parallax, subtle perspective transforms, soft background blurs, and layered scale shifts without real z-axis or WebGL overhead.
-4. **Optional 3D/WebGL Moment**: Strictly an opt-in exception path gated by explicit justification; never the baseline requirement.
+2. **Mandatory Bespoke Three.js 3D Animation**: Every website must include a basic, smooth, high-performance 3D animation using Three.js (e.g. in the hero or key section), directly reflecting the doctor's or business's specialization. **Every website must have a UNIQUE 3D effect** (e.g. dermal matrix/collagen simulation for dermatology, enamel prism/alignment lattice for dentistry, joint kinematics for orthopedics, aerodynamic flow for automotive). Must maintain 60fps+, dispose resources cleanly on unmount, and degrade gracefully on low-end devices.
+3. **Signature Interactive Effects**: Bespoke 3D cylinder treatment carousels with drag/touchpad horizontal swipe and custom SVG icons per service; hardware-accelerated before/after image comparison sliders; custom magnetic cursor dot; coordinated GSAP ScrollTrigger timelines.
+4. **Ushera AI Concierge Presentation Constraints**:
+   - **Compact Launcher**: Lovely, brand-matched avatar with simply the name **Ushera** (clean luxury pill, no long redundant text like "Ask & Book with Ushera").
+   - **Single-Line Navbar Buttons**: Every navigation link, status pill, and CTA button in the navbar **must remain strictly on a single line** (`white-space: nowrap; flex-shrink: 0;`), never wrapping words across multiple lines.
+   - **Navbar Deduplication**: Never duplicate "Ask Ushera & Book" in the center navigation links when the far-right CTA button already triggers booking/Ushera.
+   - **No Redundant Static Consultation Form**: Because Ushera AI Concierge is present to answer questions, explain timings, and book appointments via chat & voice, **do NOT build a separate static consultation form**. The consultation section should instead feature direct reception contact details, clinic address, and a direct button triggering Ushera.
+   - **Button Restraint on Cards**: Do not clutter service cards or carousel slides with repetitive "Ask & Book" buttons.
 
 ### Low-End Device Performance is a Design Constraint
 
-Target clients are **small premium local businesses** (clinics, barbers, bike/auto repair, salons, cafes). Their real customers browse predominantly on **₹8k–15k budget Android phones** on variable mobile networks. A website that stutters or drops frames on budget hardware has failed the premium design standard.
-
-### 3D/WebGL Gating Criteria
-
-A 3D hero or WebGL scene is permitted only if:
-1. **Brand & Industry Justification**: The client's brand genuinely calls for physical/spatial visualization (e.g. luxury aesthetic clinic, high-end architecture). For a neighborhood clinic, barber, or bike-repair shop, the answer is almost always "no."
-2. **Engineering & QA Budget**: Sufficient budget for shader optimization, context cleanup, and cross-device testing.
-3. **Zero Low-End Performance Penalty**: Must maintain 60fps on budget Android devices or gracefully fallback to a high-fidelity 2D composition without degrading Core Web Vitals (LCP < 2.0s).
+Target clients are **small premium local businesses** (clinics, barbers, bike/auto repair, salons, cafes). Their real customers browse predominantly on **₹8k–15k budget Android phones** on variable mobile networks. The Three.js 3D scene must be optimized (controlled particle counts, efficient geometries, automatic frame skipping or lower-resolution fallback on low-power devices) so that the website maintains fluid 60fps performance without degrading Core Web Vitals (LCP < 2.0s).
 
 ---
 

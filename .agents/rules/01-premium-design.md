@@ -422,7 +422,7 @@ information.
 
 ---
 
-## 12. Conversion Design
+## 12. Conversion Design & Concierge Architecture
 
 Every important page should have an intentional conversion path.
 
@@ -446,6 +446,12 @@ Establish:
 - supporting actions
 
 The strongest CTA should receive appropriate visual priority.
+
+### Ushera AI Concierge & Consultation Form Rules
+- **No Redundant Static Consultation Form**: When the website features the Ushera AI concierge assistant (which answers inquiries, explains timings/policies, and captures bookings via chat & voice), **do NOT build a redundant static consultation form** or cumbersome two-column form layout. The consultation section should instead feature verified clinic contact details (phone, hospital address, timings) and a direct button triggering Ushera.
+- **Compact Launcher**: The floating launcher must feature the lovely, brand-matched avatar with simply the name **Ushera** (compact luxury pill), avoiding long strings like "Ask & Book with Ushera".
+- **Single-Line Navigation**: Every navigation button, link, and status badge in the navbar must remain strictly on a single line (`white-space: nowrap; flex-shrink: 0;`). Never wrap words onto multiple lines. Never duplicate "Ask Ushera & Book" in center navigation links when the far-right CTA button already triggers booking.
+- **Button Restraint**: Do not sprinkle repetitive "Ask & Book with Ushera" buttons across individual service cards or carousel slides.
 
 ---
 
@@ -480,7 +486,10 @@ Before considering a major page complete, evaluate:
 - Does anything look obviously AI-generated?
 - Does the design support the business goal?
 - Does the page feel refined rather than overloaded?
-- Does the design default to high-craft 2D with lightweight depth, or was 3D/WebGL uncritically reached for without passing the gating criteria?
+- Does the page feature a bespoke Three.js 3D animation directly mapped to the client's medical/business specialization, and is it unique compared to previous client builds?
+- Are all navigation links and buttons strictly on a single line (`white-space: nowrap`) with zero wrapping?
+- Is the floating Ushera launcher compact and clean (avatar + "Ushera" only)?
+- Is redundant static consultation form clutter eliminated in favor of direct Ushera booking?
 - Has performance been tested and verified on a simulated low-end/budget mobile device (₹8k–15k Android phone) under throttled network conditions?
 
 When in doubt:
