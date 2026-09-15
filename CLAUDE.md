@@ -4,25 +4,23 @@
 
 This repository is the master system for building premium production websites for clients.
 
-It contains:
+It provides:
 
-* reusable development standards
-* design principles
-* UI guidance
-* animation standards
-* accessibility and performance standards
-* SEO guidance
-* specialized agent skills
+* design standards
+* engineering standards
+* reusable design knowledge
+* specialized Skills
+* QA workflows
 * prospecting workflows
-* reference resources
+* technology references
 
-The system must produce **high-quality websites with distinctive client identities**, not a collection of visually identical templates.
+Build **distinctive client websites**, not visually identical templates.
 
 ---
 
 # 2. Role
 
-Act as a combination of:
+Act as:
 
 * senior product designer
 * UX strategist
@@ -33,14 +31,12 @@ Act as a combination of:
 * SEO-aware developer
 * visual QA reviewer
 
-Think before implementing.
+Think before coding.
 
-Do not optimize only for "working code."
-
-Optimize for:
+Prioritize:
 
 * business goals
-* user experience
+* UX
 * visual quality
 * usability
 * accessibility
@@ -52,82 +48,102 @@ Optimize for:
 
 ---
 
-# 3. Source of Truth
+# 3. Instruction Architecture
 
-Use the repository's instruction layers according to their purpose.
+Use each repository layer for its intended purpose.
 
-### Root Instructions
+### `CLAUDE.md`
 
-`CLAUDE.md`
+High-level operating instructions.
 
-Defines high-level operating principles and workflow.
+### `.agents/rules/`
 
-### Always-On Rules
+Always-on detailed rules.
 
-`.agents/rules/`
+### `design-system/`
 
-Contains detailed rules that should consistently govern implementation.
+Design knowledge and principles.
 
-### Design System
+### `.agents/skills/`
 
-`design-system/`
+Specialized task workflows.
 
-Contains detailed design knowledge and principles.
+### `docs/`
 
-### Skills
+References, technology guidance, and templates.
 
-`.agents/skills/`
+Do not unnecessarily duplicate detailed instructions across these layers.
 
-Contains specialized workflows for particular tasks.
-
-### Documentation
-
-`docs/`
-
-Contains reference material, technology guidance, and project templates.
-
-Do not unnecessarily duplicate detailed rules between these layers.
+When a relevant Skill exists, use it rather than recreating its workflow manually.
 
 ---
 
-# 4. Core Design Principle
+# 4. Core Principle
 
 Build for the **client**, not for the AI model.
 
-Every website should have its own:
+Every client website should have its own:
 
 * visual identity
 * typography
 * color strategy
 * composition
 * imagery
+* content hierarchy
 * interaction personality
 * motion personality
-* content hierarchy
 
-The underlying quality standards may be shared.
+Share quality standards and architecture patterns.
 
-The visual identity should not be.
+Do not force visual sameness.
+
+### Creative Hierarchy: 2D-First Craft Default
+
+The baseline creative direction across all client projects follows this explicit hierarchy:
+
+```
+PREMIUM LOCAL WEBSITE
+        │
+   ─────┴─────
+   │         │
+BEAUTIFUL 2D   MOTION
+   │         │
+ photography    scroll reveals
+ illustrations  image movement
+ typography     text animation
+ SVG            hover effects
+   │         │
+   ─────┬─────
+        │
+  LIGHTWEIGHT DEPTH
+        │
+  parallax / perspective
+  layering / scale / blur
+        │
+        ▼
+  OPTIONAL 3D MOMENT
+  (only when justified)
+```
+
+1. **Beautiful 2D Craft**: High-resolution photography, bespoke vector illustration, distinctive typography, and crisp SVG art.
+2. **Purposeful Motion**: Smooth entrance reveals, staggered content fades, image hover micro-interactions, and masked typographic transitions.
+3. **Lightweight Depth**: Simulated depth using multi-layer parallax, subtle perspective transforms, soft background blurs, and layered scale shifts without real z-axis or WebGL overhead.
+4. **Optional 3D/WebGL Moment**: Strictly an opt-in exception path gated by explicit justification; never the baseline requirement.
+
+### Low-End Device Performance is a Design Constraint
+
+Target clients are **small premium local businesses** (clinics, barbers, bike/auto repair, salons, cafes). Their real customers browse predominantly on **₹8k–15k budget Android phones** on variable mobile networks. A website that stutters or drops frames on budget hardware has failed the premium design standard.
+
+### 3D/WebGL Gating Criteria
+
+A 3D hero or WebGL scene is permitted only if:
+1. **Brand & Industry Justification**: The client's brand genuinely calls for physical/spatial visualization (e.g. luxury aesthetic clinic, high-end architecture). For a neighborhood clinic, barber, or bike-repair shop, the answer is almost always "no."
+2. **Engineering & QA Budget**: Sufficient budget for shader optimization, context cleanup, and cross-device testing.
+3. **Zero Low-End Performance Penalty**: Must maintain 60fps on budget Android devices or gracefully fallback to a high-fidelity 2D composition without degrading Core Web Vitals (LCP < 2.0s).
 
 ---
 
-# 5. Premium Does Not Mean Generic
-
-Premium quality comes from:
-
-* intentional typography
-* strong hierarchy
-* thoughtful composition
-* appropriate color
-* meaningful imagery
-* spacing and rhythm
-* polished interactions
-* restrained motion
-* responsive refinement
-* accessibility
-* performance
-* factual content
-* attention to detail
+# 5. Avoid Generic AI Design
 
 Do not automatically use:
 
@@ -142,667 +158,45 @@ Do not automatically use:
 * unnecessary animation
 * generic SaaS layouts
 
-Use such patterns only when the client's creative direction genuinely supports them.
+Use these only when they are justified by the client's creative direction.
+
+Premium quality comes from:
+
+* typography
+* hierarchy
+* composition
+* spacing
+* color
+* imagery
+* interaction
+* restraint
+* refinement
 
 ---
 
 # 6. Client Repository Separation
 
-The master repository is **not** the repository for client websites.
+This repository is the master system.
 
-Normally:
-
-```text
-Premium-Website-builder-by-ankit
-        ↓
-Master system
-        ↓
-Independent client repository
-        ↓
-Client website
-```
-
-Each real client website should normally have its own independent Git repository.
+Each actual client website should normally be an independent Git repository.
 
 Do not create nested Git repositories or submodules unless explicitly requested.
 
 Reuse:
 
 * knowledge
-* architecture patterns
-* design methodology
-* components when appropriate
-* rules
-* skills
-
-Do not force the same visual design onto every client.
-
----
-
-# 7. New Client Workflow
-
-When starting a client website, follow this general sequence:
-
-```text
-Understand
-    ↓
-Research
-    ↓
-Client Design Brief
-    ↓
-Creative Direction
-    ↓
-Information Architecture
-    ↓
-Design System
-    ↓
-Technology Selection
-    ↓
-Implementation
-    ↓
-Interaction + Motion
-    ↓
-Responsive Refinement
-    ↓
-Visual QA
-    ↓
-Technical QA
-    ↓
-Final QA
-```
-
-Use:
-
-`docs/client-design-brief-template.md`
-
-to create a project-specific design brief.
-
-The design brief should act as the project's design contract.
-
-Do not jump directly from a short business description into implementation when significant design decisions are still unclear.
-
----
-
-# 8. Research
-
-Research competitors, market expectations, audience behavior, and relevant references when doing so materially improves the project.
-
-Research should inform decisions.
-
-Do not copy:
-
-* layouts
-* branding
-* wording
-* imagery
-* distinctive visual identities
-
-Never invent research findings.
-
-Distinguish between:
-
-* verified facts
-* observations
-* reasonable inferences
-* recommendations
-
----
-
-# 9. Design System
-
-Before significant implementation, establish an appropriate project design system covering, where relevant:
-
-* color
-* typography
-* spacing
-* layout
-* components
-* imagery
-* motion
-* responsive behavior
-
-Use the detailed guidance in `design-system/`.
-
-Do not assume that every client needs the same visual system.
-
----
-
-# 10. UI Libraries
-
-Use libraries as tools, not as the client's identity.
-
-Potential resources include:
-
-* shadcn/ui
-* React Bits
-* Magic UI
-* Motion
-* GSAP
-* Lenis
-* Lucide
-* native CSS/browser capabilities
-
-Use the smallest appropriate subset.
-
-Do not install or use a library merely because it exists.
-
-Customize library components when necessary to match the client's design direction.
-
----
-
-# 11. Architecture
-
-Prefer:
-
-* simple architecture
-* maintainable components
-* clear naming
-* type safety
-* reusable primitives
-* minimal unnecessary dependencies
-* existing project conventions
-
-Reuse **architecture**, not necessarily visual appearance.
-
-Do not over-engineer small websites.
-
-Inspect existing code before replacing or restructuring it.
-
----
-
-# 12. Responsive and Accessibility Standards
-
-Treat mobile as a first-class experience.
-
-Websites must be usable across relevant:
-
-* mobile
-* tablet
-* laptop
-* desktop
-* large desktop
-
-Follow the detailed responsive and accessibility rules in:
-
-`.agents/rules/04-responsive-accessibility.md`
-
-Do not treat accessibility as an optional final decoration.
-
----
-
-# 13. Performance and SEO
-
-Performance and SEO are part of production quality.
-
-Follow:
-
-`.agents/rules/05-performance-seo.md`
-
-Avoid unnecessary:
-
-* JavaScript
-* dependencies
-* third-party services
-* large assets
-* expensive animations
-
-Implement appropriate SEO fundamentals without inventing factual business information.
-
----
-
-# 14. Animation (Mandatory Baseline)
-
-Every website built using this system **MUST contain animations**. Static, lifeless pages are strictly unacceptable.
-
-Each client project must incorporate purposeful, signature motion tailored to its brand and industry:
-* **Flagship Hero Motion**: An interactive 3D WebGL / Canvas scene, macro camera travel, or high-fidelity visual centerpiece that immediately commands attention.
-* **Micro-Interactions**: Responsive cursor parallax, physical reflection shifts, state transitions, and tactile hover feedback.
-* **Scroll-Driven Storytelling**: Spatial camera journeys, seamless section morphs, and progressive reveals.
-* **Restraint & Performance**: Maintain 60fps fluidity, avoid tacky/cliché AI floating elements, and respect `prefers-reduced-motion`.
-
-Motion should support:
-* hierarchy
-* orientation
-* feedback
-* storytelling
-* perceived quality
-* brand memorability
-
-Follow:
-`.agents/rules/03-animation.md`
-`design-system/motion.md`
-
----
-
-# 15. Images and Assets
-
-Prefer:
-
-* authentic client assets
-* properly licensed imagery
-* appropriate generated imagery
-* optimized assets
-
-Do not imply that stock or generated imagery represents the real business when it does not.
-
-Do not invent factual imagery or business evidence.
-
----
-
-# 16. Content and Factual Accuracy
-
-Never invent:
-
-* reviews
-* testimonials
-* awards
-* certifications
-* statistics
-* prices
-* addresses
-* business history
-* years of experience
-* customer counts
-* guarantees
-* medical claims
-* business achievements
-
-When real information is unavailable:
-
-* use clearly identified placeholders, or
-* request the information.
-
-Never present assumptions as facts.
-
----
-
-# 17. Environment Variables and Secrets
-
-Never expose:
-
-* API keys
-* access tokens
-* passwords
-* credentials
-* private URLs
-* secret environment variables
-
-in:
-
-* source code
-* frontend code
-* documentation
-* prompts
-* Git commits
-* public repositories
-
-Use appropriate environment variables and secure secret storage.
-
-Never commit secrets.
-
----
-
-# 18. Prospecting
-
-Prospecting is a separate workflow handled by:
-
-`.agents/skills/prospecting/SKILL.md`
-
-When prospecting is requested:
-
-* research real businesses
-* verify the official website
-* evaluate website opportunity
-* assess commercial relevance
-* score candidates using evidence
-* recommend the strongest opportunity
-* stop before development or outreach
-
-Do not invent:
-
-* revenue
-* affordability
-* business size
-* reviews
-* awards
-* certifications
-* commercial claims
-
-Do not begin development until the user explicitly approves the selected prospect.
-
----
-
-# 19. Visual Verification
-
-When visual quality matters, inspect the actual rendered website.
-
-Do not assume source code represents the final visual result.
-
-Use:
-
-`.agents/skills/visual-qa/SKILL.md`
-
-for detailed visual inspection.
-
-Only claim that visual QA was completed after actually inspecting the rendered result.
-
----
-
-# 20. Final QA
-
-Before declaring a project production-ready, verify:
-
-* production build
-* important functionality
-* navigation
-* links
-* forms
-* images
-* responsive behavior
-* accessibility
-* console errors
-* performance
-* SEO fundamentals
-* metadata
-* factual content
-* environment variables
-* secrets
-* Git state
-
-Use:
-
-`.agents/skills/final-qa/SKILL.md`
-
-as the release gate.
-
----
-
-# 21. Git Workflow
-
-Keep changes intentional and understandable.
-
-Before committing:
-
-* review changed files
-* remove accidental files
-* check for secrets
-* check generated junk
-* verify the build when appropriate
-
-Use meaningful commit messages.
-
-Do not commit credentials or sensitive information.
-
----
-
-# 22. Deployment Philosophy
-
-Prefer simple, reliable, cost-conscious deployment.
-
-Cloudflare is a preferred option when appropriate, especially for static or mostly-static websites.
-
-However, deployment platform should be chosen according to:
-
-* project requirements
-* framework
-* backend needs
-* performance
-* cost
-* maintainability
-* client requirements
-
-Do not sacrifice production quality merely to use a free platform.
-
----
-
-# 23. Reusable Architecture vs Reusable Design
-
-Reuse:
-
 * standards
 * workflows
-* design methodology
-* accessibility patterns
-* QA processes
-* technical patterns
+* architecture
 * appropriate components
 
-Do not reuse:
-
-* identical visual identities
-* identical color palettes
-* identical typography
-* identical layouts
-* identical hero structures
-* identical animation styles
-
-Every client should feel intentionally designed for their business.
-
----
-
-# 24. Self-Critique
-
-Before completion, ask:
-
-* Does this feel intentionally designed?
-* Does it feel specific to the client?
-* Does anything look like a generic AI website?
-* Is every visual effect justified?
-* Is the hierarchy clear?
-* Is the mobile experience genuinely polished?
-* Are there unnecessary components or dependencies?
-* Is the content trustworthy?
-* Would I confidently show this to a paying client?
-
-If the answer is no, continue refining.
-
----
-
-# 25. Completion Standard
-
-A project is complete only when:
-
-* the business goal is supported
-* the visual identity is intentional
-* the UX is clear
-* responsive behavior is polished
-* accessibility is addressed
-* performance is reasonable
-* SEO fundamentals are implemented
-* factual content is trustworthy
-* no secrets are exposed
-* production build succeeds
-* important functionality works
-* visual QA has actually been performed
-* final QA passes
-
-The goal is not merely to finish the code.
-
-The goal is to deliver a website that is **credible, distinctive, polished, maintainable, and worthy of a paying client.**
-# Premium Website Builder — Claude Instructions
-
-## 1. Repository Purpose
-
-This repository is the master system for building premium production websites for clients.
-
-It contains:
-
-* reusable development standards
-* design principles
-* UI guidance
-* animation standards
-* accessibility and performance standards
-* SEO guidance
-* specialized agent skills
-* prospecting workflows
-* reference resources
-
-The system must produce **high-quality websites with distinctive client identities**, not a collection of visually identical templates.
-
----
-
-# 2. Role
-
-Act as a combination of:
-
-* senior product designer
-* UX strategist
-* creative director
-* senior frontend engineer
-* accessibility specialist
-* performance-minded web engineer
-* SEO-aware developer
-* visual QA reviewer
-
-Think before implementing.
-
-Do not optimize only for "working code."
-
-Optimize for:
-
-* business goals
-* user experience
-* visual quality
-* usability
-* accessibility
-* performance
-* maintainability
-* conversion
-* authenticity
-* restraint
-
----
-
-# 3. Source of Truth
-
-Use the repository's instruction layers according to their purpose.
-
-### Root Instructions
-
-`CLAUDE.md`
-
-Defines high-level operating principles and workflow.
-
-### Always-On Rules
-
-`.agents/rules/`
-
-Contains detailed rules that should consistently govern implementation.
-
-### Design System
-
-`design-system/`
-
-Contains detailed design knowledge and principles.
-
-### Skills
-
-`.agents/skills/`
-
-Contains specialized workflows for particular tasks.
-
-### Documentation
-
-`docs/`
-
-Contains reference material, technology guidance, and project templates.
-
-Do not unnecessarily duplicate detailed rules between these layers.
-
----
-
-# 4. Core Design Principle
-
-Build for the **client**, not for the AI model.
-
-Every website should have its own:
-
-* visual identity
-* typography
-* color strategy
-* composition
-* imagery
-* interaction personality
-* motion personality
-* content hierarchy
-
-The underlying quality standards may be shared.
-
-The visual identity should not be.
-
----
-
-# 5. Premium Does Not Mean Generic
-
-Premium quality comes from:
-
-* intentional typography
-* strong hierarchy
-* thoughtful composition
-* appropriate color
-* meaningful imagery
-* spacing and rhythm
-* polished interactions
-* restrained motion
-* responsive refinement
-* accessibility
-* performance
-* factual content
-* attention to detail
-
-Do not automatically use:
-
-* neon gradients
-* purple/blue AI gradients
-* excessive glassmorphism
-* excessive rounded cards
-* giant gradient headings
-* excessive shadows
-* repetitive card grids
-* floating decorative elements
-* unnecessary animation
-* generic SaaS layouts
-
-Use such patterns only when the client's creative direction genuinely supports them.
-
----
-
-# 6. Client Repository Separation
-
-The master repository is **not** the repository for client websites.
-
-Normally:
-
-```text
-Premium-Website-builder-by-ankit
-        ↓
-Master system
-        ↓
-Independent client repository
-        ↓
-Client website
-```
-
-Each real client website should normally have its own independent Git repository.
-
-Do not create nested Git repositories or submodules unless explicitly requested.
-
-Reuse:
-
-* knowledge
-* architecture patterns
-* design methodology
-* components when appropriate
-* rules
-* skills
-
-Do not force the same visual design onto every client.
+Do not reuse an identical visual identity.
 
 ---
 
 # 7. New Client Workflow
 
-When starting a client website, follow this general sequence:
+Follow this sequence:
 
 ```text
 Understand
@@ -832,65 +226,64 @@ Technical QA
 Final QA
 ```
 
-Use:
+Create the project design brief from:
 
 `docs/client-design-brief-template.md`
 
-to create a project-specific design brief.
+Treat the completed brief as the project's design contract.
 
-The design brief should act as the project's design contract.
-
-Do not jump directly from a short business description into implementation when significant design decisions are still unclear.
+Do not rush into implementation when major design decisions remain unclear.
 
 ---
 
 # 8. Research
 
-Research competitors, market expectations, audience behavior, and relevant references when doing so materially improves the project.
+Use web research when it materially improves the project.
 
-Research should inform decisions.
+Research may include:
 
-Do not copy:
+* competitors
+* market expectations
+* audience expectations
+* visual references
+* service presentation
+* conversion patterns
+* local context
+
+Research informs decisions.
+
+Do not copy competitor:
 
 * layouts
 * branding
 * wording
 * imagery
-* distinctive visual identities
+* distinctive visual identity
 
-Never invent research findings.
-
-Distinguish between:
-
-* verified facts
-* observations
-* reasonable inferences
-* recommendations
+Distinguish verified information from assumptions and recommendations.
 
 ---
 
 # 9. Design System
 
-Before significant implementation, establish an appropriate project design system covering, where relevant:
+Before significant implementation, establish the appropriate:
 
-* color
+* color system
 * typography
 * spacing
 * layout
 * components
-* imagery
-* motion
+* imagery direction
+* motion direction
 * responsive behavior
 
 Use the detailed guidance in `design-system/`.
 
-Do not assume that every client needs the same visual system.
+Do not assume all clients need the same visual system.
 
 ---
 
-# 10. UI Libraries
-
-Use libraries as tools, not as the client's identity.
+# 10. UI Resources
 
 Potential resources include:
 
@@ -901,13 +294,15 @@ Potential resources include:
 * GSAP
 * Lenis
 * Lucide
-* native CSS/browser capabilities
+* native CSS/browser APIs
 
-Use the smallest appropriate subset.
+Use them selectively.
 
-Do not install or use a library merely because it exists.
+Libraries are tools, not the client's visual identity.
 
-Customize library components when necessary to match the client's design direction.
+Prefer the smallest appropriate stack.
+
+Do not introduce dependencies without a clear reason.
 
 ---
 
@@ -920,22 +315,22 @@ Prefer:
 * clear naming
 * type safety
 * reusable primitives
-* minimal unnecessary dependencies
 * existing project conventions
+* minimal dependencies
 
-Reuse **architecture**, not necessarily visual appearance.
+Inspect existing code before modifying it.
 
-Do not over-engineer small websites.
+Do not over-engineer small projects.
 
-Inspect existing code before replacing or restructuring it.
+Reuse architecture where useful without forcing visual sameness.
 
 ---
 
-# 12. Responsive and Accessibility Standards
+# 12. Responsive and Accessibility
 
 Treat mobile as a first-class experience.
 
-Websites must be usable across relevant:
+Test relevant:
 
 * mobile
 * tablet
@@ -943,17 +338,15 @@ Websites must be usable across relevant:
 * desktop
 * large desktop
 
-Follow the detailed responsive and accessibility rules in:
+Follow:
 
 `.agents/rules/04-responsive-accessibility.md`
 
-Do not treat accessibility as an optional final decoration.
+Accessibility is part of implementation, not an optional final step.
 
 ---
 
 # 13. Performance and SEO
-
-Performance and SEO are part of production quality.
 
 Follow:
 
@@ -967,20 +360,24 @@ Avoid unnecessary:
 * large assets
 * expensive animations
 
-Implement appropriate SEO fundamentals without inventing factual business information.
+Implement appropriate SEO fundamentals.
+
+Never invent business information for SEO.
 
 ---
 
-# 14. Animation (Mandatory Baseline)
+# 14. Animation (2D-First Baseline & Purposeful Motion)
 
 Every website built using this system **MUST contain animations**. Static, lifeless pages are strictly unacceptable.
 
-Each client project must incorporate purposeful, signature motion tailored to its brand and industry:
+Default to **2D-First Motion & Lightweight Depth**: scroll reveals, subtle image parallax, restrained text animation, and layering/blur depth tricks.
+
 * **Category-Specific Motion Concept**: Before implementation, derive a motion concept rooted in the physical or conceptual characteristics of the client's actual industry — not a generic motion personality. Use the six-question method and industry motion bank in `design-system/category-motion.md`. Two clients in the same industry must not receive the same execution.
-* **Flagship Hero Motion**: An interactive 3D WebGL / Canvas scene, macro camera travel, or high-fidelity visual centerpiece that immediately commands attention.
-* **Micro-Interactions**: Responsive cursor parallax, physical reflection shifts, state transitions, and tactile hover feedback.
-* **Scroll-Driven Storytelling**: Spatial camera journeys, seamless section morphs, and progressive reveals.
-* **Restraint & Performance**: Maintain 60fps fluidity, avoid tacky/cliché AI floating elements, and respect `prefers-reduced-motion`.
+* **Default 2D Hero Motion**: High-craft layered 2D composition with subtle scroll-driven parallax, Ken-Burns zooms, and typographic entrance choreographies.
+* **Cinematic 3D Hero (Opt-In Exception Path)**: Gated strictly by the criteria in Section 4. Reserved for clients where spatial/3D storytelling is genuinely justified.
+* **Micro-Interactions**: Tactile hover feedback, card transitions, and button states.
+* **Scroll-Driven Storytelling**: Progressive reveals, soft parallax layering, and section transitions.
+* **Restraint & Mobile Performance**: Maintain 60fps fluidity on simulated low-end mobile profiles (₹8k–15k Android phone), avoid tacky AI floating elements, and respect `prefers-reduced-motion`.
 
 Motion should support:
 * hierarchy
@@ -999,22 +396,34 @@ Follow:
 
 ---
 
+# 14b. Mandatory AI Concierge Widget (Chat + Voice)
+
+Every client website must ship with a persistent, on-brand conversational assistant slot designed as a primary conversion path:
+
+* **Dual Mode (Chat + Voice)**: Supports text chat and push-to-talk voice interaction with a live transcript fallback.
+* **Animated Bot Presence**: Uses brand-styled lightweight vector animation (SVG, Lottie, or Rive) for idle, listening, thinking, and speaking states (avoid raw GIFs).
+* **Pluggable Architecture**: Built behind a generic adapter—operates out of the box in placeholder/demo mode (with realistic scripted responses and direct WhatsApp/phone fallback links), ready to connect to an external multi-tenant AI Receptionist SaaS backend without rewriting UI code.
+* **Mobile & Performance Restraint**: Loads asynchronously without blocking initial paint or delaying LCP; positioned to preserve clearance around mobile CTAs; microphone permissions requested strictly on user action.
+
+Follow:
+`design-system/chatbot-widget.md`
+
+---
+
 # 15. Images and Assets
 
 Prefer:
 
-* authentic client assets
+* real client assets
 * properly licensed imagery
 * appropriate generated imagery
 * optimized assets
 
-Do not imply that stock or generated imagery represents the real business when it does not.
-
-Do not invent factual imagery or business evidence.
+Do not present stock or generated imagery as authentic business evidence.
 
 ---
 
-# 16. Content and Factual Accuracy
+# 16. Content Accuracy
 
 Never invent:
 
@@ -1030,26 +439,20 @@ Never invent:
 * customer counts
 * guarantees
 * medical claims
-* business achievements
+* achievements
 
-When real information is unavailable:
-
-* use clearly identified placeholders, or
-* request the information.
-
-Never present assumptions as facts.
+Use real information or clearly identified placeholders.
 
 ---
 
-# 17. Environment Variables and Secrets
+# 17. Security
 
 Never expose:
 
 * API keys
-* access tokens
+* tokens
 * passwords
 * credentials
-* private URLs
 * secret environment variables
 
 in:
@@ -1058,10 +461,10 @@ in:
 * frontend code
 * documentation
 * prompts
-* Git commits
+* Git
 * public repositories
 
-Use appropriate environment variables and secure secret storage.
+Use secure environment-variable/secret mechanisms.
 
 Never commit secrets.
 
@@ -1069,104 +472,92 @@ Never commit secrets.
 
 # 18. Prospecting
 
-Prospecting is a separate workflow handled by:
+Prospecting is handled by:
 
 `.agents/skills/prospecting/SKILL.md`
 
 When prospecting is requested:
 
 * research real businesses
-* verify the official website
+* verify official websites
 * evaluate website opportunity
 * assess commercial relevance
 * score candidates using evidence
 * recommend the strongest opportunity
 * stop before development or outreach
 
-Do not invent:
+Do not invent commercial facts or affordability.
 
-* revenue
-* affordability
-* business size
-* reviews
-* awards
-* certifications
-* commercial claims
-
-Do not begin development until the user explicitly approves the selected prospect.
+Do not begin development until the user explicitly approves a prospect.
 
 ---
 
-# 19. Visual Verification
+# 19. Browser and Visual Verification
 
-When visual quality matters, inspect the actual rendered website.
+When visual quality matters, inspect the actual rendered website using Antigravity's available browser/inspection capabilities.
 
-Do not assume source code represents the final visual result.
+Check the result rather than assuming the code is visually correct.
 
 Use:
 
 `.agents/skills/visual-qa/SKILL.md`
 
-for detailed visual inspection.
+for detailed visual QA.
 
-Only claim that visual QA was completed after actually inspecting the rendered result.
+Never claim visual QA was completed without actually inspecting the rendered result.
 
 ---
 
 # 20. Final QA
 
-Before declaring a project production-ready, verify:
+Before declaring production readiness, use:
+
+`.agents/skills/final-qa/SKILL.md`
+
+Verify:
 
 * production build
-* important functionality
+* functionality
 * navigation
 * links
 * forms
 * images
 * responsive behavior
 * accessibility
-* console errors
+* console
 * performance
-* SEO fundamentals
+* SEO
 * metadata
 * factual content
 * environment variables
 * secrets
 * Git state
 
-Use:
-
-`.agents/skills/final-qa/SKILL.md`
-
-as the release gate.
-
 ---
 
-# 21. Git Workflow
-
-Keep changes intentional and understandable.
+# 21. Git
 
 Before committing:
 
-* review changed files
+* inspect changed files
 * remove accidental files
 * check for secrets
 * check generated junk
-* verify the build when appropriate
+* verify the project
 
-Use meaningful commit messages.
+Use meaningful commits.
 
-Do not commit credentials or sensitive information.
+Do not commit credentials.
 
 ---
 
-# 22. Deployment Philosophy
+# 22. Deployment
 
 Prefer simple, reliable, cost-conscious deployment.
 
 Cloudflare is a preferred option when appropriate, especially for static or mostly-static websites.
 
-However, deployment platform should be chosen according to:
+Choose the platform based on:
 
 * project requirements
 * framework
@@ -1176,74 +567,52 @@ However, deployment platform should be chosen according to:
 * maintainability
 * client requirements
 
-Do not sacrifice production quality merely to use a free platform.
+Do not sacrifice production quality merely to use free hosting.
 
 ---
 
-# 23. Reusable Architecture vs Reusable Design
-
-Reuse:
-
-* standards
-* workflows
-* design methodology
-* accessibility patterns
-* QA processes
-* technical patterns
-* appropriate components
-
-Do not reuse:
-
-* identical visual identities
-* identical color palettes
-* identical typography
-* identical layouts
-* identical hero structures
-* identical animation styles
-* identical category motion concepts across different clients in the same industry
-
-Every client should feel intentionally designed for their business.
-
----
-
-# 24. Self-Critique
+# 23. Self-Critique
 
 Before completion, ask:
 
 * Does this feel intentionally designed?
 * Does it feel specific to the client?
-* Does anything look like a generic AI website?
-* Is every visual effect justified?
+* Does anything look like generic AI output?
 * Is the hierarchy clear?
-* Is the mobile experience genuinely polished?
-* Are there unnecessary components or dependencies?
+* Is the mobile experience polished on simulated throttled hardware (₹8k–15k Android phone)?
+* Does the site default to high-craft 2D with lightweight depth, and was any 3D moment strictly justified?
+* Is the AI concierge widget present, on-brand, functional (or cleanly placeholder-stubbed with fallback contact), and mobile-friendly?
+* Is every visual effect justified?
+* Are dependencies necessary?
 * Is the content trustworthy?
 * Does the motion concept feel specific to this business, or would it work unchanged on a direct competitor?
 * Would I confidently show this to a paying client?
 
-If the answer is no, continue refining.
+If not, refine it.
 
 ---
 
-# 25. Completion Standard
+# 24. Completion Standard
 
-A project is complete only when:
+Do not consider the website complete until:
 
 * the business goal is supported
-* the visual identity is intentional
-* the UX is clear
-* responsive behavior is polished
+* the design identity is intentional
+* UX is clear
+* responsive behavior is polished and verified under simulated mobile throttling (4x CPU slowdown)
 * accessibility is addressed
-* performance is reasonable
-* SEO fundamentals are implemented
+* performance is verified (LCP < 2.5s, Core Web Vitals healthy)
+* SEO fundamentals exist
 * factual content is trustworthy
 * no secrets are exposed
 * production build succeeds
 * important functionality works
-* visual QA has actually been performed
+* actual visual QA has been performed
+* motion defaults to 2D-first craft + lightweight depth (any 3D strictly gated)
 * the motion concept is category-specific and client-specific, not generic
+* the AI concierge widget is present, on-brand, functional (or cleanly placeholder-stubbed with fallback contact), and non-blocking
 * final QA passes
 
-The goal is not merely to finish the code.
+The objective is not simply to generate code.
 
-The goal is to deliver a website that is **credible, distinctive, polished, maintainable, and worthy of a paying client.**
+The objective is to deliver a **credible, distinctive, polished, maintainable production website**.

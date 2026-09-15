@@ -494,6 +494,23 @@ without answering these six questions first.
 ### Animation Intentionally Avoided
 
 Document motion patterns that do not fit this client's visual identity.
+
+---
+
+## 10b. AI Concierge / Chat & Voice Widget (Required)
+
+Every client website must include an on-brand AI concierge slot for interactive Q&A and appointment booking.
+See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+
+- Enabled: Yes (Required by default)
+- Supported modes: Chat only / Voice only / Both (Default: Both)
+- Avatar style & visual personality: [Brand-derived description: colors, character, motion style]
+- Avatar technology: [SVG animation / Lottie / Rive — avoid raw GIFs]
+- Primary booking flow: [Appointment booking / consultation request / callback request / service quote]
+- Integration mode: [Placeholder/Demo mode (scripted + fallback) / Connected AI Receptionist SaaS backend]
+- Fallback contact method: [WhatsApp link / Phone `tel:` link / Contact form]
+- Placement: [Bottom-right / Bottom-left anchor with explicit mobile CTA clearance]
+
 ---
 
 # 11. Component Strategy
@@ -517,6 +534,10 @@ Document motion patterns that do not fit this client's visual identity.
 ## Content Sections
 
 [Description]
+
+## AI Concierge Widget (Required)
+
+[Specification of launcher, chat/voice modal, animated vector avatar, and fallback booking path. See design-system/chatbot-widget.md]
 
 ## Icons
 
@@ -822,6 +843,8 @@ General anti-patterns still apply:
 * giant gradient headlines
 * visual effects that compete with content
 * a motion personality with no category-specific motion concept behind it
+* a generic, off-brand chatbot bubble with no relationship to the client's identity
+* an AI widget or unoptimized 3D/video asset that harms performance on budget mobile devices
 
 ---
 
@@ -861,6 +884,10 @@ Before implementation is considered complete, answer:
 
 [Answer]
 
+### Were the motion and 3D decisions actually justified for this client, or reached for by default?
+
+[Answer — confirm that 2D-first craft + lightweight depth was prioritized and any 3D moment met all gating criteria]
+
 ### What still feels generic?
 
 [Answer]
@@ -884,7 +911,9 @@ Before major implementation:
 * [ ] Typography direction defined
 * [ ] Layout direction defined
 * [ ] Motion concept derived (Section 10, six-question method answered)
+* [ ] Motion hierarchy verified (2D-first craft default; 3D gated and justified if used)
 * [ ] Motion direction defined
+* [ ] AI concierge widget defined (avatar, integration mode, fallback)
 * [ ] Information architecture defined
 * [ ] Technology selected
 * [ ] Factual content verified or clearly marked as placeholder

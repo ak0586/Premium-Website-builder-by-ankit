@@ -2,10 +2,6 @@
 trigger: always_on
 ---
 
----
-trigger: always_on
----
-
 ## Core Requirement: Fully Animated Website
 
 Every client website must be designed and implemented as a motion-rich experience.
@@ -419,6 +415,13 @@ The website should remain fully usable without decorative motion.
 
 Choose the smallest appropriate technology.
 
+> [!IMPORTANT]
+> **WebGL and 3D are the exception, not the default**: Three.js and WebGL
+> scenes are strictly opt-in exception technologies requiring explicit justification
+> (see [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md)).
+> For all standard client websites, CSS transitions/animations, small JS animation
+> libraries, and SVG/vector animation (Lottie / Rive) must be reached for first.
+
 Possible tools include:
 
 - CSS transitions
@@ -426,9 +429,11 @@ Possible tools include:
 - Motion
 - GSAP
 - Lenis
+- Lottie / Rive (for vector bot avatars and lightweight spot animations)
 - React Bits
 - Magic UI
 - native browser APIs
+- Three.js / WebGL (exception path only, when gated and justified)
 
 Do not use a library merely because it is available.
 
@@ -454,10 +459,13 @@ Before considering a website complete, ask:
   generic motion personality?
 - Would this motion concept work unchanged on a direct competitor? If
   so, it is not specific enough.
+- Does this project need 3D, or does a 2D/parallax/blur technique achieve the
+  same premium feeling at a fraction of the performance cost?
 - Does anything feel excessively animated?
 - Does anything feel mechanically animated?
 - Does anything look like a generic AI animation template?
-- Does the website remain smooth on mobile?
+- Does the website remain smooth (60fps) on mobile, specifically verified on
+  a simulated throttled/low-end device profile (e.g. ₹8k–15k Android phone)?
 - Does reduced-motion behavior work correctly?
 
 The final experience should feel:

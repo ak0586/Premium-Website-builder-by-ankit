@@ -22,17 +22,18 @@ Always follow this sequence:
 4. Research the market when useful
 5. Research relevant competitors
 6. Define the website's primary conversion goal
-7. Define creative direction
+7. Define creative direction (2D-first craft default; 3D strictly gated)
 8. Derive the category-specific motion concept
-9. Define information architecture
-10. Define design system
-11. Select appropriate technologies
-12. Implement
-13. Refine interactions and motion
-14. Test responsive behavior
-15. Perform visual QA
-16. Perform technical QA
-17. Perform final self-critique
+9. Define AI concierge widget (personality, avatar, integration mode)
+10. Define information architecture
+11. Define design system
+12. Select appropriate technologies
+13. Implement
+14. Refine interactions and motion
+15. Test responsive behavior (including throttled budget mobile hardware)
+16. Perform visual QA
+17. Perform technical QA
+18. Perform final self-critique
 
 Do not skip directly from a business description to coding.
 
@@ -133,6 +134,17 @@ across the screen, motion with no metaphorical connection to the
 client) — see `design-system/category-motion.md` Section 7 for
 examples.
 
+## AI Concierge Widget (Required)
+
+Every client website must include an AI concierge slot for interactive Q&A and appointment booking.
+See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md):
+
+- Derive the assistant's visual identity, avatar character, and motion personality directly from the client's brand.
+- Use lightweight vector animation (SVG animation, Lottie, or Rive) for idle, listening, thinking, and speaking avatar states—never heavy raw GIFs.
+- Support dual modes: text chat and push-to-talk voice with live transcript.
+- Implement behind a clean, pluggable adapter interface: runs out of the box in placeholder/demo mode (with realistic scripted responses and direct WhatsApp/phone fallback links), ready to connect to any external AI Receptionist SaaS backend.
+- Ensure the widget is asynchronously loaded, does not block FCP/LCP, and respects mobile CTA clearance.
+
 ## Design System
 
 Define appropriate:
@@ -170,6 +182,8 @@ Consider:
 - Motion
 - GSAP
 - Lenis
+- Lottie / Rive (for vector bot avatars and lightweight spot animations)
+- Three.js / WebGL (exception path only, when gated and justified)
 
 Do not add libraries without a clear reason.
 
@@ -178,12 +192,13 @@ Do not add libraries without a clear reason.
 Build the highest-value areas first:
 
 1. Header/navigation
-2. Hero
+2. Hero (default 2D-first craft + lightweight depth; 3D strictly gated)
 3. Primary conversion path
 4. Core services/content
-5. Trust sections
-6. Supporting sections
-7. Footer
+5. AI Concierge Widget (chat + voice, pluggable adapter, fallback booking path)
+6. Trust sections
+7. Supporting sections
+8. Footer
 
 Do not spend excessive effort on decorative elements before the core experience is strong.
 
@@ -201,6 +216,12 @@ Do not introduce prominent Kyvronix branding unless explicitly required.
 
 Every new client website must be animated throughout the experience.
 
+Follow the **2D-first craft default hierarchy**: beautiful 2D craft
+(photography, typography, vector illustration, SVG) $\to$ purposeful motion
+(scroll reveals, image movement, text animations, hover feedback) $\to$
+lightweight depth (parallax, perspective, layering, scale, blur). WebGL and
+3D scenes are strictly opt-in exception moments requiring explicit justification.
+
 During creative direction, define the project's motion personality
 AND derive its category-specific motion concept (see above) before
 implementation.
@@ -209,7 +230,7 @@ During implementation, establish motion across appropriate layers:
 
 - page load
 - navigation
-- hero
+- hero (default 2D-first craft + lightweight depth)
 - content sections
 - images
 - components
@@ -224,11 +245,11 @@ Do not use an identical animation recipe across projects.
 
 The client's industry, audience, brand personality, positioning, content, and visual direction should determine the motion language.
 
-Before completion, perform a dedicated motion review of the entire website and verify smoothness, consistency, responsiveness, performance, reduced-motion behavior, and that the motion concept is specific to this client rather than generic to its industry.
+Before completion, perform a dedicated motion review of the entire website and verify smoothness (60fps on throttled budget mobile hardware), consistency, responsiveness, performance, reduced-motion behavior, and that the motion concept is specific to this client rather than generic to its industry.
 
 ## Responsive Design
 
-Treat mobile as a first-class experience.
+Treat mobile as a first-class experience. Low-end device performance (budget ₹8k–15k Android phones) is a foundational design constraint.
 
 Verify:
 
@@ -241,6 +262,7 @@ Verify:
 - section composition
 - horizontal overflow
 - touch interactions
+- AI concierge widget clearance (never obstructing primary CTA or nav)
 
 Do not merely shrink the desktop layout.
 
@@ -260,7 +282,7 @@ Respect reduced-motion preferences.
 
 ## Verification
 
-When possible, inspect the rendered website.
+When possible, inspect the rendered website across multiple simulated device profiles.
 
 Do not claim visual QA was completed without actually inspecting the result.
 
@@ -271,9 +293,11 @@ Before considering the project complete:
 - visual hierarchy is strong
 - typography feels intentional
 - layout feels designed
-- mobile experience is polished
+- mobile experience is polished on simulated throttled device (4x CPU slowdown)
 - interactions feel natural
+- motion defaults to 2D-first craft + lightweight depth (3D strictly justified if used)
 - the motion concept is specific to this client's industry and brand, not a generic recipe
+- AI concierge widget is present, on-brand, functional (or cleanly placeholder-stubbed with fallback contact), and does not regress Core Web Vitals
 - no obvious AI-generated visual patterns remain
 - content is factual
 - no secrets are exposed

@@ -5,13 +5,14 @@ production-quality UI.
 
 The standard toolkit includes:
 
+- CSS / native browser capabilities (transitions, transforms, animations)
 - shadcn/ui
 - Motion
 - React Bits
 - Magic UI
-- Three.js / WebGL / PBR shaders (for cinematic 3D, anatomical, & luxury spatial experiences)
+- Lottie / Rive (preferred for lightweight vector animation and the AI concierge avatar)
 - Lucide icons where appropriate
-- CSS/native browser capabilities
+- Three.js / WebGL / PBR shaders (strictly for the optional, justified 3D flagship moment only)
 
 These are tools, not visual identities.
 

@@ -198,9 +198,44 @@ Prefer native HTML behavior where possible.
 
 ---
 
-## 15. Cinematic 3D Hero & Interactive Canvas Components
+## 15. Default Lightweight 2D Hero Pattern (Standard)
 
-For experiences incorporating WebGL / Three.js 3D environments:
+For most premium local businesses, the standard hero is a lightweight,
+motion-rich 2D composition that delivers immediate visual elegance and
+instant performance across mobile devices.
+
+### Architecture: Layered 2D Craft + Motion
+- **Foreground Editorial Layer (`z-20`)**: High-contrast, beautifully set
+  typography, trust badges/status pills, and the primary conversion CTA in a
+  semantic DOM container.
+- **Atmospheric & Depth Layer (`z-10`)**: Subtle radial gradients, soft blurred
+  accent shapes, or delicate SVG vector lines creating visual depth without
+  a real z-axis or WebGL overhead.
+- **Imagery Layer (`z-0`)**: High-resolution photography, bespoke vector
+  illustrations, or layered composite cutouts. Foreground and background image
+  elements move at subtly different scroll rates (parallax) or respond with
+  gentle scale-on-hover / Ken-Burns transitions.
+- **Motion Polish**: CSS transforms (`translate3d`, `scale`) and `opacity`
+  for entrance reveals; subtle hover feedback on interactive triggers; smooth
+  scroll-driven parallax via `requestAnimationFrame` or passive scroll listeners.
+
+### Benefits
+- Zero WebGL startup latency or GPU lockup on budget mobile devices.
+- Rock-solid Core Web Vitals (LCP < 2.0s even on throttled 4G connections).
+- Seamless responsiveness and full cross-browser rendering fidelity.
+
+---
+
+## 16. Cinematic 3D Hero & Interactive Canvas (Opt-In Exception Path)
+
+> [!IMPORTANT]
+> **Exception Path Only**: 3D/WebGL heroes are reserved strictly for rare
+> projects where the industry genuinely demands it (e.g. luxury aesthetic
+> medicine, bespoke industrial design), budget permits thorough engineering/QA,
+> and low-end mobile performance will NOT be compromised. See gating criteria
+> in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md).
+
+For projects meeting these gating criteria:
 
 ### Architecture: Canvas + Layered DOM
 - The WebGL Canvas should sit as a responsive, hardware-accelerated viewport layer (`z-0`).
@@ -214,12 +249,37 @@ For experiences incorporating WebGL / Three.js 3D environments:
 ### Responsive Rigs & Mobile Optimization
 - Adjust camera field of view and translation vectors responsively.
 - On desktop, enable interactive raycasting (cursor parallax and diagnostic contour highlights).
-- On mobile devices, utilize simplified camera paths and touch-damped orbital shifts to maintain a silky 60fps frame rate.
+- On mobile devices, utilize simplified camera paths and touch-damped orbital shifts to maintain a silky 60fps frame rate, or gracefully fallback to a high-fidelity 2D still if GPU budget is tight.
 - Always clean up WebGL contexts, geometries, materials, and animation frame IDs on unmount.
 
 ---
 
-## 16. Final Component Review
+## 17. AI Concierge Widget (Chat + Voice)
+
+Every client website includes a persistent, on-brand conversational assistant
+slot designed as a core conversion path for Q&A and appointment booking.
+
+### Canonical Specification
+For full architecture, pluggable adapter design, animated vector avatar
+specifications, accessibility, and fallback rules, refer to the canonical
+document:
+
+- [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md)
+
+### Key Component Traits
+- **Dual Mode**: Seamlessly supports text chat and push-to-talk voice with live
+  transcript fallback.
+- **Animated Bot Presence**: Uses brand-styled lightweight vector animation (SVG,
+  Lottie, or Rive) for idle/listening/thinking/speaking states—never heavy GIFs.
+- **Pluggable Architecture**: Works out of the box in placeholder/demo mode
+  (mock responses, direct WhatsApp/phone fallback) and adapts cleanly to any
+  live AI receptionist SaaS backend without refactoring UI code.
+- **Mobile Clearance**: Placed unobtrusively in a bottom viewport anchor, carefully
+  spaced so it never obstructs primary CTA buttons or nav bars.
+
+---
+
+## 18. Final Component Review
 
 Ask:
 
@@ -231,3 +291,5 @@ Ask:
 - Is it unnecessarily complex?
 - Does it fit the client's design system?
 - Is the component library influencing the design too much?
+- Does the hero default to high-craft 2D, or has 3D been explicitly justified?
+- Is the AI Concierge widget present, on-brand, performant, and mobile-friendly?

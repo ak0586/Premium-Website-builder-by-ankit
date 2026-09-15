@@ -14,6 +14,33 @@ Do not prioritize visual effects at the expense of responsiveness.
 
 ---
 
+## 1b. Performance Budget & Low-End Mobile Devices
+
+Target clients are small local businesses whose customers browse primarily on
+budget mobile devices (₹8k–15k Android phones) over variable mobile networks.
+
+- **Core Web Vitals Under Throttling**: Target LCP < 2.5s, INP < 200ms, and CLS < 0.1
+  under simulated mobile network and CPU throttling, not just on an unrestricted
+  desktop dev machine.
+- **High-Risk Technologies**:
+  - **WebGL / 3D Canvas**: High GPU memory footprint, initial execution latency,
+    and thermal throttling. Allowed strictly as an opt-in exception path (see gating
+    criteria in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md)).
+    When used, it must be lazy-loaded with an instant 2D fallback.
+  - **Raw GIFs & Uncompressed Media**: GIFs have massive byte weights and lack hardware
+    acceleration. Replace with lightweight vector animation (SVG, Lottie, Rive) or
+    modern, compressed formats (WebP, AVIF).
+- **AI Concierge Widget Asynchronous Loading**:
+  - The AI concierge widget (chat + voice) must load asynchronously and deferred
+    after primary content paint.
+  - It must never block initial render, delay Largest Contentful Paint (LCP), or
+    introduce layout shifts (CLS). See canonical specification in
+    [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+- **Mandatory Mobile Verification**: Test every project using simulated mobile
+  device profiles with 4x CPU throttling and throttled network before final sign-off.
+
+---
+
 ## 2. Dependencies
 
 Avoid unnecessary dependencies.
@@ -185,5 +212,8 @@ Before completion:
 - verify important routes
 - verify images
 - verify sitemap/robots where applicable
+- test on simulated low-end/throttled mobile device profile (4x CPU slowdown, Fast 3G/Slow 4G)
+- verify AI concierge widget loads asynchronously and does not regress Core Web Vitals (LCP, INP, CLS)
+- confirm any 3D/WebGL moment passes gating criteria and does not stutter on budget mobile hardware
 
 Do not claim performance or SEO results that were not actually tested.

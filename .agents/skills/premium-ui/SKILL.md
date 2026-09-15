@@ -210,9 +210,21 @@ Consider:
 
 before creating another card.
 
-## Luxury Healthcare & 3D Spatial Experiences
+## AI Concierge Widget Design (Bespoke Standard)
 
-When designing flagship healthcare, aesthetic, or dental experiences:
+The conversational assistant widget must feel like an organic, custom-built extension of the client's visual identity:
+
+- **Bespoke Styling**: Typography, container framing, color tokens, and border radii must match the client's design system. It must never look like an off-the-shelf, generic third-party chat plugin.
+- **Brand-Derived Avatar**: The animated avatar (idle, listening, thinking, speaking) must visually embody the specific business character (e.g. clinical precision for a healthcare studio, artisanal warmth for a barber or cafe). Use lightweight vector animation (SVG, Lottie, or Rive).
+- **Mobile Harmony**: Positioned and sized to preserve generous clearance around mobile primary CTAs and navigation controls.
+- See canonical reference: [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+
+## Luxury Healthcare & 3D Spatial Experiences (Opt-In Exception Path)
+
+> [!NOTE]
+> Applies strictly when the 3D gating criteria in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md) are met. For standard clients, prioritize 2D craft and lightweight depth.
+
+When designing flagship healthcare, aesthetic, or architectural experiences that justify real-time 3D:
 
 ### The "Luxury Healthcare" Standard
 - Elevate the environment to feel like a high-end luxury wellness brand rather than a sterile clinic.
@@ -240,6 +252,8 @@ Ask:
 - Is the layout memorable?
 - Are decorative elements necessary?
 - Does the UI feel specific to this client?
+- Does the AI concierge widget feel bespoke to the client rather than an off-the-shelf plugin?
+- Does the experience default to high-craft 2D with lightweight depth, or was 3D uncritically reached for?
 - Does anything look like a default AI template?
 
 Fix weak areas before adding more decoration.

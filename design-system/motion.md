@@ -72,6 +72,56 @@ Two rules carry over from that file into every project:
 
 ---
 
+## 2b. 2D-First Motion & Lightweight Depth (Default)
+
+The default motion architecture for all client websites is **2D-first,
+motion-rich, and built on lightweight depth**.
+
+For small local businesses (clinics, barbers, auto/bike workshops,
+salons, cafes, neighborhood services), the majority of visitors browse
+on budget or mid-tier mobile devices (e.g. ₹8k–15k Android phones on
+variable mobile networks). The motion design must deliver immediate,
+silky fluidity without heavy canvas calculations or battery drain.
+
+### Core Techniques
+
+- **Scroll-Triggered Reveals**: Content sections and cards enter smoothly
+  via coordinated opacity and subtle translation (e.g. `translate-y: 16–28px`
+  over 0.6–0.8s with `power2.out` or natural cubic-bezier easing).
+  Stagger child items predictably (`0.08–0.12s` intervals).
+- **Image Movement & Parallax**:
+  - Subtle scroll parallax on photography (e.g. 5–15% relative travel
+    between image and container).
+  - Gentle scale-on-hover on service cards and gallery items (e.g.
+    `scale: 1.02–1.03` with smooth ease-out).
+  - Slow, restrained Ken-Burns zoom on prominent hero imagery.
+- **Restrained Text Animation**:
+  - Word or line reveals using CSS clip-path or overflow masks.
+  - Subtle tracking or weight transitions on key headlines.
+  - Never animate every paragraph or character continuously; text motion
+    must serve hierarchy, not compete with reading.
+- **Micro-Interactions & Tactile Feedback**:
+  - Buttons, cards, links, and icons provide instant visual feedback on
+    hover, focus, and press (`scale: 0.98`, subtle border glow, or
+    lightweight background shift).
+- **Lightweight Depth Tricks (Faking the Z-Axis)**:
+  - Multi-layer composition: foreground text, mid-ground photography,
+    and background atmospheric elements moving at subtly offset scroll
+    speeds.
+  - Soft blurred ambient shapes and luminous gradients behind cards
+    instead of expensive volumetric lighting.
+  - Intentional drop shadows, border highlights, and scale contrasts to
+    establish spatial depth without a WebGL canvas.
+- **Technology Priority**:
+  - Prioritize CSS transforms, CSS opacity, native browser animations,
+    and lightweight SVG animations.
+  - Use small, purpose-built vector animation tools (such as Lottie or
+    Rive) for avatars, indicators, and micro-animations.
+  - Reserve canvas and WebGL strictly for the rare, justified exception
+    described in Section 12.
+
+---
+
 ## 3. Motion Hierarchy
 
 ### Micro
@@ -87,6 +137,7 @@ Two rules carry over from that file into every project:
 - dialogs
 - accordions
 - tabs
+- AI concierge widget (see [`design-system/chatbot-widget.md`](./chatbot-widget.md))
 
 ### Section
 
@@ -195,9 +246,24 @@ Do not combine unrelated animation styles without a reason.
 
 ---
 
-## 12. Cinematic 3D Motion & WebGL Storytelling
+## 12. Cinematic 3D Motion & WebGL Storytelling (Opt-In Exception Path)
 
-When the creative direction calls for an ultra-premium, cinematic digital experience (such as luxury healthcare, high-end cosmetic practices, or architectural brands):
+**IMPORTANT: This is an opt-in exception path, NOT the default baseline.**
+
+Apply 3D WebGL / Canvas storytelling **only** when the project satisfies
+the explicit gating criteria in `.agents/rules/01-premium-design.md`
+(Section 3a):
+1. The client's brand and industry genuinely call for it (e.g. high-end
+   cosmetic surgery, luxury dental studio, flagship architecture).
+2. The project has allocated budget for the specialized 3D modeling,
+   rigging, and cross-browser QA required.
+3. **Crucially: It must not compromise performance for the client's
+   actual audience on budget/mid-tier mobile devices.** If the target
+   audience predominantly browses on modest smartphones (e.g. ₹8k–15k
+   Android devices on mobile data), 3D must be rejected in favor of the
+   2D-first motion system (Section 2b).
+
+When those gating criteria are fully satisfied:
 
 ### Macro-to-Micro Camera Journeys
 - Begin with an extreme macro close-up exploring physical surface textures, translucency, and natural microscopic details under soft studio lighting.
@@ -234,6 +300,10 @@ Ask:
 - Does motion communicate something?
 - Does it fit the brand?
 - Does it fit the client's specific industry, not just a generic tone?
+- **Does this need to be 3D, or would a 2D/parallax/blur technique
+  achieve the same premium feeling at a fraction of the performance
+  cost?**
+- **Have I checked this on a simulated low-end/throttled mobile device?**
 - Is it distracting?
 - Is it performant?
 - Is mobile appropriate?

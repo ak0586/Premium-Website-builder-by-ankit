@@ -97,6 +97,50 @@ Share quality standards and architecture patterns.
 
 Do not force visual sameness.
 
+### Creative Hierarchy: 2D-First Craft Default
+
+The baseline creative direction across all client projects follows this explicit hierarchy:
+
+```
+PREMIUM LOCAL WEBSITE
+        │
+   ─────┴─────
+   │         │
+BEAUTIFUL 2D   MOTION
+   │         │
+ photography    scroll reveals
+ illustrations  image movement
+ typography     text animation
+ SVG            hover effects
+   │         │
+   ─────┬─────
+        │
+  LIGHTWEIGHT DEPTH
+        │
+  parallax / perspective
+  layering / scale / blur
+        │
+        ▼
+  OPTIONAL 3D MOMENT
+  (only when justified)
+```
+
+1. **Beautiful 2D Craft**: High-resolution photography, bespoke vector illustration, distinctive typography, and crisp SVG art.
+2. **Purposeful Motion**: Smooth entrance reveals, staggered content fades, image hover micro-interactions, and masked typographic transitions.
+3. **Lightweight Depth**: Simulated depth using multi-layer parallax, subtle perspective transforms, soft background blurs, and layered scale shifts without real z-axis or WebGL overhead.
+4. **Optional 3D/WebGL Moment**: Strictly an opt-in exception path gated by explicit justification; never the baseline requirement.
+
+### Low-End Device Performance is a Design Constraint
+
+Target clients are **small premium local businesses** (clinics, barbers, bike/auto repair, salons, cafes). Their real customers browse predominantly on **₹8k–15k budget Android phones** on variable mobile networks. A website that stutters or drops frames on budget hardware has failed the premium design standard.
+
+### 3D/WebGL Gating Criteria
+
+A 3D hero or WebGL scene is permitted only if:
+1. **Brand & Industry Justification**: The client's brand genuinely calls for physical/spatial visualization (e.g. luxury aesthetic clinic, high-end architecture). For a neighborhood clinic, barber, or bike-repair shop, the answer is almost always "no."
+2. **Engineering & QA Budget**: Sufficient budget for shader optimization, context cleanup, and cross-device testing.
+3. **Zero Low-End Performance Penalty**: Must maintain 60fps on budget Android devices or gracefully fallback to a high-fidelity 2D composition without degrading Core Web Vitals (LCP < 2.0s).
+
 ---
 
 # 5. Avoid Generic AI Design
@@ -322,16 +366,18 @@ Never invent business information for SEO.
 
 ---
 
-# 14. Animation (Mandatory Baseline)
+# 14. Animation (2D-First Baseline & Purposeful Motion)
 
 Every website built using this system **MUST contain animations**. Static, lifeless pages are strictly unacceptable.
 
-Each client project must incorporate purposeful, signature motion tailored to its brand and industry:
+Default to **2D-First Motion & Lightweight Depth**: scroll reveals, subtle image parallax, restrained text animation, and layering/blur depth tricks.
+
 * **Category-Specific Motion Concept**: Before implementation, derive a motion concept rooted in the physical or conceptual characteristics of the client's actual industry — not a generic motion personality. Use the six-question method and industry motion bank in `design-system/category-motion.md`. Two clients in the same industry must not receive the same execution.
-* **Flagship Hero Motion**: An interactive 3D WebGL / Canvas scene, macro camera travel, or high-fidelity visual centerpiece that immediately commands attention.
-* **Micro-Interactions**: Responsive cursor parallax, physical reflection shifts, state transitions, and tactile hover feedback.
-* **Scroll-Driven Storytelling**: Spatial camera journeys, seamless section morphs, and progressive reveals.
-* **Restraint & Performance**: Maintain 60fps fluidity, avoid tacky/cliché AI floating elements, and respect `prefers-reduced-motion`.
+* **Default 2D Hero Motion**: High-craft layered 2D composition with subtle scroll-driven parallax, Ken-Burns zooms, and typographic entrance choreographies.
+* **Cinematic 3D Hero (Opt-In Exception Path)**: Gated strictly by the criteria in Section 4. Reserved for clients where spatial/3D storytelling is genuinely justified.
+* **Micro-Interactions**: Tactile hover feedback, card transitions, and button states.
+* **Scroll-Driven Storytelling**: Progressive reveals, soft parallax layering, and section transitions.
+* **Restraint & Mobile Performance**: Maintain 60fps fluidity on simulated low-end mobile profiles (₹8k–15k Android phone), avoid tacky AI floating elements, and respect `prefers-reduced-motion`.
 
 Motion should support:
 * hierarchy
@@ -347,6 +393,20 @@ Follow:
 `.agents/rules/03-animation.md`
 `design-system/motion.md`
 `design-system/category-motion.md`
+
+---
+
+# 14b. Mandatory AI Concierge Widget (Chat + Voice)
+
+Every client website must ship with a persistent, on-brand conversational assistant slot designed as a primary conversion path:
+
+* **Dual Mode (Chat + Voice)**: Supports text chat and push-to-talk voice interaction with a live transcript fallback.
+* **Animated Bot Presence**: Uses brand-styled lightweight vector animation (SVG, Lottie, or Rive) for idle, listening, thinking, and speaking states (avoid raw GIFs).
+* **Pluggable Architecture**: Built behind a generic adapter—operates out of the box in placeholder/demo mode (with realistic scripted responses and direct WhatsApp/phone fallback links), ready to connect to an external multi-tenant AI Receptionist SaaS backend without rewriting UI code.
+* **Mobile & Performance Restraint**: Loads asynchronously without blocking initial paint or delaying LCP; positioned to preserve clearance around mobile CTAs; microphone permissions requested strictly on user action.
+
+Follow:
+`design-system/chatbot-widget.md`
 
 ---
 
@@ -519,7 +579,9 @@ Before completion, ask:
 * Does it feel specific to the client?
 * Does anything look like generic AI output?
 * Is the hierarchy clear?
-* Is the mobile experience polished?
+* Is the mobile experience polished on simulated throttled hardware (₹8k–15k Android phone)?
+* Does the site default to high-craft 2D with lightweight depth, and was any 3D moment strictly justified?
+* Is the AI concierge widget present, on-brand, functional (or cleanly placeholder-stubbed with fallback contact), and mobile-friendly?
 * Is every visual effect justified?
 * Are dependencies necessary?
 * Is the content trustworthy?
@@ -537,16 +599,18 @@ Do not consider the website complete until:
 * the business goal is supported
 * the design identity is intentional
 * UX is clear
-* responsive behavior is polished
+* responsive behavior is polished and verified under simulated mobile throttling (4x CPU slowdown)
 * accessibility is addressed
-* performance is reasonable
+* performance is verified (LCP < 2.5s, Core Web Vitals healthy)
 * SEO fundamentals exist
 * factual content is trustworthy
 * no secrets are exposed
 * production build succeeds
 * important functionality works
 * actual visual QA has been performed
+* motion defaults to 2D-first craft + lightweight depth (any 3D strictly gated)
 * the motion concept is category-specific and client-specific, not generic
+* the AI concierge widget is present, on-brand, functional (or cleanly placeholder-stubbed with fallback contact), and non-blocking
 * final QA passes
 
 The objective is not simply to generate code.

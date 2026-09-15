@@ -33,6 +33,12 @@ Verify:
 - external links are correct
 - images load
 - mobile navigation works
+- AI concierge widget is present and functional:
+  - opens and closes cleanly without trapping keyboard focus
+  - chat mode sends and receives messages (or delivers clear placeholder demo responses)
+  - voice push-to-talk requests microphone permission ONLY on user action
+  - voice mode degrades gracefully with live transcript / text fallback if permission is denied or unsupported
+  - fallback contact triggers (WhatsApp link, phone `tel:` link, contact form) work reliably
 
 ## Console
 
@@ -108,6 +114,9 @@ Check:
 - font loading
 - layout shifts
 - third-party scripts
+- throttled mobile device check: verify 60fps and responsiveness under simulated mobile throttling (4x CPU slowdown, Fast 3G/Slow 4G)
+- AI concierge widget loads asynchronously and does not regress Core Web Vitals (LCP < 2.5s, INP < 200ms, CLS < 0.1)
+- 2D-first craft default verified; any 3D/WebGL moment passes gating criteria and does not stutter on budget mobile hardware
 
 Prefer simple solutions.
 
@@ -151,6 +160,7 @@ Verify:
 Do not declare production readiness if there is:
 
 - broken functionality
+- missing or non-functional AI concierge widget
 - major responsive issue
 - major accessibility issue
 - exposed secret
@@ -158,6 +168,7 @@ Do not declare production readiness if there is:
 - obvious console error
 - failed production build
 - severe visual defect
+- unoptimized 3D or animation stuttering on budget mobile hardware
 
 Fix first.
 

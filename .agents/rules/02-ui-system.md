@@ -26,6 +26,7 @@ Preferred resources include:
 - GSAP
 - Lenis
 - Lucide icons
+- Lottie / Rive (for lightweight vector animation & bot avatars)
 
 Use only what is appropriate.
 
@@ -199,7 +200,20 @@ collapsed from desktop.
 
 ---
 
-## 11. Icons
+## 11. AI Concierge Widget (Chat + Voice)
+
+Every client website must provide a conversational assistant slot (chat + push-to-talk voice):
+
+- Functions as a primary conversion path for real-time Q&A and appointment booking.
+- Incorporates a brand-styled vector animated avatar (idle, listening, thinking, speaking states) using SVG, Lottie, or Rive—never heavy GIFs.
+- Pluggable architecture: functions immediately in standalone placeholder/demo mode (with scripted mock responses and WhatsApp/tel direct fallback) or connects seamlessly to an external multi-tenant AI Receptionist SaaS backend.
+- Non-blocking, asynchronously loaded, keyboard-accessible, and strictly clear of mobile CTA and navigation touch targets.
+
+See canonical reference: [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+
+---
+
+## 12. Icons
 
 Use icons consistently.
 
@@ -211,7 +225,7 @@ Icon-only controls must have accessible names.
 
 ---
 
-## 12. Visual Consistency
+## 13. Visual Consistency
 
 Maintain consistency in:
 
@@ -230,7 +244,7 @@ Different content types may require different compositions.
 
 ---
 
-## 13. Design Tokens
+## 14. Design Tokens
 
 Whenever possible, centralize:
 
@@ -252,7 +266,7 @@ for the project's deeper design system.
 
 ---
 
-## 14. Premium Quality
+## 15. Premium Quality
 
 Premium UI should come from:
 
@@ -275,7 +289,7 @@ Do not attempt to make a UI premium simply by adding:
 
 ---
 
-## 15. Final UI Review
+## 16. Final UI Review
 
 Before completing a major UI component, ask:
 
@@ -288,3 +302,4 @@ Before completing a major UI component, ask:
 - Are states handled?
 - Is the component unnecessarily complex?
 - Can anything be simplified?
+- Is the AI concierge widget present, on-brand, performant, and mobile-friendly without blocking primary CTAs?

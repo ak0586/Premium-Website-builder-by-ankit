@@ -62,7 +62,14 @@ identity of client websites.
 
 ---
 
-## Cinematic 3D & Luxury Healthcare Benchmarks
+## Cinematic 3D & Luxury Healthcare Benchmarks (Optional-Tier Exception Path)
+
+> [!NOTE]
+> **Optional-Tier References Only**: These benchmarks apply exclusively to the
+> rare project that meets the explicit gating criteria in
+> [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md).
+> They are NOT general baseline inspiration for every client. The standard default
+> for local businesses is 2D-first craft + lightweight depth.
 
 Award-winning benchmarks (Awwwards / CSS Design Awards inspirations such as LAVA Dental, Dentalux, Ori Scan, Apple Product Films):
 

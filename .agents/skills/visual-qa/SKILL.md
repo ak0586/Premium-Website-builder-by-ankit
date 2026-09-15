@@ -72,6 +72,12 @@ Check:
 - inputs
 - icons
 - states
+- AI concierge widget:
+  - presence and visibility across all viewports
+  - bespoke, on-brand styling and avatar (not a generic third-party chat bubble)
+  - modal and conversation panel render cleanly without clipping
+  - zero visual clash or physical overlap with primary CTAs, sticky mobile contact bars, or nav controls
+  - readable typography and clear interactive states (chat input, voice push-to-talk, close button)
 
 ### Imagery
 
@@ -94,6 +100,7 @@ Check:
 - transitions
 - excessive movement
 - layout shifts
+- 2D-first craft default (any 3D moment is justified and performs smoothly)
 
 Motion should feel intentional and natural.
 
@@ -110,6 +117,7 @@ Check for:
 - incorrect image crops
 - excessive spacing
 - touch-target problems
+- AI concierge widget positioning (adequate clearance from mobile sticky CTA bars)
 
 ## Priority
 

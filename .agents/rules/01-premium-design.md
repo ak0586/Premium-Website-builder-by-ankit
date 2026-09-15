@@ -108,6 +108,65 @@ Maintain consistency in quality, not visual sameness.
 
 ---
 
+## 3b. Creative Hierarchy: 2D-First, Motion-Rich, Lightweight Depth (Default)
+
+The standard creative direction across all client projects follows this explicit hierarchy:
+
+```
+PREMIUM LOCAL WEBSITE
+        │
+   ─────┴─────
+   │         │
+BEAUTIFUL 2D   MOTION
+   │         │
+ photography    scroll reveals
+ illustrations  image movement
+ typography     text animation
+ SVG            hover effects
+   │         │
+   ─────┬─────
+        │
+  LIGHTWEIGHT DEPTH
+        │
+  parallax / perspective
+  layering / scale / blur
+        │
+        ▼
+  OPTIONAL 3D MOMENT
+  (only when justified)
+```
+
+1. **Beautiful 2D Craft (Base)**: High-resolution photography, bespoke vector illustrations, distinctive typography, and crisp SVG artwork.
+2. **Purposeful Motion (Life)**: Smooth entrance reveals, staggered content fades, image hover micro-interactions, and masked typographic transitions.
+3. **Lightweight Depth (Dimension)**: Simulated depth using multi-layer parallax, subtle perspective transforms, soft background blurs, and layered scale shifts—achieving a three-dimensional illusion without GPU overhead.
+4. **Optional 3D/WebGL Moment (Exception)**: A dedicated 3D scene or WebGL canvas is never the baseline; it is an opt-in flagship feature reserved strictly for clients who earn it.
+
+---
+
+## 3c. Low-End Device Performance is a Design Constraint
+
+Low-end mobile performance is a foundational design constraint, not an afterthought or performance footnote.
+
+Target clients are **small premium local businesses** (clinics, barbers, bike/auto repair, salons, cafes). Their customers browse predominantly on **₹8,000–₹15,000 budget Android devices** over fluctuating mobile cellular connections.
+
+- A homepage that stutters, locks up, or drops below 60fps on a budget mobile device has **failed** the premium design standard—even if it renders gorgeously on an M3 MacBook Pro.
+- Heavy WebGL runtimes, uncompressed canvas shaders, or massive asset bundles directly destroy conversion rates for local businesses.
+- Design for the customer's actual hardware reality first.
+
+---
+
+## 3d. Gating Criteria for 3D/WebGL (Opt-In Exception Path)
+
+A 3D hero or WebGL experience may **only** be introduced if it passes all three gating criteria:
+
+1. **Brand & Industry Justification**: The client's brand and service genuinely demand physical/spatial visualization (e.g. high-end cosmetic dentistry, luxury architectural studios, precision biomedical engineering). For a local barber, neighborhood clinic, or bike-repair shop, the answer is almost always "no."
+2. **Engineering & QA Budget**: The project budget and timeline permit dedicated shader optimization, camera rig calibration, WebGL context cleanup, and multi-viewport QA.
+3. **Zero Low-End Performance Penalty**: The 3D implementation must either maintain silky 60fps on budget Android devices or gracefully fallback to a high-fidelity 2D still/SVG composition without blocking page paint or degrading Core Web Vitals (LCP < 2.0s).
+
+If any of these conditions are not met, stay strictly with the 2D-first + lightweight depth architecture.
+
+---
+
 ## 4. Avoid Generic AI Aesthetics
 
 Do not automatically use:
@@ -421,6 +480,8 @@ Before considering a major page complete, evaluate:
 - Does anything look obviously AI-generated?
 - Does the design support the business goal?
 - Does the page feel refined rather than overloaded?
+- Does the design default to high-craft 2D with lightweight depth, or was 3D/WebGL uncritically reached for without passing the gating criteria?
+- Has performance been tested and verified on a simulated low-end/budget mobile device (₹8k–15k Android phone) under throttled network conditions?
 
 When in doubt:
 
