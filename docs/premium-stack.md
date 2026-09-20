@@ -94,5 +94,5 @@ Premium quality comes from:
 
 A website does NOT become premium merely by installing animation libraries.
 
-**The canon reference implementation** demonstrating every required technique
-is `e:\clients-websites\devaki-dental-v2\`.
+See [`design-system/motion.md`](../design-system/motion.md) for the
+copy-reference code patterns implementing every required technique.

@@ -254,7 +254,7 @@ instant performance across mobile devices.
 > projects where the industry genuinely demands it (e.g. luxury aesthetic
 > medicine, bespoke industrial design), budget permits thorough engineering/QA,
 > and low-end mobile performance will NOT be compromised. See gating criteria
-> in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md).
+> in [.agents/rules/01-premium-design.md](../.agents/rules/01-premium-design.md).
 
 For projects meeting these gating criteria:
 
@@ -285,7 +285,7 @@ For full architecture, pluggable adapter design, animated vector avatar
 specifications, accessibility, and fallback rules, refer to the canonical
 document:
 
-- [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md)
+- [design-system/chatbot-widget.md](chatbot-widget.md)
 
 ### Key Component Traits
 - **Dual Mode**: Seamlessly supports text chat and push-to-talk voice with live

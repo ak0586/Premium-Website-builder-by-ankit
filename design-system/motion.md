@@ -128,9 +128,11 @@ This section documents the concrete, copy-reference animation patterns
 that every client website must implement. These are the minimum craft
 standards — the floor, not the ceiling.
 
-The **canonical reference implementation** for all patterns below is
-`e:\clients-websites\devaki-dental-v2\`. Read the source of any
-component you are building to see the exact pattern in full context.
+These patterns are self-contained: each one below includes full
+copy-reference code. If your working environment also has a completed
+client project available locally, reviewing it directly can add real-
+world context — but it is not required, and no specific project path
+should be assumed to exist across machines.
 
 ---
 

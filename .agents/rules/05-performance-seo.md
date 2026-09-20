@@ -25,7 +25,7 @@ budget mobile devices (₹8k–15k Android phones) over variable mobile networks
 - **High-Risk Technologies**:
   - **WebGL / 3D Canvas**: High GPU memory footprint, initial execution latency,
     and thermal throttling. Allowed strictly as an opt-in exception path (see gating
-    criteria in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md)).
+    criteria in [.agents/rules/01-premium-design.md](01-premium-design.md)).
     When used, it must be lazy-loaded with an instant 2D fallback.
   - **Raw GIFs & Uncompressed Media**: GIFs have massive byte weights and lack hardware
     acceleration. Replace with lightweight vector animation (SVG, Lottie, Rive) or
@@ -35,7 +35,7 @@ budget mobile devices (₹8k–15k Android phones) over variable mobile networks
     after primary content paint.
   - It must never block initial render, delay Largest Contentful Paint (LCP), or
     introduce layout shifts (CLS). See canonical specification in
-    [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+    [design-system/chatbot-widget.md](../../design-system/chatbot-widget.md).
 - **Mandatory Mobile Verification**: Test every project using simulated mobile
   device profiles with 4x CPU throttling and throttled network before final sign-off.
 

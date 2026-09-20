@@ -5,6 +5,9 @@ node_modules/
 
 # Testing & Coverage
 coverage/
+.coverage
+coverage-*.json
+*.coverage
 
 # Production builds
 dist/

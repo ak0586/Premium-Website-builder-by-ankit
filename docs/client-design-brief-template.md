@@ -500,7 +500,7 @@ Document motion patterns that do not fit this client's visual identity.
 ## 10b. AI Concierge / Ushera Chatbot (Required)
 
 Every client website must include an on-brand AI concierge slot for interactive Q&A and appointment booking.
-See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+See canonical specification in [design-system/chatbot-widget.md](../design-system/chatbot-widget.md).
 
 - Enabled: Yes (Required by default)
 - Name: Ushera

@@ -209,7 +209,7 @@ Every client website must provide a conversational assistant slot (chat + push-t
 - Pluggable architecture: functions immediately in standalone placeholder/demo mode (with scripted mock responses and WhatsApp/tel direct fallback) or connects seamlessly to an external multi-tenant AI Receptionist SaaS backend.
 - Non-blocking, asynchronously loaded, keyboard-accessible, and strictly clear of mobile CTA and navigation touch targets.
 
-See canonical reference: [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+See canonical reference: [design-system/chatbot-widget.md](../../design-system/chatbot-widget.md).
 
 ---
 

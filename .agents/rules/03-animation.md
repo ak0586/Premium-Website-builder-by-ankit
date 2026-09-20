@@ -424,11 +424,13 @@ techniques as a minimum standard. These are not optional enhancements.
 
 ## Reference Implementation
 
-> **`e:\clients-websites\devaki-dental-v2\`** is the canonical reference
-> implementation for this technique floor. Every technique in the
-> "Required Technique Floor" section above is demonstrated there.
-> Read the source code of any component you are implementing to
-> understand how the technique was applied in context.
+> Every technique in the "Required Technique Floor" section above is
+> specified in full detail above and in
+> [`design-system/motion.md`](../../design-system/motion.md), which
+> provides copy-reference code for each pattern. If your environment
+> also has a completed client project available locally, reviewing it
+> directly can add real-world context, but no specific project path
+> should be assumed to exist across machines.
 
 ---
 

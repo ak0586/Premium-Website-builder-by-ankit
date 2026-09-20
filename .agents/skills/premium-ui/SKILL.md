@@ -228,12 +228,12 @@ The conversational assistant widget must feel like an organic, custom-built exte
 - **Bespoke Styling**: Typography, container framing, color tokens, and border radii must match the client's design system. It must never look like an off-the-shelf, generic third-party chat plugin.
 - **Brand-Derived Avatar**: The animated avatar (idle, listening, thinking, speaking) must visually embody the specific business character (e.g. clinical precision for a healthcare studio, artisanal warmth for a barber or cafe). Use lightweight vector animation (SVG, Lottie, or Rive).
 - **Mobile Harmony**: Positioned and sized to preserve generous clearance around mobile primary CTAs and navigation controls.
-- See canonical reference: [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md).
+- See canonical reference: [design-system/chatbot-widget.md](../../../design-system/chatbot-widget.md).
 
 ## Luxury Healthcare & 3D Spatial Experiences (Opt-In Exception Path)
 
 > [!NOTE]
-> Applies strictly when the 3D gating criteria in [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md) are met. For standard clients, prioritize 2D craft and lightweight depth.
+> Applies strictly when the 3D gating criteria in [.agents/rules/01-premium-design.md](../../rules/01-premium-design.md) are met. For standard clients, prioritize 2D craft and lightweight depth.
 
 When designing flagship healthcare, aesthetic, or architectural experiences that justify real-time 3D:
 

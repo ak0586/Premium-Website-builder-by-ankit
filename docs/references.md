@@ -67,7 +67,7 @@ identity of client websites.
 > [!NOTE]
 > **Optional-Tier References Only**: These benchmarks apply exclusively to the
 > rare project that meets the explicit gating criteria in
-> [.agents/rules/01-premium-design.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/.agents/rules/01-premium-design.md).
+> [.agents/rules/01-premium-design.md](../.agents/rules/01-premium-design.md).
 > They are NOT general baseline inspiration for every client. The standard default
 > for local businesses is 2D-first craft + lightweight depth.
 

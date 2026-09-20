@@ -302,8 +302,6 @@ method applied to a real client, resulting in concrete, client-specific
 implementation choices. Use it as a template for how to think through
 the process — not as a result to copy.
 
-**Reference implementation**: `e:\clients-websites\devaki-dental-v2\`
-
 ---
 
 ### Client context

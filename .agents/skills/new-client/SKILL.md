@@ -137,7 +137,7 @@ examples.
 ## AI Concierge Widget & Chatbot Presentation Constraints (Required)
 
 Every client website must include an AI concierge slot for interactive Q&A and appointment booking.
-See canonical specification in [design-system/chatbot-widget.md](file:///e:/clients-websites/Premium-Website-builder-by-ankit/design-system/chatbot-widget.md):
+See canonical specification in [design-system/chatbot-widget.md](../../../design-system/chatbot-widget.md):
 
 - Derive the assistant's visual identity, avatar character, and motion personality directly from the client's brand.
 - **Launcher button presentation**: Display a lovely, brand-matched animated avatar accompanied simply by the name **Ushera** (clean, compact luxury pill, e.g. `<ConciergeAvatar size={32} /> Ushera`). Never use verbose text like "Ask & Book with Ushera".
