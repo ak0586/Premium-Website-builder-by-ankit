@@ -41,7 +41,21 @@ Premium-Website-builder-by-ankit/
 │       │   └── SKILL.md
 │       ├── visual-qa/
 │       │   └── SKILL.md
-│       └── final-qa/
+│       ├── final-qa/
+│       │   └── SKILL.md
+│       ├── ui-ux-pro-max/
+│       │   └── SKILL.md
+│       ├── design-tokens/
+│       │   └── SKILL.md
+│       ├── ui-styling/
+│       │   └── SKILL.md
+│       ├── brand/
+│       │   └── SKILL.md
+│       ├── banner-design/
+│       │   └── SKILL.md
+│       ├── slides/
+│       │   └── SKILL.md
+│       └── design/
 │           └── SKILL.md
 │
 ├── design-system/
@@ -81,6 +95,22 @@ It is referenced from `.agents/rules/03-animation.md`,
 those files. The industry motion bank is inspiration, never a
 template — two clients in the same industry must receive different
 executions.
+
+## Skills
+
+`.agents/skills/` splits into two groups:
+
+- **Workflow skills** (`new-client`, `prospecting`, `visual-qa`,
+  `final-qa`) drive the core client-website build sequence described in
+  `CLAUDE.md` / `GEMINI.md` Section 7.
+- **Design intelligence and collateral skills** (`premium-ui`,
+  `ui-ux-pro-max`, `design-tokens`, `ui-styling`, `brand`,
+  `banner-design`, `slides`, `design`) provide on-demand design data,
+  implementation guidance, and marketing/brand collateral. `premium-ui`
+  is the taste/judgment layer for this repository; `ui-ux-pro-max`
+  supplies the searchable palette, typography, icon, and stack data it
+  draws on — see `.agents/skills/premium-ui/SKILL.md` for how the two
+  relate.
 
 ## AI Concierge Widget
 

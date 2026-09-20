@@ -5,6 +5,17 @@ description: Guides premium visual interface design with intentional hierarchy, 
 
 # Premium UI Skill
 
+## Relationship to ui-ux-pro-max
+
+This skill is the **judgment and taste layer** for this repository — it decides
+*whether* an aesthetic choice fits a given client and enforces the anti-generic
+rules below. It does not replace `ui-ux-pro-max`.
+
+When a concrete option set is needed (a specific palette, a specific font
+pairing, an icon set, a GSAP preset, a chart type), defer to `ui-ux-pro-max`'s
+searchable local data (192 palettes, 74 font pairings, 105 icons, 17 GSAP
+presets, 25 chart types) to generate candidates, then apply the filters in
+this file to pick or reject among them. Do not duplicate that data here.
 
 ## Purpose
 

@@ -280,6 +280,11 @@ Use the detailed guidance in `design-system/`.
 
 Do not assume all clients need the same visual system.
 
+For systemic token architecture (primitive → semantic → component layers,
+CSS variables, spacing/typography scales) and strategic slide generation,
+`.agents/skills/design-tokens/SKILL.md` provides on-demand implementation
+detail beyond what `design-system/` documents at a principles level.
+
 ---
 
 # 10. UI Resources
@@ -302,6 +307,17 @@ Libraries are tools, not the client's visual identity.
 Prefer the smallest appropriate stack.
 
 Do not introduce dependencies without a clear reason.
+
+For hands-on shadcn/ui + Tailwind CSS implementation (component
+installation, theming, accessibility patterns, dark mode, responsive
+utilities), use `.agents/skills/ui-styling/SKILL.md`.
+
+For concrete design-decision data — curated color palettes, font
+pairings, icon sets, motion presets, and stack-specific UI guidance
+across 22 technology stacks — consult
+`.agents/skills/ui-ux-pro-max/SKILL.md`. `premium-ui` remains the
+taste/judgment layer that filters and applies this data rather than
+duplicating it; see `.agents/skills/premium-ui/SKILL.md`.
 
 ---
 
@@ -420,6 +436,13 @@ Prefer:
 
 Do not present stock or generated imagery as authentic business evidence.
 
+Hero video is a legitimate alternative to photography/illustration for
+industries where motion itself is the evidence of quality (hospitality,
+fitness, salons/spas, real estate, automotive) — never a default. Follow
+`.agents/rules/01-premium-design.md` §10b for when it fits and
+`.agents/rules/05-performance-seo.md` §3b for the compression, poster
+frame, and low-end mobile fallback requirements.
+
 ---
 
 # 16. Content Accuracy
@@ -488,6 +511,27 @@ When prospecting is requested:
 Do not invent commercial facts or affordability.
 
 Do not begin development until the user explicitly approves a prospect.
+
+---
+
+# 18b. Marketing and Brand Collateral
+
+For work outside the client website itself — brand guideline documents,
+pitch/sales decks, and social or ad banners used in prospecting and
+client communication — use:
+
+* `.agents/skills/brand/SKILL.md` — brand voice, visual identity,
+  messaging frameworks, style guides
+* `.agents/skills/banner-design/SKILL.md` — social, ad, and print
+  banner design
+* `.agents/skills/slides/SKILL.md` — HTML presentation decks with
+  charts and copywriting formulas
+* `.agents/skills/design/SKILL.md` — broader design collateral (logos,
+  corporate identity mockups, icons, social photos) when an engagement
+  calls for it beyond the website itself
+
+These are supporting collateral skills, not part of the core
+client-website build sequence in Section 7.
 
 ---
 

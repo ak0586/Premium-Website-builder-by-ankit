@@ -398,6 +398,32 @@ unless its nature is clear.
 
 ---
 
+## 10b. Hero Video (Opt-In Alternative to Photography/Illustration)
+
+Hero video is a legitimate third option alongside photography and
+illustration — not a default, and not merely a performance risk to
+avoid.
+
+**When it fits**: industries where motion itself is the evidence of
+quality — hospitality and food service (kitchen/ambience), fitness and
+wellness studios, salons and spas (treatment in progress), real estate
+and architecture (space/walkthrough), automotive (the vehicle or the
+shop in action). For a neighborhood clinic, accountant, or repair
+shop, a strong photograph or the category-specific motion concept in
+`design-system/category-motion.md` will usually outperform video.
+
+**When it does not fit**: never as a substitute for having a genuine
+motion concept, never as stock footage presented as the client's own
+space or work, and never when it would push LCP past budget on a
+₹8,000–₹15,000 Android device (see `.agents/rules/05-performance-seo.md`
+§3b for the technical constraints that gate this).
+
+Choose hero video the same way any other hero treatment is chosen — by
+asking what genuinely fits this client's industry and identity, not by
+default preference.
+
+---
+
 ## 11. Content and Trust
 
 Design should support trust.

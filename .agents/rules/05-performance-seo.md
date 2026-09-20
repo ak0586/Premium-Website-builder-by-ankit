@@ -71,6 +71,34 @@ Use appropriate responsive image techniques.
 
 ---
 
+## 3b. Video
+
+When hero video is used (see `.agents/rules/01-premium-design.md`
+§10b for when it fits creatively), it must meet the same performance
+bar as any other hero treatment:
+
+- Compress aggressively; serve WebM with an MP4 fallback.
+- `muted autoplay loop playsinline` — never rely on unmuted autoplay,
+  which browsers block anyway.
+- Always set a `poster` frame so the perceived hero loads instantly,
+  even before the video itself is ready.
+- The video must never be, or block, the Largest Contentful Paint
+  element. Treat the poster/first-frame as LCP-critical; load the
+  actual video asset after.
+- On low-end/low-bandwidth mobile, fall back to the static poster
+  image or an equivalent photograph rather than forcing video
+  playback — detect via `prefers-reduced-motion`, connection type
+  (`navigator.connection.saveData` / `effectiveType`), or a simple
+  viewport-width threshold.
+- Keep the clip short and loopable (a few seconds) rather than a long
+  file that inflates page weight for a background loop.
+
+An unoptimized hero video that degrades Core Web Vitals or budget
+mobile performance has failed the premium standard, regardless of how
+good it looks on a fast connection.
+
+---
+
 ## 4. Fonts
 
 Avoid loading unnecessary font families and weights.
